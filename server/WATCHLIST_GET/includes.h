@@ -69,8 +69,7 @@ mime_type(beast::string_view path)
 }
 
 
-void new_watchlist(std::string body);
-void get_watchlists();
+json get_watchlists();
 
 // This function produces an HTTP response for the given
 // request. The type of the response object depends on the
@@ -80,7 +79,18 @@ template< class Body, class Allocator, class Send>
 void handle_request(beast::string_view doc_root, http::request<Body, http::basic_fields<Allocator>>&& req, Send&& send){
     if (req.method() == http::verb::get && req.target() == "/"){
         // already string due to string body in sesion.h
-        new_watchlist(req.body());
+        json result = get_watchlists();
+
+        json result_response;
+
+        for (auto& element : result) {
+            json result_response_2;
+            result_response_2["id"] = element["id"];
+            result_response_2["name"] = element["name"];
+            result_response_2["stocks"] = element["stocks"];
+            result_response.push_back(result_response_2);
+        }
+
 
         http_response res{http::status::ok, req.version()};
         res.set(http::field::server, BOOST_BEAST_VERSION_STRING);
@@ -88,7 +98,7 @@ void handle_request(beast::string_view doc_root, http::request<Body, http::basic
         res.set(http::field::access_control_allow_origin, "*" );
 
 
-        res.body() = "DONE";
+        res.body() = result_response.dump();
 
         res.prepare_payload();
         get_watchlists();
@@ -96,20 +106,7 @@ void handle_request(beast::string_view doc_root, http::request<Body, http::basic
     }
 }
 
-void new_watchlist(std::string body){  // verify ssl is quick fix
-
-    std::string restheart_url = "http://localhost:8080/db/watchlist";
-    auto r = cpr::Post(
-                cpr::Url{restheart_url},
-                cpr::VerifySsl(false),
-                cpr::Authentication{"admin", "changeit"},
-                cpr::Body{body},
-                cpr::Header{{"Content-Type", "application/json"}}
-            );
-        std::cout << r.status_code << std::endl;
-
-}
-void get_watchlists(){  // verify ssl is quick fix
+json get_watchlists(){  // verify ssl is quick fix
 
     std::string restheart_url = "http://localhost:8080/db/watchlist";
     auto r = cpr::Get(
@@ -119,10 +116,8 @@ void get_watchlists(){  // verify ssl is quick fix
             cpr::Header{{"Content-Type", "application/json"}}
     );
     json j = json::parse(r.text);
-    j = j["_embedded"];
-    std::cout << j.dump() << std::endl;
+    return j["_embedded"];
 
 }
-//9620 0092
 
 #endif

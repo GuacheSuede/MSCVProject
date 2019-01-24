@@ -1,0 +1,5 @@
+<span>
+  <span *ngIf="watchlistitems">
+      <app-stockitem *ngFor="let stock of watchlistitems" [ticker] = "stock"></app-stockitem>
+  </span>
+</span>

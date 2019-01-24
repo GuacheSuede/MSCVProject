@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated>
-      <config projectName="MSCVProject" targetName="MSCVProject" />
-    </generated>
+    <generated />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -11,7 +9,317 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e575387-7aab-4406-af92-c7eeeaf50a43" name="Default Changelist" comment="" />
+    <list default="true" id="3e575387-7aab-4406-af92-c7eeeaf50a43" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/@angular-devkit/build-optimizer/node_modules/typescript/CopyrightNotice.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/@angular-devkit/build-optimizer/node_modules/typescript/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/@angular-devkit/build-optimizer/node_modules/typescript/ThirdPartyNoticeText.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/@angular/cli/utilities/INITIAL_COMMIT_MESSAGE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/@angular/compiler-cli/node_modules/yargs-parser/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/@babel/generator/node_modules/jsesc/LICENSE-MIT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/@schematics/angular/node_modules/typescript/CopyrightNotice.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/@schematics/angular/node_modules/typescript/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/@schematics/angular/node_modules/typescript/ThirdPartyNoticeText.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/@webassemblyjs/leb128/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/adm-zip/MIT-LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/browserstack/LICENSE-MIT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/chrome-trace-event/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/circular-json/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/cliui/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/cssesc/LICENSE-MIT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/dashdash/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/exit/test/fixtures/10-stderr.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/exit/test/fixtures/10-stdout-stderr.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/exit/test/fixtures/10-stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/exit/test/fixtures/100-stderr.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/exit/test/fixtures/100-stdout-stderr.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/exit/test/fixtures/100-stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/exit/test/fixtures/1000-stderr.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/exit/test/fixtures/1000-stdout-stderr.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/exit/test/fixtures/1000-stdout.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/immediate/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/isbinaryfile/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/istanbul-reports/lib/html/templates/foot.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/istanbul-reports/lib/html/templates/head.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/istanbul/lib/report/templates/foot.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/istanbul/lib/report/templates/head.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/jasmine-core/jasmine_core.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/jasmine-core/jasmine_core.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/jasmine-core/jasmine_core.egg-info/requires.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/jasmine-core/jasmine_core.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/jasmine-core/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/jasmine/node_modules/jasmine-core/jasmine_core.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/jasmine/node_modules/jasmine-core/jasmine_core.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/jasmine/node_modules/jasmine-core/jasmine_core.egg-info/requires.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/jasmine/node_modules/jasmine-core/jasmine_core.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/jasmine/node_modules/jasmine-core/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/jsesc/LICENSE-MIT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/browser/less/console-errors/test-error.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/browser/less/errors/image-height-error.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/browser/less/errors/image-size-error.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/browser/less/errors/image-width-error.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/add-mixed-units.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/add-mixed-units2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/at-rules-undefined-var.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/at-rules-unmatching-block.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/bad-variable-declaration1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/color-func-invalid-color.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/css-guard-default-func.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/custom-property-unmatched-block-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/custom-property-unmatched-block-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/custom-property-unmatched-block-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/detached-ruleset-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/detached-ruleset-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/detached-ruleset-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/detached-ruleset-5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/detached-ruleset-6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/divide-mixed-units.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/extend-no-selector.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/extend-not-at-end.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/functions-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/functions-10-keyword.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/functions-11-operation.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/functions-12-quoted.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/functions-13-selector.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/functions-14-url.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/functions-15-value.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/functions-3-assignment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/functions-4-call.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/functions-5-color-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/functions-5-color.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/functions-6-condition.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/functions-7-dimension.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/functions-8-element.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/functions-9-expression.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/import-malformed.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/import-missing.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/import-no-semi.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/import-subfolder1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/import-subfolder2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/javascript-error.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/javascript-undefined-var.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/mixed-mixin-definition-args-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/mixed-mixin-definition-args-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/mixin-not-defined-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/mixin-not-defined.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/mixin-not-matched.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/mixin-not-matched2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/mixin-not-visible-in-scope-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/mixins-guards-cond-expected.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/mixins-guards-default-func-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/mixins-guards-default-func-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/mixins-guards-default-func-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/multiple-guards-on-css-selectors.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/multiple-guards-on-css-selectors2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/multiply-mixed-units.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/namespacing-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/namespacing-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/namespacing-4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/parens-error-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/parens-error-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/parens-error-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/parse-error-curly-bracket.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/parse-error-media-no-block-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/parse-error-media-no-block-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/parse-error-media-no-block-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/parse-error-missing-bracket.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/parse-error-missing-parens.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/parse-error-with-import.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/percentage-missing-space.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/percentage-non-number-argument.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/plugin-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/plugin-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/plugin-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/property-asterisk-only-name.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/property-ie5-hack.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/property-in-root.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/property-in-root2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/property-in-root3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/property-interp-not-defined.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/recursive-variable.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/root-func-undefined-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/root-func-undefined-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/single-character.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/svg-gradient1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/svg-gradient2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/svg-gradient3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/svg-gradient4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/svg-gradient5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/svg-gradient6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/errors/unit-function.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less-bom/no-js-errors/no-js-errors.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/add-mixed-units.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/add-mixed-units2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/at-rules-undefined-var.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/at-rules-unmatching-block.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/bad-variable-declaration1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/color-func-invalid-color.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/css-guard-default-func.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/custom-property-unmatched-block-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/custom-property-unmatched-block-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/custom-property-unmatched-block-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/detached-ruleset-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/detached-ruleset-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/detached-ruleset-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/detached-ruleset-5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/detached-ruleset-6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/divide-mixed-units.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/extend-no-selector.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/extend-not-at-end.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/functions-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/functions-10-keyword.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/functions-11-operation.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/functions-12-quoted.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/functions-13-selector.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/functions-14-url.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/functions-15-value.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/functions-3-assignment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/functions-4-call.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/functions-5-color-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/functions-5-color.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/functions-6-condition.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/functions-7-dimension.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/functions-8-element.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/functions-9-expression.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/import-malformed.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/import-missing.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/import-no-semi.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/import-subfolder1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/import-subfolder2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/javascript-error.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/javascript-undefined-var.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/mixed-mixin-definition-args-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/mixed-mixin-definition-args-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/mixin-not-defined-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/mixin-not-defined.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/mixin-not-matched.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/mixin-not-matched2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/mixin-not-visible-in-scope-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/mixins-guards-cond-expected.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/mixins-guards-default-func-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/mixins-guards-default-func-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/mixins-guards-default-func-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/multiple-guards-on-css-selectors.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/multiple-guards-on-css-selectors2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/multiply-mixed-units.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/namespacing-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/namespacing-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/namespacing-4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/parens-error-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/parens-error-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/parens-error-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/parse-error-curly-bracket.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/parse-error-media-no-block-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/parse-error-media-no-block-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/parse-error-media-no-block-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/parse-error-missing-bracket.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/parse-error-missing-parens.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/parse-error-with-import.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/percentage-missing-space.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/percentage-non-number-argument.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/plugin-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/plugin-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/plugin-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/property-asterisk-only-name.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/property-ie5-hack.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/property-in-root.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/property-in-root2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/property-in-root3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/property-interp-not-defined.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/recursive-variable.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/root-func-undefined-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/root-func-undefined-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/single-character.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/svg-gradient1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/svg-gradient2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/svg-gradient3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/svg-gradient4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/svg-gradient5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/svg-gradient6.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/errors/unit-function.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/less/test/less/no-js-errors/no-js-errors.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/mkdirp/bin/usage.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/node-libs-browser/node_modules/punycode/LICENSE-MIT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/optimist/node_modules/wordwrap/test/idleness.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/path-is-inside/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/performance-now/license.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/punycode/LICENSE-MIT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/reflect-metadata/CopyrightNotice.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/regenerate/LICENSE-MIT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/regexpu-core/LICENSE-MIT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/regjsgen/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/regjsparser/node_modules/jsesc/LICENSE-MIT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/require-main-filename/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/rxjs/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/rxjs/_esm2015/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/rxjs/_esm5/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/rxjs/src/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/selenium-webdriver/lib/test/data/plain.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/set-blocking/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/setimmediate/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/signal-exit/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/source-map-loader/test/fixtures/absolute-sourceRoot-source-map.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/source-map-loader/test/fixtures/data/relative-sourceRoot-source-map.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/source-map-loader/test/fixtures/external-source-map2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/stream-http/test/server/static/basic.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/tough-cookie/node_modules/punycode/LICENSE-MIT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/tslib/CopyrightNotice.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/tslib/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/typescript/CopyrightNotice.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/typescript/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/typescript/ThirdPartyNoticeText.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/url/node_modules/punycode/LICENSE-MIT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/webpack-dev-server/node_modules/cliui/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/webpack-dev-server/node_modules/yargs-parser/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/when/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/wordwrap/test/idleness.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/xmlhttprequest-ssl/tests/testdata.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/node_modules/yargs-parser/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/cpr/CMakeFiles/cpr.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/opt/curl/lib/CMakeFiles/libcurl.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/opt/googletest/CMakeFiles/gtest.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/opt/googletest/CMakeFiles/gtest_main.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/opt/mongoose/CMakeFiles/mongoose.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/test/CMakeFiles/alternating_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/test/CMakeFiles/async_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/test/CMakeFiles/callback_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/test/CMakeFiles/delete_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/test/CMakeFiles/error_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/test/CMakeFiles/get_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/test/CMakeFiles/head_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/test/CMakeFiles/options_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/test/CMakeFiles/patch_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/test/CMakeFiles/post_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/test/CMakeFiles/proxy_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/test/CMakeFiles/put_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/test/CMakeFiles/raw_body_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/test/CMakeFiles/session_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/test/CMakeFiles/test_server.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_GET/cpr/test/CMakeFiles/util_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/cpr/CMakeFiles/cpr.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/opt/curl/lib/CMakeFiles/libcurl.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/opt/googletest/CMakeFiles/gtest.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/opt/googletest/CMakeFiles/gtest_main.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/opt/mongoose/CMakeFiles/mongoose.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/test/CMakeFiles/alternating_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/test/CMakeFiles/async_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/test/CMakeFiles/callback_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/test/CMakeFiles/delete_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/test/CMakeFiles/error_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/test/CMakeFiles/get_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/test/CMakeFiles/head_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/test/CMakeFiles/options_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/test/CMakeFiles/patch_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/test/CMakeFiles/post_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/test/CMakeFiles/proxy_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/test/CMakeFiles/put_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/test/CMakeFiles/raw_body_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/test/CMakeFiles/session_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/test/CMakeFiles/test_server.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/test/CMakeFiles/util_tests.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/iex_na_all_variables_fundamentals_quarterly.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/iex_na_all_variables_fundementals_quarterly_tabbed.txt" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,38 +327,115 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Default" />
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.cc">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/build_db.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="17">
+              <caret line="1" column="59" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/WATCHLIST_POST/includes.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1887">
+              <caret line="111" column="35" selection-start-line="111" selection-start-column="35" selection-end-line="120" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/Makefile">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1">
+              <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/iex_na_all_variables_fundementals_quarterly_tabbed.txt">
+          <provider selected="true" editor-type-id="LargeFileEditor">
+            <state>
+              <caret column="5468" selection-start-column="5468" selection-end-column="5468" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/iex_na_all_variables_fundamentals_quarterly.csv">
+          <provider selected="true" editor-type-id="LargeFileEditor">
+            <state relative-caret-position="3417">
+              <caret line="201" column="63" selection-start-line="201" selection-start-column="63" selection-end-line="201" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/WATCHLIST_POST/index.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compiler/main.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="9" selection-start-line="18" selection-start-column="7" selection-end-line="24" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>target</find>
+      <find>push</find>
+      <find>19880101</find>
+      <find>asaltd</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/main.cc" />
+        <option value="$PROJECT_DIR$/server/main.cc" />
+        <option value="$PROJECT_DIR$/server/index.html" />
+        <option value="$PROJECT_DIR$/database/build_db.sh" />
+        <option value="$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="53" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="y" value="27" />
+    <option name="width" value="1920" />
+    <option name="height" value="1053" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -58,15 +443,48 @@
               <item name="MSCVProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="MSCVProject" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MSCVProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MSCVProject" type="462c0819:PsiDirectoryNode" />
+              <item name="compiler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MSCVProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MSCVProject" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MSCVProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MSCVProject" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MSCVProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MSCVProject" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="WATCHLIST_POST" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MSCVProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MSCVProject" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="WRDS_IMPORTER" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/WRDS_IMPORTER" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -80,13 +498,6 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="MSCVProject" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MSCVProject" TARGET_NAME="MSCVProject" CONFIG_NAME="Default" RUN_TARGET_PROJECT_NAME="MSCVProject" RUN_TARGET_NAME="MSCVProject">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -98,23 +509,24 @@
       <option name="presentableId" value="Default" />
       <updated>1547918329018</updated>
       <workItem from="1547918332207" duration="3180000" />
+      <workItem from="1548135981067" duration="1619000" />
+      <workItem from="1548174621243" duration="27000" />
+      <workItem from="1548248902791" duration="1852000" />
+      <workItem from="1548251153276" duration="7598000" />
+      <workItem from="1548259509263" duration="5078000" />
+      <workItem from="1548318054651" duration="2844000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3180000" />
+    <option name="totallyTimeSpent" value="22198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25987193" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="CMake" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -122,20 +534,98 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="CMake" order="11" visible="true" weight="0.3293348" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26040554" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="CMake" order="11" visible="true" weight="0.3293348" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main.cc">
+    <entry file="file://$PROJECT_DIR$/main.cc" />
+    <entry file="file://$PROJECT_DIR$/server/index.html" />
+    <entry file="file://$PROJECT_DIR$/server/main.cc" />
+    <entry file="file:///usr/local/include/boost/asio/io_context.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="186">
+          <caret line="178" column="6" selection-start-line="178" selection-start-column="6" selection-end-line="178" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/includes.h" />
+    <entry file="file://$PROJECT_DIR$/database/build_db.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="59" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/WATCHLIST_POST/includes.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1887">
+          <caret line="111" column="35" selection-start-line="111" selection-start-column="35" selection-end-line="120" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/Makefile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/iex_na_all_variables_fundamentals_quarterly.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="3417">
+          <caret line="201" column="63" selection-start-line="201" selection-start-column="63" selection-end-line="201" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/WATCHLIST_POST/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="9" selection-start-line="18" selection-start-column="7" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/iex_na_all_variables_fundementals_quarterly_tabbed.txt">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state>
+          <caret column="5468" selection-start-column="5468" selection-end-column="5468" />
         </state>
       </provider>
     </entry>

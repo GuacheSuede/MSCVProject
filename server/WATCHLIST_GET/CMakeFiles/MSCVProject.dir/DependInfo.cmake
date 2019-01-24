@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/justin/MSCVProject/server/WATCHLIST_POST/main.cc" "/home/justin/MSCVProject/server/WATCHLIST_POST/CMakeFiles/MSCVProject.dir/main.cc.o"
+  "/home/justin/MSCVProject/server/WATCHLIST_GET/main.cc" "/home/justin/MSCVProject/server/WATCHLIST_GET/CMakeFiles/MSCVProject.dir/main.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -18,8 +18,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/justin/MSCVProject/server/WATCHLIST_POST/cpr/cpr/CMakeFiles/cpr.dir/DependInfo.cmake"
-  "/home/justin/MSCVProject/server/WATCHLIST_POST/cpr/opt/curl/lib/CMakeFiles/libcurl.dir/DependInfo.cmake"
+  "/home/justin/MSCVProject/server/WATCHLIST_GET/cpr/cpr/CMakeFiles/cpr.dir/DependInfo.cmake"
+  "/home/justin/MSCVProject/server/WATCHLIST_GET/cpr/opt/curl/lib/CMakeFiles/libcurl.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

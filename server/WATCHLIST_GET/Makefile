@@ -48,10 +48,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/justin/MSCVProject/server/WATCHLIST_POST
+CMAKE_SOURCE_DIR = /home/justin/MSCVProject/server/WATCHLIST_GET
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/justin/MSCVProject/server/WATCHLIST_POST
+CMAKE_BINARY_DIR = /home/justin/MSCVProject/server/WATCHLIST_GET
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,9 +126,9 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/justin/MSCVProject/server/WATCHLIST_POST/CMakeFiles /home/justin/MSCVProject/server/WATCHLIST_POST/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/justin/MSCVProject/server/WATCHLIST_GET/CMakeFiles /home/justin/MSCVProject/server/WATCHLIST_GET/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/justin/MSCVProject/server/WATCHLIST_POST/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/justin/MSCVProject/server/WATCHLIST_GET/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -261,45 +261,6 @@ libcurl/fast:
 .PHONY : libcurl/fast
 
 #=============================================================================
-# Target rules for targets named gtest_main
-
-# Build rule for target.
-gtest_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
-.PHONY : gtest_main
-
-# fast build rule for target.
-gtest_main/fast:
-	$(MAKE) -f cpr/opt/googletest/CMakeFiles/gtest_main.dir/build.make cpr/opt/googletest/CMakeFiles/gtest_main.dir/build
-.PHONY : gtest_main/fast
-
-#=============================================================================
-# Target rules for targets named gtest
-
-# Build rule for target.
-gtest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest
-.PHONY : gtest
-
-# fast build rule for target.
-gtest/fast:
-	$(MAKE) -f cpr/opt/googletest/CMakeFiles/gtest.dir/build.make cpr/opt/googletest/CMakeFiles/gtest.dir/build
-.PHONY : gtest/fast
-
-#=============================================================================
-# Target rules for targets named mongoose
-
-# Build rule for target.
-mongoose: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mongoose
-.PHONY : mongoose
-
-# fast build rule for target.
-mongoose/fast:
-	$(MAKE) -f cpr/opt/mongoose/CMakeFiles/mongoose.dir/build.make cpr/opt/mongoose/CMakeFiles/mongoose.dir/build
-.PHONY : mongoose/fast
-
-#=============================================================================
 # Target rules for targets named cpr
 
 # Build rule for target.
@@ -311,214 +272,6 @@ cpr: cmake_check_build_system
 cpr/fast:
 	$(MAKE) -f cpr/cpr/CMakeFiles/cpr.dir/build.make cpr/cpr/CMakeFiles/cpr.dir/build
 .PHONY : cpr/fast
-
-#=============================================================================
-# Target rules for targets named proxy_tests
-
-# Build rule for target.
-proxy_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 proxy_tests
-.PHONY : proxy_tests
-
-# fast build rule for target.
-proxy_tests/fast:
-	$(MAKE) -f cpr/test/CMakeFiles/proxy_tests.dir/build.make cpr/test/CMakeFiles/proxy_tests.dir/build
-.PHONY : proxy_tests/fast
-
-#=============================================================================
-# Target rules for targets named get_tests
-
-# Build rule for target.
-get_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 get_tests
-.PHONY : get_tests
-
-# fast build rule for target.
-get_tests/fast:
-	$(MAKE) -f cpr/test/CMakeFiles/get_tests.dir/build.make cpr/test/CMakeFiles/get_tests.dir/build
-.PHONY : get_tests/fast
-
-#=============================================================================
-# Target rules for targets named async_tests
-
-# Build rule for target.
-async_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 async_tests
-.PHONY : async_tests
-
-# fast build rule for target.
-async_tests/fast:
-	$(MAKE) -f cpr/test/CMakeFiles/async_tests.dir/build.make cpr/test/CMakeFiles/async_tests.dir/build
-.PHONY : async_tests/fast
-
-#=============================================================================
-# Target rules for targets named alternating_tests
-
-# Build rule for target.
-alternating_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 alternating_tests
-.PHONY : alternating_tests
-
-# fast build rule for target.
-alternating_tests/fast:
-	$(MAKE) -f cpr/test/CMakeFiles/alternating_tests.dir/build.make cpr/test/CMakeFiles/alternating_tests.dir/build
-.PHONY : alternating_tests/fast
-
-#=============================================================================
-# Target rules for targets named test_server
-
-# Build rule for target.
-test_server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_server
-.PHONY : test_server
-
-# fast build rule for target.
-test_server/fast:
-	$(MAKE) -f cpr/test/CMakeFiles/test_server.dir/build.make cpr/test/CMakeFiles/test_server.dir/build
-.PHONY : test_server/fast
-
-#=============================================================================
-# Target rules for targets named head_tests
-
-# Build rule for target.
-head_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 head_tests
-.PHONY : head_tests
-
-# fast build rule for target.
-head_tests/fast:
-	$(MAKE) -f cpr/test/CMakeFiles/head_tests.dir/build.make cpr/test/CMakeFiles/head_tests.dir/build
-.PHONY : head_tests/fast
-
-#=============================================================================
-# Target rules for targets named post_tests
-
-# Build rule for target.
-post_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 post_tests
-.PHONY : post_tests
-
-# fast build rule for target.
-post_tests/fast:
-	$(MAKE) -f cpr/test/CMakeFiles/post_tests.dir/build.make cpr/test/CMakeFiles/post_tests.dir/build
-.PHONY : post_tests/fast
-
-#=============================================================================
-# Target rules for targets named session_tests
-
-# Build rule for target.
-session_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 session_tests
-.PHONY : session_tests
-
-# fast build rule for target.
-session_tests/fast:
-	$(MAKE) -f cpr/test/CMakeFiles/session_tests.dir/build.make cpr/test/CMakeFiles/session_tests.dir/build
-.PHONY : session_tests/fast
-
-#=============================================================================
-# Target rules for targets named put_tests
-
-# Build rule for target.
-put_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 put_tests
-.PHONY : put_tests
-
-# fast build rule for target.
-put_tests/fast:
-	$(MAKE) -f cpr/test/CMakeFiles/put_tests.dir/build.make cpr/test/CMakeFiles/put_tests.dir/build
-.PHONY : put_tests/fast
-
-#=============================================================================
-# Target rules for targets named delete_tests
-
-# Build rule for target.
-delete_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 delete_tests
-.PHONY : delete_tests
-
-# fast build rule for target.
-delete_tests/fast:
-	$(MAKE) -f cpr/test/CMakeFiles/delete_tests.dir/build.make cpr/test/CMakeFiles/delete_tests.dir/build
-.PHONY : delete_tests/fast
-
-#=============================================================================
-# Target rules for targets named callback_tests
-
-# Build rule for target.
-callback_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 callback_tests
-.PHONY : callback_tests
-
-# fast build rule for target.
-callback_tests/fast:
-	$(MAKE) -f cpr/test/CMakeFiles/callback_tests.dir/build.make cpr/test/CMakeFiles/callback_tests.dir/build
-.PHONY : callback_tests/fast
-
-#=============================================================================
-# Target rules for targets named raw_body_tests
-
-# Build rule for target.
-raw_body_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 raw_body_tests
-.PHONY : raw_body_tests
-
-# fast build rule for target.
-raw_body_tests/fast:
-	$(MAKE) -f cpr/test/CMakeFiles/raw_body_tests.dir/build.make cpr/test/CMakeFiles/raw_body_tests.dir/build
-.PHONY : raw_body_tests/fast
-
-#=============================================================================
-# Target rules for targets named options_tests
-
-# Build rule for target.
-options_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 options_tests
-.PHONY : options_tests
-
-# fast build rule for target.
-options_tests/fast:
-	$(MAKE) -f cpr/test/CMakeFiles/options_tests.dir/build.make cpr/test/CMakeFiles/options_tests.dir/build
-.PHONY : options_tests/fast
-
-#=============================================================================
-# Target rules for targets named patch_tests
-
-# Build rule for target.
-patch_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 patch_tests
-.PHONY : patch_tests
-
-# fast build rule for target.
-patch_tests/fast:
-	$(MAKE) -f cpr/test/CMakeFiles/patch_tests.dir/build.make cpr/test/CMakeFiles/patch_tests.dir/build
-.PHONY : patch_tests/fast
-
-#=============================================================================
-# Target rules for targets named util_tests
-
-# Build rule for target.
-util_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 util_tests
-.PHONY : util_tests
-
-# fast build rule for target.
-util_tests/fast:
-	$(MAKE) -f cpr/test/CMakeFiles/util_tests.dir/build.make cpr/test/CMakeFiles/util_tests.dir/build
-.PHONY : util_tests/fast
-
-#=============================================================================
-# Target rules for targets named error_tests
-
-# Build rule for target.
-error_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 error_tests
-.PHONY : error_tests
-
-# fast build rule for target.
-error_tests/fast:
-	$(MAKE) -f cpr/test/CMakeFiles/error_tests.dir/build.make cpr/test/CMakeFiles/error_tests.dir/build
-.PHONY : error_tests/fast
 
 main.o: main.cc.o
 
@@ -567,26 +320,7 @@ help:
 	@echo "... opts-pdf"
 	@echo "... generate-curl.1"
 	@echo "... libcurl"
-	@echo "... gtest_main"
-	@echo "... gtest"
-	@echo "... mongoose"
 	@echo "... cpr"
-	@echo "... proxy_tests"
-	@echo "... get_tests"
-	@echo "... async_tests"
-	@echo "... alternating_tests"
-	@echo "... test_server"
-	@echo "... head_tests"
-	@echo "... post_tests"
-	@echo "... session_tests"
-	@echo "... put_tests"
-	@echo "... delete_tests"
-	@echo "... callback_tests"
-	@echo "... raw_body_tests"
-	@echo "... options_tests"
-	@echo "... patch_tests"
-	@echo "... util_tests"
-	@echo "... error_tests"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

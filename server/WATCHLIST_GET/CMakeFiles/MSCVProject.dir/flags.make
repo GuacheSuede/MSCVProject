@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/justin/MSCVProject/server/WATCHLIST_POST/cpr/include -I/home/justin/MSCVProject/server/WATCHLIST_POST/cpr/opt/curl/include -I/home/justin/MSCVProject/server/WATCHLIST_POST/cpr/opt/curl/include/curl -isystem /usr/local/include 
+CXX_INCLUDES = -I/home/justin/MSCVProject/server/WATCHLIST_GET/cpr/include -I/home/justin/MSCVProject/server/WATCHLIST_GET/cpr/opt/curl/include -I/home/justin/MSCVProject/server/WATCHLIST_GET/cpr/opt/curl/include/curl -isystem /usr/local/include 
 

@@ -1,0 +1,12 @@
+<span>
+  <ul class="watchlistsselection">
+    <li 
+      *ngFor="let watchlist of watchlistsdata"
+      (click)="select_watchlist(watchlist.name)">
+      {{watchlist.name}}
+    </li>
+  </ul>
+  <span *ngIf="selectedwatchlist">
+    <app-watchlistview [watchlist] = "selectedwatchlist"></app-watchlistview>
+  </span>
+</span>

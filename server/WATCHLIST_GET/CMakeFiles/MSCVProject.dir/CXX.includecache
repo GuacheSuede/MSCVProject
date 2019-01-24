@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/justin/MSCVProject/server/WATCHLIST_POST/includes.h
+/home/justin/MSCVProject/server/WATCHLIST_GET/includes.h
 boost/beast/core.hpp
 -
 boost/beast/http.hpp
@@ -44,21 +44,21 @@ nlohmann/json.hpp
 cpr/cpr.h
 -
 
-/home/justin/MSCVProject/server/WATCHLIST_POST/listener.h
+/home/justin/MSCVProject/server/WATCHLIST_GET/listener.h
 includes.h
-/home/justin/MSCVProject/server/WATCHLIST_POST/includes.h
+/home/justin/MSCVProject/server/WATCHLIST_GET/includes.h
 session.h
-/home/justin/MSCVProject/server/WATCHLIST_POST/session.h
+/home/justin/MSCVProject/server/WATCHLIST_GET/session.h
 
-/home/justin/MSCVProject/server/WATCHLIST_POST/main.cc
+/home/justin/MSCVProject/server/WATCHLIST_GET/main.cc
 includes.h
-/home/justin/MSCVProject/server/WATCHLIST_POST/includes.h
+/home/justin/MSCVProject/server/WATCHLIST_GET/includes.h
 listener.h
-/home/justin/MSCVProject/server/WATCHLIST_POST/listener.h
+/home/justin/MSCVProject/server/WATCHLIST_GET/listener.h
 
-/home/justin/MSCVProject/server/WATCHLIST_POST/session.h
+/home/justin/MSCVProject/server/WATCHLIST_GET/session.h
 includes.h
-/home/justin/MSCVProject/server/WATCHLIST_POST/includes.h
+/home/justin/MSCVProject/server/WATCHLIST_GET/includes.h
 
 /usr/local/include/boost/array.hpp
 boost/detail/workaround.hpp
