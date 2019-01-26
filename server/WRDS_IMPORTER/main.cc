@@ -15,6 +15,17 @@
 #include <cpr/cpr.h>
 
 
+#include <bsoncxx/builder/basic/document.hpp>
+#include <bsoncxx/builder/basic/kvp.hpp>
+#include <bsoncxx/json.hpp>
+#include <bsoncxx/stdx/make_unique.hpp>
+
+#include <mongocxx/client.hpp>
+#include <mongocxx/logger.hpp>
+#include <mongocxx/options/client.hpp>
+#include <mongocxx/uri.hpp>
+
+
 using json = nlohmann::json;
 using namespace std;
 using boost::tokenizer;
@@ -28,9 +39,16 @@ vector<string> transient_row;
 int ticker_index = 9;
 
 int tracker = 0;
+int thousand_tracker = 0;
 
 vector<string> titles;
 bool titled = false;
+json data_rows;
+
+
+mongocxx::uri uri("mongodb://restheart:R3ste4rt!@localhost:27017");
+mongocxx::database db;
+mongocxx::collection fundamentals_collection;
 
 void commit_document(json data){
     std::string restheart_url = "http://localhost:8080/db/fundamentals";
@@ -44,6 +62,10 @@ void commit_document(json data){
 
 }
 
+void commit_document_direct(json data) {
+    bsoncxx::stdx::optional <mongocxx::result::insert_one> result = fundamentals_collection.insert_one(bsoncxx::from_json(data.dump()));
+}
+
 void sort_and_commit_rows(string wrds_buffer){
     ++tracker;
     // FORMAT ROW
@@ -54,8 +76,17 @@ void sort_and_commit_rows(string wrds_buffer){
     for(so_tokenizer::iterator beg=tok.begin(); beg!=tok.end(); ++beg){
         transient_row.push_back(*beg);
     }
-
     ticker = transient_row[9];
+
+    json ticker_row_json;
+    for (int ticker_index_row = 0; ticker_index_row < transient_row.size(); ++ticker_index_row) {
+        ticker_row_json[titles[ticker_index_row]] = transient_row[ticker_index_row];
+    }
+    commit_document_direct(ticker_row_json);
+    cout << "COMMITED ON:" << time(0) <<  " FOR " << ticker << " AT LINE " << tracker << endl;
+    transient_row.clear();
+    ticker = "";
+//    commit_document_direct(ticker_row_json);
     // actio keidl and lme signappreo saf army
 
     /// peo w lnto suaoppsoe pap and army osidotic,dicatatiorship wihto reaosn,sutpidity system
@@ -86,28 +117,30 @@ void sort_and_commit_rows(string wrds_buffer){
 //    cout << prev_ticker << "=====" << ticker << endl;
 // chiense afraid admit faults
     // IF END, CLEAN and COMMIT
-    if (ticker != "" && ticker != prev_ticker && ticker_rows.size() != 0){
-        transient_row.clear();
+//    if (ticker != "" && ticker != prev_ticker && ticker_rows.size() != 0){
+//        transient_row.clear();
 
         //send to db and the ncontinuel
-        json data;
-        for (int ticker_index = 0; ticker_index < ticker_rows.size(); ++ticker_index) {
-            vector<string> ticker_row = ticker_rows[ticker_index];
-            json ticker_row_json;
-            for (int ticker_index_row = 0; ticker_index_row < ticker_row.size(); ++ticker_index_row) {
-                ticker_row_json[titles[ticker_index_row]] = ticker_row[ticker_index_row];
-            }
-            data[ticker].push_back(ticker_row_json);
-        }
-        commit_document(data);
-        cout << time(0) << endl;
+//        for (int ticker_index = 0; ticker_index < transient_row.size(); ++ticker_index) {
+
+//            data_rows.push_back(ticker_row_json);
+//            ++thousand_tracker;
+//            if (thousand_tracker == 100){
+//                cout << time(0)  << endl;
+//                commit_document(data_rows);
+//                data_rows.clear();
+//                thousand_tracker = 0;
+//                sleep(2);
+//            }
+//        }
+
         //        cout << data.dump() << endl;
         //learn to smoke peope ,whait onyl nenes to look as usch..
 //        cout << "===========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================" << endl;
 
-        ticker_rows.clear();
-        ticker = "";
-// ahve cofndience 9in ur discoveries
+//        ticker_rows.clear();
+//        ticker = "";
+//// ahve cofndience 9in ur discoveries
 // womane only appeal via sex
 //the yvisually ugly whe nsex
 //dare to ahv eocnfidnece
@@ -127,12 +160,12 @@ void sort_and_commit_rows(string wrds_buffer){
          *
          */
     // ELSE CONTINUE
-    }else{
-        ticker_rows.push_back(transient_row);
-        transient_row.clear();
-        prev_ticker = ticker;
-
-    }
+//    }else{
+//        ticker_rows.push_back(transient_row);
+//        transient_row.clear();
+//        prev_ticker = ticker;
+//
+//    }
 
 
     //jsoeph lvoe change htigns when peope arebusy..dotn stuppify self by follwogn toehrs
@@ -145,8 +178,9 @@ void sort_and_commit_rows(string wrds_buffer){
 }
 
 int main(){
-
-
+    mongocxx::client client(uri);
+    db = client["db"];
+    fundamentals_collection = db["fundamentals"];
 
     ifstream wrds_file;
     wrds_file.open("iex_na_all_variables_fundamentals_quarterly.csv");

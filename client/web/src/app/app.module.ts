@@ -9,7 +9,6 @@ import { WatchlistsoverviewComponent } from './watchlistsoverview/watchlistsover
 import { WatchlistsselectionComponent } from './watchlistsselection/watchlistsselection.component';
 import { WatchlistviewComponent } from './watchlistview/watchlistview.component';
 import { WatchlistcreationComponent } from './watchlistcreation/watchlistcreation.component';
-import { StockItemComponent } from './stock-item/stock-item.component';
 import { StockitemComponent } from './stockitem/stockitem.component';
 
 @NgModule({
@@ -19,9 +18,8 @@ import { StockitemComponent } from './stockitem/stockitem.component';
     WatchlistsselectionComponent,
     WatchlistviewComponent,
     WatchlistcreationComponent,
-    StockItemComponent,
     StockitemComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -2,6 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/database/mongo-cxx-driver" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/database/mongo-cxx-driver/buildb/src/bsoncxx/third_party/EP_mnmlstc_core-prefix/src/EP_mnmlstc_core" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/server/TRTH_BUILDER/libdill" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/server/WATCHLIST_POST/cpr" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/server/WATCHLIST_POST/cpr/opt/curl" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/server/WATCHLIST_POST/cpr/opt/googletest" vcs="Git" />

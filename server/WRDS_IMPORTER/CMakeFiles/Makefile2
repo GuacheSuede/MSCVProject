@@ -65,40 +65,40 @@ CMAKE_SOURCE_DIR = /home/justin/MSCVProject/server/WRDS_IMPORTER
 CMAKE_BINARY_DIR = /home/justin/MSCVProject/server/WRDS_IMPORTER
 
 #=============================================================================
-# Target rules for target CMakeFiles/MSCVProject.dir
+# Target rules for target CMakeFiles/main.dir
 
 # All Build rule for target.
-CMakeFiles/MSCVProject.dir/all: cpr/opt/curl/lib/CMakeFiles/libcurl.dir/all
-CMakeFiles/MSCVProject.dir/all: cpr/cpr/CMakeFiles/cpr.dir/all
-	$(MAKE) -f CMakeFiles/MSCVProject.dir/build.make CMakeFiles/MSCVProject.dir/depend
-	$(MAKE) -f CMakeFiles/MSCVProject.dir/build.make CMakeFiles/MSCVProject.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/justin/MSCVProject/server/WRDS_IMPORTER/CMakeFiles --progress-num= "Built target MSCVProject"
-.PHONY : CMakeFiles/MSCVProject.dir/all
+CMakeFiles/main.dir/all: cpr/opt/curl/lib/CMakeFiles/libcurl.dir/all
+CMakeFiles/main.dir/all: cpr/cpr/CMakeFiles/cpr.dir/all
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/justin/MSCVProject/server/WRDS_IMPORTER/CMakeFiles --progress-num= "Built target main"
+.PHONY : CMakeFiles/main.dir/all
 
 # Include target in all.
-all: CMakeFiles/MSCVProject.dir/all
+all: CMakeFiles/main.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/MSCVProject.dir/rule: cmake_check_build_system
+CMakeFiles/main.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/justin/MSCVProject/server/WRDS_IMPORTER/CMakeFiles 15
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/MSCVProject.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/justin/MSCVProject/server/WRDS_IMPORTER/CMakeFiles 0
-.PHONY : CMakeFiles/MSCVProject.dir/rule
+.PHONY : CMakeFiles/main.dir/rule
 
 # Convenience name for target.
-MSCVProject: CMakeFiles/MSCVProject.dir/rule
+main: CMakeFiles/main.dir/rule
 
-.PHONY : MSCVProject
-
-# clean rule for target.
-CMakeFiles/MSCVProject.dir/clean:
-	$(MAKE) -f CMakeFiles/MSCVProject.dir/build.make CMakeFiles/MSCVProject.dir/clean
-.PHONY : CMakeFiles/MSCVProject.dir/clean
+.PHONY : main
 
 # clean rule for target.
-clean: CMakeFiles/MSCVProject.dir/clean
+CMakeFiles/main.dir/clean:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
+.PHONY : CMakeFiles/main.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/main.dir/clean
 
 .PHONY : clean
 

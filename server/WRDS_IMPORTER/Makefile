@@ -157,17 +157,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named MSCVProject
+# Target rules for targets named main
 
 # Build rule for target.
-MSCVProject: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MSCVProject
-.PHONY : MSCVProject
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-MSCVProject/fast:
-	$(MAKE) -f CMakeFiles/MSCVProject.dir/build.make CMakeFiles/MSCVProject.dir/build
-.PHONY : MSCVProject/fast
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 #=============================================================================
 # Target rules for targets named uninstall
@@ -279,7 +279,7 @@ main.o: main.cc.o
 
 # target to build an object file
 main.cc.o:
-	$(MAKE) -f CMakeFiles/MSCVProject.dir/build.make CMakeFiles/MSCVProject.dir/main.cc.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.o
 .PHONY : main.cc.o
 
 main.i: main.cc.i
@@ -288,7 +288,7 @@ main.i: main.cc.i
 
 # target to preprocess a source file
 main.cc.i:
-	$(MAKE) -f CMakeFiles/MSCVProject.dir/build.make CMakeFiles/MSCVProject.dir/main.cc.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.i
 .PHONY : main.cc.i
 
 main.s: main.cc.s
@@ -297,7 +297,7 @@ main.s: main.cc.s
 
 # target to generate assembly for a file
 main.cc.s:
-	$(MAKE) -f CMakeFiles/MSCVProject.dir/build.make CMakeFiles/MSCVProject.dir/main.cc.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.s
 .PHONY : main.cc.s
 
 # Help Target
@@ -308,7 +308,7 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... edit_cache"
-	@echo "... MSCVProject"
+	@echo "... main"
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
 	@echo "... install/local"

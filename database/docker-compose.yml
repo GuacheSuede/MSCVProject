@@ -35,13 +35,13 @@ services:
             # Be sure this credentials match with those in etc/restheart.yml
             # $ mongo --username restheart --password R3ste4rt! --authenticationDatabase admin
             # These aren't needed if connecting to an existing database instance
-            MONGO_INITDB_ROOT_USERNAME: restheart
-            MONGO_INITDB_ROOT_PASSWORD: R3ste4rt!
+            MONGO_INITDB_ROOT_USERNAME: restheart 
+            MONGO_INITDB_ROOT_PASSWORD: R3ste4rt! 
       command: --bind_ip_all --auth
       volumes:
          - restheart-datadb:/data/db
       networks:
          - backend
       ### Uncoment below if you want to map mongodb port
-      #ports:
-      #   - "27017:27017"
+      ports:
+         - "27017:27017"
