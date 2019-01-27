@@ -35,7 +35,6 @@ string ticker = "";
 string prev_ticker = "";
 
 vector<vector<string>> ticker_rows;
-vector<string> transient_row;
 int ticker_index = 9;
 
 int tracker = 0;
@@ -44,6 +43,9 @@ int thousand_tracker = 0;
 vector<string> titles;
 bool titled = false;
 json data_rows;
+
+vector<future<void>> async_commits;
+
 
 
 mongocxx::uri uri("mongodb://restheart:R3ste4rt!@localhost:27017");
@@ -67,7 +69,8 @@ void commit_document_direct(json data) {
 }
 
 void sort_and_commit_rows(string wrds_buffer){
-    ++tracker;
+    int tracked = ++tracker;
+    vector<string> transient_row;
     // FORMAT ROW
     typedef tokenizer<escaped_list_separator<char> > so_tokenizer;
 
@@ -82,8 +85,10 @@ void sort_and_commit_rows(string wrds_buffer){
     for (int ticker_index_row = 0; ticker_index_row < transient_row.size(); ++ticker_index_row) {
         ticker_row_json[titles[ticker_index_row]] = transient_row[ticker_index_row];
     }
-    commit_document_direct(ticker_row_json);
-    cout << "COMMITED ON:" << time(0) <<  " FOR " << ticker << " AT LINE " << tracker << endl;
+    bsoncxx::stdx::optional <mongocxx::result::insert_one> result = fundamentals_collection.insert_one(bsoncxx::from_json(data.dump()));
+
+//    commit_document_direct(ticker_row_json);
+    cout << "COMMITED ON:" << time(0) <<  " FOR " << ticker << " AT LINE " << tracked << endl;
     transient_row.clear();
     ticker = "";
 //    commit_document_direct(ticker_row_json);
@@ -188,11 +193,15 @@ int main(){
         string wrds_buffer;
         while (getline(wrds_file, wrds_buffer)){
             if(titled == true){
-                sort_and_commit_rows(wrds_buffer);
+                async_commits.push_back(async(launch::async, sort_and_commit_rows, wrds_buffer));
             }else{
                 boost::split(titles, wrds_buffer, boost::is_any_of(","));
                 titled = true;
             }
+        }
+
+        for (auto &ac: async_commits){
+            ac.get();
         }
         wrds_file.close();
     }

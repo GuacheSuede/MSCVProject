@@ -6,6 +6,7 @@
 #include <ctime>
 #include <unistd.h>
 #include <libdill.h>
+#include <mutex>
 
 #include <nlohmann/json.hpp>
 #include <cpr/cpr.h>
@@ -19,7 +20,27 @@ vector<string> global_ric_list;
 vector<string> search_strings;
 string search_string;
 int tracker = 0;
+int async_tracker = 0;
+vector<future<string>> async_data_requests;
+mutex async_mu;
+atomic<int> tracker_counter;
+atomic<int> trackered;
 
+int get_tc(){
+    return ++tracker_counter;
+}
+
+void reset_tc(){
+    tracker_counter = 0;
+}
+
+int get_tcd(){
+    return ++trackered;
+}
+
+void reset_tcd(){
+    trackered = 0;
+}
 //void (json data){
 //    std::string restheart_url = "http://localhost:8080/db/fundamentals";
 //    auto r = cpr::Post(
@@ -58,7 +79,7 @@ string auth(){
     return auth_response["value"];
 }
 
-coroutine void instrument_search(string ticker){
+coroutine string instrument_search(string ticker, int index){
     string instrument_search_url = "https://hosted.datascopeapi.reuters.com/RestApi/v1/Search/InstrumentSearch";
 
     // Building Search Request Data
@@ -87,99 +108,74 @@ coroutine void instrument_search(string ticker){
             }
     );
     // Get value and Return list of RICs (current use case)
-    json search_response = json::parse(r.text);
-    json value_list = search_response["value"];
-    cout << value_list << endl;
-    string ric_list;
-    for (auto &v : value_list){
-        ric_list += "RIC,";
-        ric_list += v["Identifier"];
-        ric_list += "\n";
+    json search_response;
+
+    try {
+        search_response = json::parse(r.text);
+    } catch(json::parse_error) {
+            cout << "PARSE ERROR" << endl;
+
+            cout << r.text << endl;
     }
-//    cout << ric_list << endl;
-    global_ric_list.push_back(ric_list);
+
+    json value_list;
+    try {
+        value_list = search_response["value"];
+    }catch (json::type_error){
+        cout << "TYPE ERROR" << endl;
+        cout << r.text << endl;
+    }
+
+
+
+
+    // Commit first 3 RICs only - we could have changed to only get first 3 RICs from minifier but our previous implementation was buigged inthat it missed RIC's that were iportant, perhaps due to indeifier length limit
+    if(!value_list.empty()) {
+        for (int vll = 0; vll < 3; ++vll) {
+            if (value_list[vll] != NULL || !value_list[vll].empty()) {
+                string ric_list = "RIC,";
+                ric_list += value_list[vll]["Identifier"];
+                ric_list += "\n";
+                cout << index << "===" << ric_list << endl;
+                return ric_list;
+
+            }
+        }
+    }
 }
 
 
-void perform_search(){
-    int perform_tracker = 0;
-    vector<string> local_search_strings;
-    vector<thread> local_search_strings_threads;
-
-    for (auto &ss: search_strings) {
-        cout << ss << endl;
-        cout << "==============" << endl;
-        ++perform_tracker;
-//        local_search_strings.push_back(ss);
-//        if (perform_tracker == 100){
-//            int bb = bundle();
-//            for (int pt = 0; pt < 999; ++pt){
-        go(instrument_search(ss));
-//                bundle_go(bb, instrument_search(local_search_strings[pt]));
-//            }
-//            bundle_wait(bb, -1);
-//            thread t1(instrument_search, local_search_strings[0]);
-//            thread t2(instrument_search, local_search_strings[1]);
-//            thread t3(instrument_search, local_search_strings[2]);
-//            thread t4(instrument_search, local_search_strings[3]);
-//            thread t5(instrument_search, local_search_strings[4]);
-//            thread t6(instrument_search, local_search_strings[5]);
-//            thread t7(instrument_search, local_search_strings[6]);
-//            thread t8(instrument_search, local_search_strings[7]);
-//            thread t9(instrument_search, local_search_strings[8]);
-//            thread t10(instrument_search, local_search_strings[9]);
-//
-//            t1.join();
-//            t2.join();
-//            t3.join();
-//            t4.join();
-//            t5.join();
-//            t6.join();
-//            t7.join();
-//            t8.join();
-//            t9.join();
-//            t10.join();
-//
-
-
-
-
-//            perform_tracker = 0;
-//            local_search_strings.clear();
-//            local_search_strings_threads.clear();
-//        }
-    }
-
-}
 int main(){
 
     auth_token = auth();
 
-    //  Open IEX File
+//    //  Open IEX File
     ifstream iex_file;
     iex_file.open("IEXSymbolsList.txt");
     if (iex_file.is_open()){
         string iex_buffer;
 
         while (getline(iex_file, iex_buffer)){
-            ++tracker;
-            search_string += iex_buffer;
-            search_string += ",";
-            if (tracker == 10){
-                tracker = 0;
-                search_strings.push_back(search_string);
-                search_string = "";
+            if (get_tc() < 100 ) { // too many request at once, will ahve trth error
+                async_data_requests.push_back(async(launch::async, instrument_search, iex_buffer, get_tcd()));
+            }else{
+                sleep(30);
+                reset_tc();
             }
+//            go(instrument_search(iex_buffer, tracker));
         }
     iex_file.close();
     }
-    perform_search();
 
-    ofstream iex_trth("IEXTRTHSymbolsList.txt");
-    for (auto& grl: global_ric_list){
-        iex_trth << grl;
-    }
+
+    ofstream iex_trth("IEXTRTHSymbolsList.csv");
+//
+//    for (auto &a: async_data_requests){
+//        iex_trth << a.get(); // required by c++ or seg fault
+//    }
+
     iex_trth.close();
 
 }
 
+//thank god progres, fixed the bu aswell as enabeld std async for fast code

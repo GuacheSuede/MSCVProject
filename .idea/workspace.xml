@@ -10,25 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e575387-7aab-4406-af92-c7eeeaf50a43" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/web/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/database/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/MSCVProject.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/MSCVProject.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/MSCVProject.dir/main.cc.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/MSCVProject" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/MSCVProject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/build.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/cpr/CMakeFiles/cpr.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/cpr/CMakeFiles/cpr.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/opt/curl/docs/libcurl/CMakeFiles/html.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/opt/curl/docs/libcurl/CMakeFiles/html.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/opt/curl/lib/CMakeFiles/libcurl.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/cpr/opt/curl/lib/CMakeFiles/libcurl.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/CMakeFiles/main.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/CMakeFiles/main.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/CMakeFiles/main.dir/main.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/CMakeFiles/main.dir/main.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/IEXSymbolsList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/IEXSymbolsList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/main" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/main.cc" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/main.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/main" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -55,17 +44,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/TRTH_MINIFIER/main.cc">
+        <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/main.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+            <state relative-caret-position="271">
+              <caret line="170" column="48" lean-forward="true" selection-start-line="170" selection-start-column="48" selection-end-line="170" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/TRTH_MINIFIER/IEXTRTHSymbolsList.csv">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-11753" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/IEXSymbolsList.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="7745" column="4" selection-start-line="7745" selection-start-column="4" selection-end-line="7745" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compiler/main.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="9" selection-start-line="18" selection-start-column="7" selection-end-line="24" selection-end-column="9" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -87,6 +96,18 @@
       <find>instance</find>
       <find>bbn</find>
       <find>RI</find>
+      <find>zyne</find>
+      <find>AEE</find>
+      <find>mtv</find>
+      <find>224</find>
+      <find>,A.</find>
+      <find>MHLD</find>
+      <find>COM</find>
+      <find>BCOM</find>
+      <find>CO</find>
+      <find>co.c</find>
+      <find>Co.</find>
+      <find>VART</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -102,11 +123,12 @@
         <option value="$PROJECT_DIR$/database/clear_fundamentals.sh" />
         <option value="$PROJECT_DIR$/server/WRDS_IMPORTER/build.sh" />
         <option value="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc" />
         <option value="$PROJECT_DIR$/server/TRTH_BUILDER/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/server/TRTH_BUILDER/IEXSymbolsList.txt" />
-        <option value="$PROJECT_DIR$/server/TRTH_BUILDER/main.cc" />
         <option value="$PROJECT_DIR$/server/TRTH_MINIFIER/main.cc" />
+        <option value="$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.csv" />
+        <option value="$PROJECT_DIR$/server/TRTH_BUILDER/IEXSymbolsList.txt" />
+        <option value="$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc" />
+        <option value="$PROJECT_DIR$/server/TRTH_BUILDER/main.cc" />
       </list>
     </option>
   </component>
@@ -154,12 +176,6 @@
               <item name="MSCVProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="MSCVProject" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="TRTH_MINIFIER" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSCVProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSCVProject" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="WRDS_IMPORTER" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -172,6 +188,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -214,15 +231,15 @@
       <workItem from="1548351644353" duration="2849000" />
       <workItem from="1548394926714" duration="5461000" />
       <workItem from="1548431419478" duration="3034000" />
-      <workItem from="1548437125943" duration="16795000" />
+      <workItem from="1548437125943" duration="31603000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53868000" />
+    <option name="totallyTimeSpent" value="68676000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1920" height="1053" extended-state="7" />
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27214515" />
@@ -346,13 +363,6 @@
     <entry file="file://$PROJECT_DIR$/server/WATCHLIST_POST/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/compiler/main.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="9" selection-start-line="18" selection-start-column="7" selection-end-line="24" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -360,41 +370,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/IEXSymbolsList.txt">
+    <entry file="file://$PROJECT_DIR$/server/TRTH_MINIFIER/IEXTRTHSymbolsList.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        <state relative-caret-position="-1326">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="53236" column="10" selection-start-line="53236" selection-start-column="10" selection-end-line="53236" selection-end-column="10" />
+        <state relative-caret-position="483">
+          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/main.cc">
+    <entry file="file://$PROJECT_DIR$/server/TRTH_MINIFIER/main.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="93" column="31" lean-forward="true" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="31" />
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="184" column="22" selection-start-line="184" selection-start-column="13" selection-end-line="184" selection-end-column="22" />
+        <state relative-caret-position="-1837">
+          <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/TRTH_MINIFIER/IEXTRTHSymbolsList.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/TRTH_MINIFIER/main.cc">
+    <entry file="file://$PROJECT_DIR$/compiler/main.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+        <state relative-caret-position="408">
+          <caret line="24" column="9" selection-start-line="18" selection-start-column="7" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/IEXSymbolsList.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="7745" column="4" selection-start-line="7745" selection-start-column="4" selection-end-line="7745" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11753" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="170" column="48" lean-forward="true" selection-start-line="170" selection-start-column="48" selection-end-line="170" selection-end-column="48" />
         </state>
       </provider>
     </entry>
