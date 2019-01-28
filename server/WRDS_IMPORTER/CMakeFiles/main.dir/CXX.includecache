@@ -21,6 +21,8 @@ ctime
 -
 unistd.h
 -
+atomic
+-
 boost/algorithm/string/replace.hpp
 -
 boost/algorithm/string/split.hpp

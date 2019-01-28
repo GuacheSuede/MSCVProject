@@ -115,7 +115,7 @@ coroutine string instrument_search(string ticker, int index){
     } catch(json::parse_error) {
             cout << "PARSE ERROR" << endl;
 
-            cout << r.text << endl;
+            cout << r.status_code << endl;
     }
 
     json value_list;
@@ -141,7 +141,10 @@ coroutine string instrument_search(string ticker, int index){
 
             }
         }
+    }else{
+        cout << "NO RICs" << endl;
     }
+
 }
 
 
@@ -156,7 +159,7 @@ int main(){
         string iex_buffer;
 
         while (getline(iex_file, iex_buffer)){
-            if (get_tc() < 100 ) { // too many request at once, will ahve trth error
+            if (get_tc() < 300 ) { // too many request at once, will ahve trth error
                 async_data_requests.push_back(async(launch::async, instrument_search, iex_buffer, get_tcd()));
             }else{
                 sleep(30);
@@ -169,10 +172,11 @@ int main(){
 
 
     ofstream iex_trth("IEXTRTHSymbolsList.csv");
-//
-//    for (auto &a: async_data_requests){
-//        iex_trth << a.get(); // required by c++ or seg fault
-//    }
+
+    for (auto &a: async_data_requests){
+        cout << a.get() << endl;
+        iex_trth << a.get(); // required by c++ or seg fault
+    }
 
     iex_trth.close();
 

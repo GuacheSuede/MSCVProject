@@ -11,12 +11,27 @@
   <component name="ChangeListManager">
     <list default="true" id="3e575387-7aab-4406-af92-c7eeeaf50a43" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/CMakeFiles/main.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/CMakeFiles/main.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/CMakeFiles/main.dir/main.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/CMakeFiles/main.dir/main.cc.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/IEXSymbolsList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/IEXSymbolsList.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/main" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/main.cc" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/main.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/count.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/main.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/main.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/main" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc" afterDir="false" />
     </list>
@@ -43,27 +58,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/main.cc">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="170" column="48" lean-forward="true" selection-start-line="170" selection-start-column="48" selection-end-line="170" selection-end-column="48" />
+            <state relative-caret-position="206">
+              <caret line="213" column="44" selection-start-line="213" selection-start-column="44" selection-end-line="213" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.csv">
+        <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/main.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11753" />
+            <state relative-caret-position="410">
+              <caret line="176" column="32" selection-start-line="176" selection-start-column="32" selection-end-line="176" selection-end-column="32" />
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/IEXSymbolsList.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="7745" column="4" selection-start-line="7745" selection-start-column="4" selection-end-line="7745" selection-end-column="4" />
+            <state relative-caret-position="483">
+              <caret line="276" column="3" selection-start-line="276" selection-start-column="3" selection-end-line="7753" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -73,6 +90,24 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
               <caret line="24" column="9" selection-start-line="18" selection-start-column="7" selection-end-line="24" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/iex_na_all_variables_fundementals_quarterly_tabbed.txt">
+          <provider selected="true" editor-type-id="LargeFileEditor">
+            <state>
+              <caret column="5468" selection-start-column="5468" selection-end-column="5468" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/iex_na_all_variables_fundamentals_quarterly.csv">
+          <provider selected="true" editor-type-id="LargeFileEditor">
+            <state relative-caret-position="3417">
+              <caret line="201" column="63" selection-start-line="201" selection-start-column="63" selection-end-line="201" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -127,12 +162,12 @@
         <option value="$PROJECT_DIR$/server/TRTH_MINIFIER/main.cc" />
         <option value="$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.csv" />
         <option value="$PROJECT_DIR$/server/TRTH_BUILDER/IEXSymbolsList.txt" />
-        <option value="$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc" />
         <option value="$PROJECT_DIR$/server/TRTH_BUILDER/main.cc" />
+        <option value="$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="y" value="27" />
     <option name="width" value="1920" />
     <option name="height" value="1053" />
@@ -231,12 +266,12 @@
       <workItem from="1548351644353" duration="2849000" />
       <workItem from="1548394926714" duration="5461000" />
       <workItem from="1548431419478" duration="3034000" />
-      <workItem from="1548437125943" duration="31603000" />
+      <workItem from="1548437125943" duration="34712000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68676000" />
+    <option name="totallyTimeSpent" value="71785000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
@@ -346,20 +381,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/iex_na_all_variables_fundementals_quarterly_tabbed.txt">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state>
-          <caret column="5468" selection-start-column="5468" selection-end-column="5468" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/iex_na_all_variables_fundamentals_quarterly.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="3417">
-          <caret line="201" column="63" selection-start-line="201" selection-start-column="63" selection-end-line="201" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/WATCHLIST_POST/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -391,13 +412,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1837">
-          <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/compiler/main.cc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -405,22 +419,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/IEXSymbolsList.txt">
+    <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="7745" column="4" selection-start-line="7745" selection-start-column="4" selection-end-line="7745" selection-end-column="4" />
+        <state relative-caret-position="-11515">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.csv">
+    <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/IEXSymbolsList.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11753" />
+        <state relative-caret-position="483">
+          <caret line="276" column="3" selection-start-line="276" selection-start-column="3" selection-end-line="7753" selection-end-column="4" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/main.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="170" column="48" lean-forward="true" selection-start-line="170" selection-start-column="48" selection-end-line="170" selection-end-column="48" />
+        <state relative-caret-position="410">
+          <caret line="176" column="32" selection-start-line="176" selection-start-column="32" selection-end-line="176" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="213" column="44" selection-start-line="213" selection-start-column="44" selection-end-line="213" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/iex_na_all_variables_fundementals_quarterly_tabbed.txt">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state>
+          <caret column="5468" selection-start-column="5468" selection-end-column="5468" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/iex_na_all_variables_fundamentals_quarterly.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="3417">
+          <caret line="201" column="63" selection-start-line="201" selection-start-column="63" selection-end-line="201" selection-end-column="63" />
         </state>
       </provider>
     </entry>

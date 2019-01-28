@@ -5,7 +5,7 @@
 #include <vector>
 #include <ctime>
 #include <unistd.h>
-
+#include <atomic>
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/algorithm/string/split.hpp>
 #include <boost/algorithm/string.hpp>
@@ -31,7 +31,6 @@ using namespace std;
 using boost::tokenizer;
 using boost::escaped_list_separator;
 
-string ticker = "";
 string prev_ticker = "";
 
 vector<vector<string>> ticker_rows;
@@ -44,7 +43,9 @@ vector<string> titles;
 bool titled = false;
 json data_rows;
 
-vector<future<void>> async_commits;
+atomic<int> track_c = 0;
+
+vector<future<bool>> async_commits;
 
 
 
@@ -68,8 +69,7 @@ void commit_document_direct(json data) {
     bsoncxx::stdx::optional <mongocxx::result::insert_one> result = fundamentals_collection.insert_one(bsoncxx::from_json(data.dump()));
 }
 
-void sort_and_commit_rows(string wrds_buffer){
-    int tracked = ++tracker;
+bool sort_and_commit_rows(string wrds_buffer){
     vector<string> transient_row;
     // FORMAT ROW
     typedef tokenizer<escaped_list_separator<char> > so_tokenizer;
@@ -79,18 +79,31 @@ void sort_and_commit_rows(string wrds_buffer){
     for(so_tokenizer::iterator beg=tok.begin(); beg!=tok.end(); ++beg){
         transient_row.push_back(*beg);
     }
-    ticker = transient_row[9];
+    string ticker = transient_row[9];
 
     json ticker_row_json;
     for (int ticker_index_row = 0; ticker_index_row < transient_row.size(); ++ticker_index_row) {
         ticker_row_json[titles[ticker_index_row]] = transient_row[ticker_index_row];
     }
-    bsoncxx::stdx::optional <mongocxx::result::insert_one> result = fundamentals_collection.insert_one(bsoncxx::from_json(data.dump()));
+
+
+//    bsoncxx::stdx::optional <mongocxx::result::insert_one> result = fundamentals_collection.insert_one(bsoncxx::from_json(ticker_row_json.dump()));
 
 //    commit_document_direct(ticker_row_json);
-    cout << "COMMITED ON:" << time(0) <<  " FOR " << ticker << " AT LINE " << tracked << endl;
+
+//
+    std::string restheart_url = "http://localhost:8080/db/fundamentals";
+    auto r = cpr::Post(
+            cpr::Url{restheart_url},
+            cpr::VerifySsl(false),
+            cpr::Authentication{"admin", "changeit"},
+            cpr::Body{ticker_row_json.dump()},
+            cpr::Header{{"Content-Type", "application/json"}}
+    );
+
+    cout << "COMMITED ON:" << time(0) <<  " FOR " << ticker << endl;
     transient_row.clear();
-    ticker = "";
+    return true;
 //    commit_document_direct(ticker_row_json);
     // actio keidl and lme signappreo saf army
 
@@ -191,18 +204,29 @@ int main(){
     wrds_file.open("iex_na_all_variables_fundamentals_quarterly.csv");
     if (wrds_file.is_open()){
         string wrds_buffer;
+
         while (getline(wrds_file, wrds_buffer)){
             if(titled == true){
-                async_commits.push_back(async(launch::async, sort_and_commit_rows, wrds_buffer));
+                ++track_c;
+                if(track_c > 5000){
+                    sleep(5);
+                    track_c = 0;
+                    for (auto &ac: async_commits){
+                            ac.wait();
+                            if(ac.get() == true){ cout << "DONE" << endl;};
+                    }
+
+                    async_commits.clear();
+                }else{
+                    async_commits.push_back(async(launch::async, sort_and_commit_rows, wrds_buffer));
+                }
             }else{
                 boost::split(titles, wrds_buffer, boost::is_any_of(","));
                 titled = true;
             }
         }
 
-        for (auto &ac: async_commits){
-            ac.get();
-        }
+
         wrds_file.close();
     }
 }
