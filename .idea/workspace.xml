@@ -11,27 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3e575387-7aab-4406-af92-c7eeeaf50a43" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/CMakeFiles/main.dir/main.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/CMakeFiles/main.dir/main.cc.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.csv" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/main" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/main.cc" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/main.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/12" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/14" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/15" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/16" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/17" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/18" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/19" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/20" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/21" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/22" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/23" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/Progress/count.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/main.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/main.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/main.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/main.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/main.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/main.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/main.dir/main.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/CMakeFiles/main.dir/main.cc.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/main" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc" afterDir="false" />
     </list>
@@ -61,17 +45,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="213" column="44" selection-start-line="213" selection-start-column="44" selection-end-line="213" selection-end-column="44" />
+            <state relative-caret-position="47">
+              <caret line="209" selection-start-line="209" selection-end-line="209" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/main.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="176" column="32" selection-start-line="176" selection-start-column="32" selection-end-line="176" selection-end-column="32" />
+            <state relative-caret-position="67">
+              <caret line="162" column="56" selection-start-line="162" selection-end-line="163" />
             </state>
           </provider>
         </entry>
@@ -79,7 +63,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/IEXSymbolsList.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
+            <state relative-caret-position="4692">
               <caret line="276" column="3" selection-start-line="276" selection-start-column="3" selection-end-line="7753" selection-end-column="4" />
             </state>
           </provider>
@@ -103,7 +87,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/iex_na_all_variables_fundamentals_quarterly.csv">
           <provider selected="true" editor-type-id="LargeFileEditor">
             <state relative-caret-position="3417">
@@ -167,7 +151,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="27" />
     <option name="width" value="1920" />
     <option name="height" value="1053" />
@@ -267,17 +251,21 @@
       <workItem from="1548394926714" duration="5461000" />
       <workItem from="1548431419478" duration="3034000" />
       <workItem from="1548437125943" duration="34712000" />
+      <workItem from="1548650448286" duration="456000" />
+      <workItem from="1548651149452" duration="1807000" />
+      <workItem from="1548653603882" duration="78000" />
+      <workItem from="1548654852682" duration="987000" />
+      <workItem from="1548656294631" duration="1818000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71785000" />
+    <option name="totallyTimeSpent" value="76931000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27214515" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28815368" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -291,7 +279,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="CMake" order="11" visible="true" weight="0.3293348" />
+      <window_info active="true" anchor="bottom" id="CMake" order="11" visible="true" weight="0.3293348" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -398,24 +386,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.txt" />
     <entry file="file://$PROJECT_DIR$/server/TRTH_MINIFIER/main.cc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compiler/main.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="9" selection-start-line="18" selection-start-column="7" selection-end-line="24" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -428,22 +403,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/IEXSymbolsList.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
+        <state relative-caret-position="4692">
           <caret line="276" column="3" selection-start-line="276" selection-start-column="3" selection-end-line="7753" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/main.cc">
+    <entry file="file://$PROJECT_DIR$/compiler/main.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="176" column="32" selection-start-line="176" selection-start-column="32" selection-end-line="176" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="213" column="44" selection-start-line="213" selection-start-column="44" selection-end-line="213" selection-end-column="44" />
+        <state relative-caret-position="408">
+          <caret line="24" column="9" selection-start-line="18" selection-start-column="7" selection-end-line="24" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -458,6 +426,20 @@
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state relative-caret-position="3417">
           <caret line="201" column="63" selection-start-line="201" selection-start-column="63" selection-end-line="201" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="209" selection-start-line="209" selection-end-line="209" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="162" column="56" selection-start-line="162" selection-end-line="163" />
         </state>
       </provider>
     </entry>

@@ -585,6 +585,13 @@ CMakeFiles/main.dir/main.cc.o
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/basic/sub_document.hpp
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/concatenate.hpp
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/core.hpp
+ /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/stream/array_context.hpp
+ /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/stream/closed_context.hpp
+ /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/stream/document.hpp
+ /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/stream/helpers.hpp
+ /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/stream/key_context.hpp
+ /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/stream/single_context.hpp
+ /usr/local/include/bsoncxx/v_noabi/bsoncxx/builder/stream/value_context.hpp
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/config/compiler.hpp
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/config/config.hpp
  /usr/local/include/bsoncxx/v_noabi/bsoncxx/config/export.hpp
