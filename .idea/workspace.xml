@@ -10,36 +10,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e575387-7aab-4406-af92-c7eeeaf50a43" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/compiler/includes.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compiler/listener.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compiler/session.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/CMakeRuleHashes.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/CheckTypeSize/SIZEOF_SIG_ATOMIC_T.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/CheckTypeSize/SIZEOF_SIG_ATOMIC_T.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/CheckTypeSize/SIZEOF_STRUCT_SOCKADDR_STORAGE.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/CheckTypeSize/SIZEOF_STRUCT_SOCKADDR_STORAGE.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/main.dir/CXX.includecache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/main.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/main.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/main.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/main.dir/depend.internal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/main.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/main.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/main.dir/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/main.dir/main.cc.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/CMakeFiles/main.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compiler/main" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/web/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/web/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/web/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web/src/app/watchlistsoverview/watchlistsoverview.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/web/src/app/watchlistsoverview/watchlistsoverview.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web/src/app/watchlistsoverview/watchlistsoverview.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/web/src/app/watchlistsoverview/watchlistsoverview.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compiler/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/CMakeError.log" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/CMakeFiles/CMakeError.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/MSCVProject.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/CMakeFiles/MSCVProject.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/MSCVProject.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/CMakeFiles/MSCVProject.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/MSCVProject.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/CMakeFiles/MSCVProject.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/MSCVProject.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/CMakeFiles/MSCVProject.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/MSCVProject.dir/main.cc.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/CMakeTmp/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/CMakeTmp/src.c" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/Progress/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/Progress/count.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compiler/MSCVProject" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/MSCVProject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compiler/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compiler/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compiler/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compiler/main.cc" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/main.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler/cpr/opt/curl/CMake/cmake_uninstall.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/cpr/opt/curl/CMake/cmake_uninstall.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler/includes.h" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/includes.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler/lib/libcurl.so" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/lib/libcurl.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler/main.q" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/main.q" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compiler/script.q" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/script.q" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compiler_test/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/compiler_test/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compiler_test/main2.js" beforeDir="false" afterPath="$PROJECT_DIR$/compiler_test/main2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compiler_test/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/compiler_test/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/WATCHLIST_POST/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/server/WATCHLIST_POST/CMakeFiles/CMakeOutput.log" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,63 +73,65 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/TRTH_IMPORTER/main.cc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1565">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/files/trth/AAPL.csv">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state>
-              <caret column="43" selection-start-column="38" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/PRICES_GET/main.cc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="370" column="21" selection-start-line="370" selection-start-column="21" selection-end-line="370" selection-end-column="21" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/compiler/cpr/cpr/Makefile">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/compiler/main.cc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/compiler/includes.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="271" column="56" selection-start-line="271" selection-start-column="56" selection-end-line="271" selection-end-column="56" />
+            <state relative-caret-position="121">
+              <caret line="216" column="42" selection-start-line="216" selection-start-column="42" selection-end-line="216" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/compiler/listener.h">
+        <entry file="file://$PROJECT_DIR$/compiler/script.q">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="22" column="11" selection-end-line="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compiler/main.q">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="50" selection-start-column="50" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compiler_backup/main.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="526">
+              <caret line="396" selection-start-line="396" selection-end-line="396" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compiler_test/main2.js">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/WATCHLIST_POST/main.cc">
+        <entry file="file://$PROJECT_DIR$/compiler_test/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="1" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="357">
+              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="22" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -136,15 +146,6 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/compiler/script.q">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -156,9 +157,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>target</find>
-      <find>push</find>
-      <find>19880101</find>
       <find>asaltd</find>
       <find>data</find>
       <find>instance</find>
@@ -184,6 +182,11 @@
       <find>lengh</find>
       <find>macd</find>
       <find>init_</find>
+      <find>more_t</find>
+      <find>cout</find>
+      <find>spl</find>
+      <find>cirret</find>
+      <find>current</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -211,10 +214,13 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/server/PRICES_GET/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/server/PRICES_GET/main.cc" />
-        <option value="$PROJECT_DIR$/compiler/script.q" />
-        <option value="$PROJECT_DIR$/compiler/includes.h" />
         <option value="$PROJECT_DIR$/server/WATCHLIST_POST/main.cc" />
         <option value="$PROJECT_DIR$/compiler/main.cc" />
+        <option value="$PROJECT_DIR$/compiler/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.ts" />
+        <option value="$PROJECT_DIR$/compiler/script.q" />
+        <option value="$PROJECT_DIR$/compiler/main.q" />
+        <option value="$PROJECT_DIR$/compiler/includes.h" />
       </list>
     </option>
   </component>
@@ -229,6 +235,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -239,18 +246,12 @@
             <path>
               <item name="MSCVProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="MSCVProject" type="462c0819:PsiDirectoryNode" />
-              <item name="compiler" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MSCVProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="MSCVProject" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSCVProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSCVProject" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-              <item name="trth" type="462c0819:PsiDirectoryNode" />
+              <item name="compiler_test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MSCVProject" type="b2602c69:ProjectViewProjectNode" />
@@ -261,13 +262,12 @@
               <item name="MSCVProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="MSCVProject" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="WATCHLIST_POST" type="462c0819:PsiDirectoryNode" />
+              <item name="PRICES_GET" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -276,6 +276,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/client/web/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -331,18 +332,19 @@
       <workItem from="1548783551792" duration="2469000" />
       <workItem from="1548806773094" duration="2585000" />
       <workItem from="1548809739924" duration="4137000" />
-      <workItem from="1548831090275" duration="3794000" />
+      <workItem from="1548831090275" duration="4032000" />
+      <workItem from="1548835517312" duration="12536000" />
+      <workItem from="1548851034807" duration="5765000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93875000" />
+    <option name="totallyTimeSpent" value="112414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30736393" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31483456" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -357,40 +359,39 @@
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="CMake" order="11" visible="true" weight="0.3293348" />
+      <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.32977587" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26040554" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31109926" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="CMake" order="11" visible="true" weight="0.3293348" />
+      <window_info anchor="bottom" id="TypeScript" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3293348" />
+      <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="CMake" order="12" visible="true" weight="0.3293348" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32977587" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main.cc" />
-    <entry file="file://$PROJECT_DIR$/server/index.html" />
-    <entry file="file://$PROJECT_DIR$/server/main.cc" />
     <entry file="file:///usr/local/include/boost/asio/io_context.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -549,13 +550,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/PRICES_GET/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/TRTH_IMPORTER/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -563,20 +557,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compiler/main.q">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/files/trth/AAPL.csv">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state>
           <caret column="43" selection-start-column="38" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compiler/script.q">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
@@ -587,32 +571,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compiler_backup/main.q">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compiler/listener.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/PRICES_GET/main.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
+        <state relative-caret-position="6290">
           <caret line="370" column="21" selection-start-line="370" selection-start-column="21" selection-end-line="370" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compiler_backup/main.cc">
+    <entry file="file://$PROJECT_DIR$/compiler/main.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="566" column="4" lean-forward="true" selection-start-line="566" selection-start-column="4" selection-end-line="567" selection-end-column="25" />
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compiler/includes.h">
+    <entry file="file://$PROJECT_DIR$/server/PRICES_GET/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="271" column="56" selection-start-line="271" selection-start-column="56" selection-end-line="271" selection-end-column="56" />
+        <state relative-caret-position="136">
+          <caret line="8" column="42" selection-end-line="30" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/listener.h">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/server/WATCHLIST_POST/main.cc">
       <provider selected="true" editor-type-id="text-editor">
@@ -624,13 +612,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/cpr/cpr/Makefile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler_test/main2.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler_backup/main.q">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler_test/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="22" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/PRICES_GET/Makefile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/compiler/main.cc">
+    <entry file="file://$PROJECT_DIR$/compiler_backup/main.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        <state relative-caret-position="526">
+          <caret line="396" selection-start-line="396" selection-end-line="396" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="50" selection-start-column="50" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/script.q">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="22" column="11" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/main.q">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/includes.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="216" column="42" selection-start-line="216" selection-start-column="42" selection-end-line="216" selection-end-column="42" />
         </state>
       </provider>
     </entry>

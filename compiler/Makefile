@@ -56,16 +56,17 @@ CMAKE_BINARY_DIR = /home/justin/MSCVProject/compiler
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -77,6 +78,51 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +157,121 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named MSCVProject
+# Target rules for targets named main
 
 # Build rule for target.
-MSCVProject: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MSCVProject
-.PHONY : MSCVProject
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-MSCVProject/fast:
-	$(MAKE) -f CMakeFiles/MSCVProject.dir/build.make CMakeFiles/MSCVProject.dir/build
-.PHONY : MSCVProject/fast
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+#=============================================================================
+# Target rules for targets named uninstall
+
+# Build rule for target.
+uninstall: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 uninstall
+.PHONY : uninstall
+
+# fast build rule for target.
+uninstall/fast:
+	$(MAKE) -f cpr/opt/curl/CMakeFiles/uninstall.dir/build.make cpr/opt/curl/CMakeFiles/uninstall.dir/build
+.PHONY : uninstall/fast
+
+#=============================================================================
+# Target rules for targets named pdf
+
+# Build rule for target.
+pdf: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pdf
+.PHONY : pdf
+
+# fast build rule for target.
+pdf/fast:
+	$(MAKE) -f cpr/opt/curl/docs/libcurl/CMakeFiles/pdf.dir/build.make cpr/opt/curl/docs/libcurl/CMakeFiles/pdf.dir/build
+.PHONY : pdf/fast
+
+#=============================================================================
+# Target rules for targets named html
+
+# Build rule for target.
+html: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 html
+.PHONY : html
+
+# fast build rule for target.
+html/fast:
+	$(MAKE) -f cpr/opt/curl/docs/libcurl/CMakeFiles/html.dir/build.make cpr/opt/curl/docs/libcurl/CMakeFiles/html.dir/build
+.PHONY : html/fast
+
+#=============================================================================
+# Target rules for targets named opts-html
+
+# Build rule for target.
+opts-html: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 opts-html
+.PHONY : opts-html
+
+# fast build rule for target.
+opts-html/fast:
+	$(MAKE) -f cpr/opt/curl/docs/libcurl/opts/CMakeFiles/opts-html.dir/build.make cpr/opt/curl/docs/libcurl/opts/CMakeFiles/opts-html.dir/build
+.PHONY : opts-html/fast
+
+#=============================================================================
+# Target rules for targets named opts-pdf
+
+# Build rule for target.
+opts-pdf: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 opts-pdf
+.PHONY : opts-pdf
+
+# fast build rule for target.
+opts-pdf/fast:
+	$(MAKE) -f cpr/opt/curl/docs/libcurl/opts/CMakeFiles/opts-pdf.dir/build.make cpr/opt/curl/docs/libcurl/opts/CMakeFiles/opts-pdf.dir/build
+.PHONY : opts-pdf/fast
+
+#=============================================================================
+# Target rules for targets named generate-curl.1
+
+# Build rule for target.
+generate-curl.1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 generate-curl.1
+.PHONY : generate-curl.1
+
+# fast build rule for target.
+generate-curl.1/fast:
+	$(MAKE) -f cpr/opt/curl/docs/cmdline-opts/CMakeFiles/generate-curl.1.dir/build.make cpr/opt/curl/docs/cmdline-opts/CMakeFiles/generate-curl.1.dir/build
+.PHONY : generate-curl.1/fast
+
+#=============================================================================
+# Target rules for targets named libcurl
+
+# Build rule for target.
+libcurl: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 libcurl
+.PHONY : libcurl
+
+# fast build rule for target.
+libcurl/fast:
+	$(MAKE) -f cpr/opt/curl/lib/CMakeFiles/libcurl.dir/build.make cpr/opt/curl/lib/CMakeFiles/libcurl.dir/build
+.PHONY : libcurl/fast
+
+#=============================================================================
+# Target rules for targets named cpr
+
+# Build rule for target.
+cpr: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cpr
+.PHONY : cpr
+
+# fast build rule for target.
+cpr/fast:
+	$(MAKE) -f cpr/cpr/CMakeFiles/cpr.dir/build.make cpr/cpr/CMakeFiles/cpr.dir/build
+.PHONY : cpr/fast
 
 main.o: main.cc.o
 
@@ -129,7 +279,7 @@ main.o: main.cc.o
 
 # target to build an object file
 main.cc.o:
-	$(MAKE) -f CMakeFiles/MSCVProject.dir/build.make CMakeFiles/MSCVProject.dir/main.cc.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.o
 .PHONY : main.cc.o
 
 main.i: main.cc.i
@@ -138,7 +288,7 @@ main.i: main.cc.i
 
 # target to preprocess a source file
 main.cc.i:
-	$(MAKE) -f CMakeFiles/MSCVProject.dir/build.make CMakeFiles/MSCVProject.dir/main.cc.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.i
 .PHONY : main.cc.i
 
 main.s: main.cc.s
@@ -147,7 +297,7 @@ main.s: main.cc.s
 
 # target to generate assembly for a file
 main.cc.s:
-	$(MAKE) -f CMakeFiles/MSCVProject.dir/build.make CMakeFiles/MSCVProject.dir/main.cc.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.s
 .PHONY : main.cc.s
 
 # Help Target
@@ -156,9 +306,21 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... MSCVProject"
+	@echo "... install/strip"
 	@echo "... edit_cache"
+	@echo "... main"
+	@echo "... rebuild_cache"
+	@echo "... list_install_components"
+	@echo "... install/local"
+	@echo "... install"
+	@echo "... uninstall"
+	@echo "... pdf"
+	@echo "... html"
+	@echo "... opts-html"
+	@echo "... opts-pdf"
+	@echo "... generate-curl.1"
+	@echo "... libcurl"
+	@echo "... cpr"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

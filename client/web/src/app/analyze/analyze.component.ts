@@ -10,7 +10,8 @@ export class AnalyzeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    eval(`window.rr = "rr";`)
+    (<any>window).murl = "http://127.0.0.1:8080/db/prices?pagesize=1&sort_by=datetime&filter={\"ticker\": \"";
+    (<any>window).url_end = "\"}";
   }
 
 

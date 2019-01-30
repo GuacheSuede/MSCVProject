@@ -9143,3 +9143,224 @@ int main(void) {
     recv(0, 0, 0, 0);
     return 0;
 }
+Performing C SOURCE FILE Test curl_cv_func_recv_test succeeded with the following output:
+Change Dir: /home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8fa31/fast"
+make[1]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_8fa31.dir/build.make CMakeFiles/cmTC_8fa31.dir/build
+make[2]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8fa31.dir/src.c.o
+/usr/bin/cc  -I/home/justin/MSCVProject/compiler/cpr/opt/curl/include  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -Dcurl_cv_func_recv_test   -o CMakeFiles/cmTC_8fa31.dir/src.c.o   -c /home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_8fa31
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8fa31.dir/link.txt --verbose=1
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -Dcurl_cv_func_recv_test    -rdynamic CMakeFiles/cmTC_8fa31.dir/src.c.o  -o cmTC_8fa31 /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+make[2]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+                  #undef inline
+#include <sys/types.h>
+#include <sys/socket.h>
+                  extern ssize_t 
+                  recv(int, void *, size_t, int);
+                  int main(void) {
+                    int s=0;
+                    void * buf=0;
+                    size_t len=0;
+                    int flags=0;
+                    ssize_t res = recv(s, buf, len, flags);
+                    (void) res;
+                    return 0;
+                  }
+Performing C SOURCE FILE Test curl_cv_send succeeded with the following output:
+Change Dir: /home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8fabf/fast"
+make[1]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_8fabf.dir/build.make CMakeFiles/cmTC_8fabf.dir/build
+make[2]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8fabf.dir/src.c.o
+/usr/bin/cc  -I/home/justin/MSCVProject/compiler/cpr/opt/curl/include  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -Dcurl_cv_send   -o CMakeFiles/cmTC_8fabf.dir/src.c.o   -c /home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_8fabf
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8fabf.dir/link.txt --verbose=1
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -Dcurl_cv_send    -rdynamic CMakeFiles/cmTC_8fabf.dir/src.c.o  -o cmTC_8fabf /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+make[2]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+
+Source file was:
+#undef inline
+#include <sys/types.h>
+#include <sys/socket.h>
+int main(void) {
+    send(0, 0, 0, 0);
+    return 0;
+}
+Performing C SOURCE FILE Test curl_cv_func_send_test succeeded with the following output:
+Change Dir: /home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9523b/fast"
+make[1]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_9523b.dir/build.make CMakeFiles/cmTC_9523b.dir/build
+make[2]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9523b.dir/src.c.o
+/usr/bin/cc  -I/home/justin/MSCVProject/compiler/cpr/opt/curl/include  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -Dcurl_cv_func_send_test   -o CMakeFiles/cmTC_9523b.dir/src.c.o   -c /home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_9523b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9523b.dir/link.txt --verbose=1
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -Dcurl_cv_func_send_test    -rdynamic CMakeFiles/cmTC_9523b.dir/src.c.o  -o cmTC_9523b /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+make[2]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+                  #undef inline
+#include <sys/types.h>
+#include <sys/socket.h>
+                  extern ssize_t 
+                  send(int, const void *, size_t, int);
+                  int main(void) {
+                    int s=0;
+                    const void * buf=0;
+                    size_t len=0;
+                    int flags=0;
+                    ssize_t res = send(s, buf, len, flags);
+                    (void) res;
+                    return 0;
+                  }
+Performing C SOURCE FILE Test HAVE_MSG_NOSIGNAL succeeded with the following output:
+Change Dir: /home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c005f/fast"
+make[1]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_c005f.dir/build.make CMakeFiles/cmTC_c005f.dir/build
+make[2]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c005f.dir/src.c.o
+/usr/bin/cc  -I/home/justin/MSCVProject/compiler/cpr/opt/curl/include  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -DHAVE_MSG_NOSIGNAL   -o CMakeFiles/cmTC_c005f.dir/src.c.o   -c /home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_c005f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c005f.dir/link.txt --verbose=1
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -DHAVE_MSG_NOSIGNAL    -rdynamic CMakeFiles/cmTC_c005f.dir/src.c.o  -o cmTC_c005f /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+make[2]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+
+Source file was:
+#undef inline
+#include <sys/types.h>
+#include <sys/socket.h>
+  int main(void) {
+    int flag = MSG_NOSIGNAL;
+    (void)flag;
+    return 0;
+  }
+Performing C SOURCE FILE Test HAVE_STRUCT_TIMEVAL succeeded with the following output:
+Change Dir: /home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d3714/fast"
+make[1]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_d3714.dir/build.make CMakeFiles/cmTC_d3714.dir/build
+make[2]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d3714.dir/src.c.o
+/usr/bin/cc  -I/home/justin/MSCVProject/compiler/cpr/opt/curl/include  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -DHAVE_STRUCT_TIMEVAL   -o CMakeFiles/cmTC_d3714.dir/src.c.o   -c /home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_d3714
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d3714.dir/link.txt --verbose=1
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -DHAVE_STRUCT_TIMEVAL    -rdynamic CMakeFiles/cmTC_d3714.dir/src.c.o  -o cmTC_d3714 /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+make[2]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+
+Source file was:
+#undef inline
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <time.h>
+#include <time.h>
+int main(void) {
+  struct timeval ts;
+  ts.tv_sec  = 0;
+  ts.tv_usec = 0;
+  (void)ts;
+  return 0;
+}
+Performing C SOURCE FILE Test HAVE_POLL_FINE succeeded with the following compile output:
+Change Dir: /home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fded0/fast"
+make[1]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_fded0.dir/build.make CMakeFiles/cmTC_fded0.dir/build
+make[2]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fded0.dir/src.c.o
+/usr/bin/cc  -I/home/justin/MSCVProject/compiler/cpr/opt/curl/include  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -DHAVE_POLL_FINE -DHAVE_SYS_POLL_H   -o CMakeFiles/cmTC_fded0.dir/src.c.o   -c /home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_fded0
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fded0.dir/link.txt --verbose=1
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -DHAVE_POLL_FINE -DHAVE_SYS_POLL_H    -rdynamic CMakeFiles/cmTC_fded0.dir/src.c.o  -o cmTC_fded0 /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+make[2]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+    #ifdef HAVE_SYS_POLL_H
+    #  include <sys/poll.h>
+    #endif
+    int main(void) {
+      return poll((void *)0, 0, 10 /*ms*/);
+    }
+Determining size of sig_atomic_t passed with the following output:
+Change Dir: /home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4d7a0/fast"
+make[1]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_4d7a0.dir/build.make CMakeFiles/cmTC_4d7a0.dir/build
+make[2]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4d7a0.dir/SIZEOF_SIG_ATOMIC_T.c.o
+/usr/bin/cc  -I/home/justin/MSCVProject/compiler/cpr/opt/curl/include  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -DHAVE_SIGNAL_H   -o CMakeFiles/cmTC_4d7a0.dir/SIZEOF_SIG_ATOMIC_T.c.o   -c /home/justin/MSCVProject/compiler/CMakeFiles/CheckTypeSize/SIZEOF_SIG_ATOMIC_T.c
+Linking C executable cmTC_4d7a0
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4d7a0.dir/link.txt --verbose=1
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -DHAVE_SIGNAL_H    -rdynamic CMakeFiles/cmTC_4d7a0.dir/SIZEOF_SIG_ATOMIC_T.c.o  -o cmTC_4d7a0 /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+make[2]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test HAVE_SIG_ATOMIC_T_NOT_VOLATILE succeeded with the following output:
+Change Dir: /home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_eac5f/fast"
+make[1]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_eac5f.dir/build.make CMakeFiles/cmTC_eac5f.dir/build
+make[2]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eac5f.dir/src.c.o
+/usr/bin/cc  -I/home/justin/MSCVProject/compiler/cpr/opt/curl/include  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -DHAVE_SIG_ATOMIC_T_NOT_VOLATILE -DHAVE_SIGNAL_H   -o CMakeFiles/cmTC_eac5f.dir/src.c.o   -c /home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_eac5f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eac5f.dir/link.txt --verbose=1
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -DHAVE_SIG_ATOMIC_T_NOT_VOLATILE -DHAVE_SIGNAL_H    -rdynamic CMakeFiles/cmTC_eac5f.dir/src.c.o  -o cmTC_eac5f /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+make[2]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+    #ifdef HAVE_SIGNAL_H
+    #  include <signal.h>
+    #endif
+    int main(void) {
+      static volatile sig_atomic_t dummy = 0;
+      (void)dummy;
+      return 0;
+    }
+Determining size of struct sockaddr_storage passed with the following output:
+Change Dir: /home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cda7a/fast"
+make[1]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_cda7a.dir/build.make CMakeFiles/cmTC_cda7a.dir/build
+make[2]: Entering directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cda7a.dir/SIZEOF_STRUCT_SOCKADDR_STORAGE.c.o
+/usr/bin/cc  -I/home/justin/MSCVProject/compiler/cpr/opt/curl/include  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -DHAVE_SIGNAL_H   -o CMakeFiles/cmTC_cda7a.dir/SIZEOF_STRUCT_SOCKADDR_STORAGE.c.o   -c /home/justin/MSCVProject/compiler/CMakeFiles/CheckTypeSize/SIZEOF_STRUCT_SOCKADDR_STORAGE.c
+Linking C executable cmTC_cda7a
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cda7a.dir/link.txt --verbose=1
+/usr/bin/cc   -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wno-long-long -Wfloat-equal -Wno-multichar -Wsign-compare -Wundef -Wno-format-nonliteral -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wno-sign-conversion -Wvla -Wdouble-promotion -Wno-system-headers -DHAVE_SIGNAL_H    -rdynamic CMakeFiles/cmTC_cda7a.dir/SIZEOF_STRUCT_SOCKADDR_STORAGE.c.o  -o cmTC_cda7a /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+make[2]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/justin/MSCVProject/compiler/CMakeFiles/CMakeTmp'
+
+

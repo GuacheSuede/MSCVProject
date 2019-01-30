@@ -1,4 +1,4 @@
-# Variable  
+# Variable
 variable(graft,1)
 
 # Array Init
@@ -17,8 +17,39 @@ array_has(graft,1)
 use macd
 
 # Algo Current Reference
-more_than(current_macd, dddd) 
+current_macd
 
 # Algo Ago Reference
-more_than(55_ago_macd, dddd)
+55_ago_macd
+
+# Current Price
+AAPL_price
+
+# Ago Price
+55_ago_AAPL_price
+
+# less than
+less_than(1,2)
+
+# more than
+more_than(1,2)
+
+
+# less than or eqals
+less_than_or_equals(1,2)
+
+# more than or eqals
+more_than_or_equals(1,2)
+
+# equals
+equals(1,2)
+
+# not equals
+not_equals(1,2)
+
+# or
+or(1,2)
+
+# and
+and(1,2)
 

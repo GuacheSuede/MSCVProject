@@ -7,7 +7,8 @@ import { AnalyzeComponent } from './analyze/analyze.component'
 
 const routes: Routes = [
   {path: 'watch', component: WatchlistsoverviewComponent},
-  {path: 'analyse', component: AnalyzeComponent}
+  {path: 'analyse', component: AnalyzeComponent},
+  {path: 'info', }
 ];
 
 @NgModule({

@@ -20,6 +20,8 @@
 #include <nlohmann/json.hpp>
 #include <cpr/cpr.h>
 
+using namespace std;
+
 namespace beast = boost::beast;         // from <boost/beast.hpp>
 namespace http = beast::http;           // from <boost/beast/http.hpp>
 namespace net = boost::asio;            // from <boost/asio.hpp>
@@ -78,6 +80,7 @@ string code;
 
 string gen_syntax(string code_line);
 string init_code_gen();
+string loop_code;
 
 void load_script(string name){
     code_script.open(name);
@@ -95,7 +98,8 @@ void load_script(string name){
 
 
 string init_code_gen(){
-    string i_code = "function price(ticker){ \n var r_obj = {}; \n fetch( window.murl + ticker + window.url_end + \"&page=\"+price_page, { \n method: \'get\', \n headers:{ \n \'Authorization\': \'Basic '+btoa(\'admin:changeit\'), \n \'Content-Type\': \'application/json\' \n }\n}).then(response => {\nreturn response.json(); \n }).then(data => obj\[ticker\] = data\[\"_embedded\"\]\[0\]\[\"price\"\]) \n return r_obj; \n";
+    string i_code = "function price(ticker){ \n var r_obj = {}; \n fetch( window.murl + ticker + window.url_end + \"&page=\"+price_page, { \n method: \'get\', \n headers:{ \n \'Authorization\': \'Basic '+btoa(\'admin:changeit\'), \n \'Content-Type\': \'application/json\' \n }\n}).then(response => {\nreturn response.json(); \n }).then(data => r_obj = data\[\"_embedded\"\]\[0\]\[\"price\"\]) \n return r_obj;} \n";
+    i_code += "window.tickers = []; \n";
     return i_code;
 }
 
@@ -161,6 +165,91 @@ string gen_syntax(string code_line){
         code_line.insert(0, "window.");
     }
 
+    // more than function
+    if(code_line.find("more_than(") != string::npos) {
+        string parameter_s = code_line;
+        vector<string> params;
+        boost::replace_first(parameter_s, "more_than(", "");
+        boost::replace_first(parameter_s, ")", "");
+        cout << parameter_s << endl;
+        boost::split(params, parameter_s, boost::is_any_of(","));
+        code_line = "(" + params[0] + " > " + params[1] + ")";
+    }
+
+    // more than or equals function
+    if(code_line.find("more_than_or_equals(") != string::npos) {
+        string parameter_s = code_line;
+        vector<string> params;
+        boost::replace_first(parameter_s, "more_than_or_equals(", "");
+        boost::replace_first(parameter_s, ")", "");
+        boost::split(params, parameter_s, boost::is_any_of(","));
+        code_line = "(" + params[0] + " >= " + params[1] + ")";
+    }
+
+    // less than function
+    if(code_line.find("less_than(") != string::npos) {
+        string parameter_s = code_line;
+        vector<string> params;
+        boost::replace_first(parameter_s, "less_than(", "");
+        boost::replace_first(parameter_s, ")", "");
+        boost::split(params, parameter_s, boost::is_any_of(","));
+        code_line = "(" + params[0] + " < " + params[1] + ")";
+    }
+
+
+    // less than or equals function
+    if(code_line.find("less_than_or_equals(") != string::npos) {
+        string parameter_s = code_line;
+        vector<string> params;
+        boost::replace_first(parameter_s, "less_than_or_equals(", "");
+        boost::replace_first(parameter_s, ")", "");
+        boost::split(params, parameter_s, boost::is_any_of(","));
+        code_line = "(" + params[0] + " <= " + params[1] + ")";
+    }
+
+    // equals function
+    if(code_line.find("equals(") != string::npos) {
+        string parameter_s = code_line;
+        vector<string> params;
+        boost::replace_first(parameter_s, "equals(", "");
+        boost::replace_first(parameter_s, ")", "");
+        boost::split(params, parameter_s, boost::is_any_of(","));
+        code_line = "(" + params[0] + " == " + params[1] + ")";
+    }
+
+    // not equals function
+    if(code_line.find("not_equals(") != string::npos) {
+        string parameter_s = code_line;
+        vector<string> params;
+        boost::replace_first(parameter_s, "equals(", "");
+        boost::replace_first(parameter_s, ")", "");
+        boost::split(params, parameter_s, boost::is_any_of(","));
+        code_line = "(" + params[0] + " != " + params[1] + ")";
+    }
+
+
+    // or function
+    if(code_line.find("or(") != string::npos) {
+        string parameter_s = code_line;
+        vector<string> params;
+        boost::replace_first(parameter_s, "or(", "");
+        boost::replace_first(parameter_s, ")", "");
+        boost::split(params, parameter_s, boost::is_any_of(","));
+        code_line = "(" + params[0] + " || " + params[1] + ")";
+    }
+
+    // and function
+    if(code_line.find("and(") != string::npos) {
+        string parameter_s = code_line;
+        vector<string> params;
+        boost::replace_first(parameter_s, "and(", "");
+        boost::replace_first(parameter_s, ")", "");
+        boost::split(params, parameter_s, boost::is_any_of(","));
+        code_line = "(" + params[0] + " && " + params[1] + ")";
+    }
+
+
+
     /* Algo Init Declaration
      * use algo_name eg. use sma
      */
@@ -185,13 +274,18 @@ string gen_syntax(string code_line){
         bool algo_name_end = false;
         string algo_name;
         int algo_name_start = code_line.find("current_")+7;
+        int algo_name_will_end = code_line.length();
+        cout << algo_name_will_end << "=" << endl;
+        while (algo_name_end == false) {
 
-        while (algo_name_end == false){
-            ++algo_name_start;
-            if(alphabets.find(code_line.at(algo_name_start)) != string::npos){
-                algo_name += code_line.at(algo_name_start);
-            }else{
+            if (++algo_name_start >= algo_name_will_end) {
                 algo_name_end = true;
+            } else {
+                if (alphabets.find(code_line.at(algo_name_start)) != string::npos) {
+                    algo_name += code_line.at(algo_name_start);
+                }else{
+                    algo_name_end = true;
+                }
             }
         }
 
@@ -207,20 +301,26 @@ string gen_syntax(string code_line){
      * days_ago_algo_name. eg. 2_ago_algo_name
      * Unable to use tokenisation due to space not consistent
      */
-    if (code_line.find("_ago_") != string::npos){
+    if (code_line.find("_ago_") != string::npos && code_line.find("_price") == string::npos){
         string numbers = "0123456789";
         string alphabets = "abcdefghijklmnopqrstuvwxyz";
         int algo_name_length = 0;
         bool algo_name_end = false;
         string algo_name;
         int algo_name_start = code_line.find("_ago_")+4;
+        int algo_name_will_end = code_line.length();
+        cout << algo_name_will_end << "=" << endl;
 
-        while (algo_name_end == false){
-            ++algo_name_start;
-            if(alphabets.find(code_line.at(algo_name_start)) != string::npos){
-                algo_name += code_line.at(algo_name_start);
-            }else{
+        while (algo_name_end == false) {
+
+            if (++algo_name_start >= algo_name_will_end) {
                 algo_name_end = true;
+            } else {
+                if (alphabets.find(code_line.at(algo_name_start)) != string::npos) {
+                    algo_name += code_line.at(algo_name_start);
+                }else{
+                   algo_name_end = true;
+                }
             }
         }
 
@@ -233,17 +333,125 @@ string gen_syntax(string code_line){
         string days = "";
 
         while(days_ended == false){
-            --days_end;
-            if(numbers.find(code_line.at(days_end)) != string::npos){
-                days += code_line.at(days_end);
-            }else{
+            if(days_end-1 < 0) {
                 days_ended = true;
                 boost::replace_first(code_line, days, "");
+            }else {
+                --days_end;
+                if (numbers.find(code_line.at(days_end)) != string::npos) {
+                    days += code_line.at(days_end);
+                } else {
+                    days_ended = true;
+                    boost::replace_first(code_line, days, "");
+                }
             }
         }
 
-        boost::replace_first(code_line, algo_name, "window."+algo_name+"_values["+algo_name+"_values.length-"+days+"]");
+        boost::replace_first(code_line, algo_name, "window."+algo_name+"_values[window."+algo_name+"_values.length-"+days+"]");
     }
+
+
+    /* Price Reference Declaration
+     * ticker_price eg. AAPL_price
+     */
+
+    if (code_line.find("_price") != string::npos && code_line.find("_ago_") == string::npos) {
+            string numbers = "0123456789";
+            string alphabets = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            int ticker_name_length = 0;
+            bool ticker_name_start = false;
+            string ticker_name;
+            int ticker_name_end = code_line.find("_price");
+            --ticker_name_end;
+
+            while (ticker_name_start == false) {
+                if (alphabets.find(code_line[ticker_name_end]) != string::npos) {
+                    ticker_name = code_line[ticker_name_end] + ticker_name;
+                    if (ticker_name_end == 0) {
+                        ticker_name_start = true;
+                    } else {
+                        --ticker_name_end;
+                    }
+                } else {
+                    ticker_name_start = true;
+                }
+            }
+
+
+            init_code += "window." + ticker_name + "_values = []; \n";
+            init_code += "window.tickers.push(\"" + ticker_name + "\"); \n";
+            boost::replace_first(code_line, ticker_name + "_price",
+                                 "window." + ticker_name + "_values.slice(-1).pop()");
+        }
+
+
+
+
+
+
+
+    /* Price Reference Declaration, Ago Variant
+   * days_ago_ticker_price. eg. days_ago_ticker_price
+   * Unable to use tokenisation due to space not consistent
+   */
+    if (code_line.find("_ago_") != string::npos && code_line.find("_price") != string::npos){
+        string numbers = "0123456789";
+        string alphabets = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        int ticker_name_length = 0;
+        bool ticker_name_start = false;
+        string ticker_name;
+        int ticker_name_end = code_line.find("_price");
+        --ticker_name_end;
+
+        while (ticker_name_start == false){
+            cout << code_line[ticker_name_end];
+            if(alphabets.find(code_line[ticker_name_end]) != string::npos){
+                ticker_name = code_line[ticker_name_end] + ticker_name;
+                if (ticker_name_end == 0) {
+                    ticker_name_start = true;
+                }else{
+                    --ticker_name_end;
+                }
+            }else{
+                ticker_name_start = true;
+            }
+        }
+
+        boost::replace_first(code_line, "_"+ticker_name+"_price", "");
+
+        int days_ago_end = code_line.find("_ago");
+        int days_ago_length = 0;
+        bool days_ago_start = false;
+        string days_ago_name = "";
+        --days_ago_end;
+
+
+        while(days_ago_start == false){
+            if(numbers.find(code_line.at(days_ago_end)) != string::npos){
+                days_ago_name = code_line[days_ago_length] + days_ago_name;
+                if (days_ago_end == 0){
+                    days_ago_start = true;
+                }else{
+                    --days_ago_end;
+                }
+            }else{
+                days_ago_start = true;
+            }
+        }
+
+        boost::replace_first(code_line, days_ago_name+"_ago", "window."+ticker_name+"_values[window."+ticker_name+"_values.length-"+days_ago_name+"];");
+    }
+
+
+
+
+//        boost::replace_first(code_line, "more_than(", "");
+//        boost::replace_first(code_line, ")", "");
+//
+//        vector<string> paramters;
+//        boost::split(paramters, code_line )
+//    }
+
 
     // TODO: version with at vlaue
     return code_line;
@@ -269,20 +477,19 @@ void handle_request(beast::string_view doc_root, http::request<Body, http::basic
     }
 
     if (req.method() == http::verb::post && req.target() == "/"){
-        // already string due to string body in sesion.h
-            new_watchlist(req.body());
+        http_response res{http::status::ok, req.version()};
+        res.set(http::field::server, BOOST_BEAST_VERSION_STRING);
+        res.set(http::field::content_type, "application/json");
+        res.set(http::field::access_control_allow_origin, "*");
+        load_script("main.q");
+        res.body() = code;
+        code = "";
+        init_code = "";
 
-            http_response res{http::status::ok, req.version()};
-            res.set(http::field::server, BOOST_BEAST_VERSION_STRING);
-            res.set(http::field::content_type, "application/json");
-            res.set(http::field::access_control_allow_origin, "*");
-            load_script("script.q");
-            res.body() = code;
-
-            res.prepare_payload();
-            return send(std::move(res));
-        }
+        res.prepare_payload();
+        return send(std::move(res));
     }
 }
+
 
 #endif
