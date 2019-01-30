@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { watchlists } from '../mock-watchlist';
 import { WatchlistService } from '../watchlist.service'
 import { watchlist } from '../watchlist'
+import {interval} from "rxjs/internal/observable/interval";
+import { map, filter, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-watchlistsselection',
@@ -16,12 +18,11 @@ export class WatchlistsselectionComponent implements OnInit {
   constructor(private watchlistservice: WatchlistService) { }
 
   ngOnInit() {
-  	this.get_watchlists();
+    this.get_watchlists()
   }
 
   get_watchlists(): void {
-  	this.watchlistservice.get_watchlists()
-  	.subscribe( watchlists => this.watchlistsdata = watchlists );
+    interval(1000).pipe(switchMap(() =>  this.watchlistservice.get_watchlists())).subscribe( watchlists => this.watchlistsdata = watchlists );
   }
 
   select_watchlist(name: string): void{

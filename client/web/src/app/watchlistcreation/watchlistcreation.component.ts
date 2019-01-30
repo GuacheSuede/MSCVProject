@@ -17,8 +17,8 @@ export class WatchlistcreationComponent implements OnInit {
   constructor(private watchlistservice: WatchlistService) { }
 
   ngOnInit() {
-    this.watch_list_name = document.querySelector('.watchlist_create_stock_input_name');
-    this.watch_list_values = document.querySelector('.watchlist_create_stock_select_stocks');
+    this.watch_list_name = document.querySelector('.watchlistcreatestockinputname');
+    this.watch_list_values = document.querySelector('.watchlistcreatestockselectstocks');
   }
 
   create_watchlist(): void{
@@ -30,7 +30,8 @@ export class WatchlistcreationComponent implements OnInit {
     }
 
     this.watchlistservice.new_watchlist(new watchlist(watchlist_obj)).subscribe();
-  
+
+    this.watch_list_name.value = ""
   } 
 
 

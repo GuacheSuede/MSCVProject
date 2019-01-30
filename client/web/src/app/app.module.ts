@@ -19,6 +19,8 @@ import { StockitemComponent } from './stockitem/stockitem.component';
     WatchlistviewComponent,
     WatchlistcreationComponent,
     StockitemComponent
+    
+    ,
     ],
   imports: [
     BrowserModule,

@@ -5,8 +5,8 @@ import { WatchlistsoverviewComponent } from './watchlistsoverview/watchlistsover
 import { WatchlistcreationComponent } from './watchlistcreation/watchlistcreation.component';
 
 const routes: Routes = [
-    {path: 'watch', component: WatchlistsoverviewComponent},
-    {path: 'watch_creation', component: WatchlistcreationComponent}
+  {path: 'watch', component: WatchlistsoverviewComponent},
+  {path: 'watch_creation', component: WatchlistcreationComponent}
 ];
 
 @NgModule({

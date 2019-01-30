@@ -1,11 +1,9 @@
-<span>
-  <h1 class="watchlist_create_stock_title" >Create Watchlist</h1>  
+  <h1 class="watchlistcreatestocktitle" >Create Watchlist</h1>  
   
-  <input type="text" placeholder="Name" class="watchlist_create_stock_input_name">
+  <input type="text" placeholder="Name" class="watchlistcreatestockinputname">
 
-  <select multiple class="watchlist_create_stock_select_stocks">
+  <select multiple class="watchlistcreatestockselectstocks">
     <option *ngFor="let symbol of symbols_data" [value] = "symbol.split(' - ')[0]" >{{symbol}}</option>
   </select>
 
-  <button class="watchlist_create_stock_btn_finish" (click)="create_watchlist()">Create</button>
-</span>
+  <h2 class="watchlistcreatestockbtnfinish" (click)="create_watchlist()">Create</h2>
