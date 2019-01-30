@@ -31,4 +31,4 @@ client.on('connect', function(connection) {
     sendNumber();
 });
  
-client.connect('ws://localhost:29172/', 'echo-protocol');
+client.connect('ws://localhost:29171/', 'echo-protocol');

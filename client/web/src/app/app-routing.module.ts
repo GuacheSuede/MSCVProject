@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { WatchlistsoverviewComponent } from './watchlistsoverview/watchlistsoverview.component';
 import { WatchlistcreationComponent } from './watchlistcreation/watchlistcreation.component';
+import { AnalyzeComponent } from './analyze/analyze.component'
 
 const routes: Routes = [
   {path: 'watch', component: WatchlistsoverviewComponent},
-  {path: 'watch_creation', component: WatchlistcreationComponent}
+  {path: 'analyse', component: AnalyzeComponent}
 ];
 
 @NgModule({

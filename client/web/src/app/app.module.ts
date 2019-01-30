@@ -10,6 +10,7 @@ import { WatchlistsselectionComponent } from './watchlistsselection/watchlistsse
 import { WatchlistviewComponent } from './watchlistview/watchlistview.component';
 import { WatchlistcreationComponent } from './watchlistcreation/watchlistcreation.component';
 import { StockitemComponent } from './stockitem/stockitem.component';
+import { AnalyzeComponent } from './analyze/analyze.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { StockitemComponent } from './stockitem/stockitem.component';
     WatchlistsselectionComponent,
     WatchlistviewComponent,
     WatchlistcreationComponent,
-    StockitemComponent
+    StockitemComponent,
+    AnalyzeComponent
     
     ,
     ],
