@@ -38,7 +38,7 @@ vector<string> commits_data;
 vector<string> titles;
 
 bool titled = false;
-string file_ticker = "AAPL";
+string file_ticker = "IBM";
 int date_index = 2;
 int price_index = 5;
 

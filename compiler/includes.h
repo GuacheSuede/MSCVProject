@@ -19,6 +19,8 @@
 #include <r3/r3.hpp>
 #include <nlohmann/json.hpp>
 #include <cpr/cpr.h>
+#include <sstream>
+
 
 using namespace std;
 
@@ -74,33 +76,52 @@ mime_type(beast::string_view path)
 
 
 
-ifstream code_script;
-string init_code;
-string code;
+string init_code = " ";
+string code = "";
 
 string gen_syntax(string code_line);
 string init_code_gen();
-string loop_code;
+string loop_gen();
+string loop_code = "";
 
-void load_script(string name){
-    code_script.open(name);
-    if (code_script.is_open()){
-        string code_script_buf;
-        while (getline(code_script, code_script_buf)){
-            code += gen_syntax(code_script_buf) + "\n";
-        }
-        code_script.close();
+vector<string> tickers;
+
+void load_script(string input_code){
+    tickers.clear();
+
+    init_code += "window.tickers = []; \n";
+    init_code += "window.price_page = 0; \n";
+    init_code += "window.portfolio = 10000; \n";
+    init_code += "window.buys = [] \n"; // for now buy and sell  a stock only limited
+    init_code += "window.sells = []; \n"; //push thoguth so u see the good
+
+
+    istringstream f(input_code);
+    string code_script_buf;
+    while (getline(f, code_script_buf)){
+        code += gen_syntax(code_script_buf) + "\n";
     }
 
+    code.insert(0, loop_gen());
     code.insert(0, init_code_gen());
     code.insert(0, init_code);
+
 }
 
 
 string init_code_gen(){
-    string i_code = "function price(ticker){ \n var r_obj = {}; \n fetch( window.murl + ticker + window.url_end + \"&page=\"+price_page, { \n method: \'get\', \n headers:{ \n \'Authorization\': \'Basic '+btoa(\'admin:changeit\'), \n \'Content-Type\': \'application/json\' \n }\n}).then(response => {\nreturn response.json(); \n }).then(data => r_obj = data\[\"_embedded\"\]\[0\]\[\"price\"\]) \n return r_obj;} \n";
-    i_code += "window.tickers = []; \n";
+    string i_code = "function price(ticker){  \n fetch( window.murl + ticker + window.url_end + \"&page=\"+price_page, { \n method: \'get\', \n headers:{ \n \'Authorization\': \'Basic '+btoa(\'admin:changeit\'), \n \'Content-Type\': \'application/json\' \n }\n}).then(response => {\nreturn response.json(); \n }).then(data => {";
+    for (auto &t: tickers) { // this happens after all tickers have been examined
+        i_code += "window." + t + "_values.push(data\[\"_embedded\"\]\[0\]\[\"price\"\]);\n";
+    }
+    i_code += "}); \n } \n";
     return i_code;
+}
+
+string loop_gen(){
+    string ret;
+    ret += "function loop(){ ++price_page;\n for( let t of window.tickers){ price(t); } \n } \n setInterval(loop, 1000); \n";
+    return ret;
 }
 
 /* 1. Normal Loop Code - normal code
@@ -167,86 +188,168 @@ string gen_syntax(string code_line){
 
     // more than function
     if(code_line.find("more_than(") != string::npos) {
-        string parameter_s = code_line;
-        vector<string> params;
-        boost::replace_first(parameter_s, "more_than(", "");
-        boost::replace_first(parameter_s, ")", "");
-        cout << parameter_s << endl;
-        boost::split(params, parameter_s, boost::is_any_of(","));
-        code_line = "(" + params[0] + " > " + params[1] + ")";
+        int occurrences;
+        int pos;
+
+        string target = "more_than(";
+        while ((pos = code_line.find(target, pos )) != std::string::npos) {
+            ++ occurrences;
+            pos += target.length();
+        }
+
+        cout << occurrences  << endl;
+        for(int oc = 0; oc < occurrences; ++oc) {
+
+            // always find and start with first, can we ddo multiple instructions ?
+            bool index_ended = false;
+            int line_end = code_line.length() - 1;
+            int index = code_line.find("more_than(");
+            int index_end = index + 9;
+
+            string parameter_s;
+            while (index_ended == false) {
+                if (++index_end <= line_end && code_line.at(index_end) != ')') {
+                    parameter_s += code_line.at(index_end);
+                } else {
+                    index_ended = true;
+                }
+            }
+
+            cout << parameter_s << endl;
+            vector <string> params;
+            boost::split(params, parameter_s, boost::is_any_of(","));
+            // only 2 paramaters
+            boost::replace_first(code_line, "more_than(" + params[0] + "," + params[1] + ")", "");
+            code_line.insert(index, "(" + params[0] + " > " + params[1] + ")");
+        }
     }
 
     // more than or equals function
     if(code_line.find("more_than_or_equals(") != string::npos) {
+        int index = code_line.find("more_than_or_equals(");
+
         string parameter_s = code_line;
         vector<string> params;
         boost::replace_first(parameter_s, "more_than_or_equals(", "");
         boost::replace_first(parameter_s, ")", "");
         boost::split(params, parameter_s, boost::is_any_of(","));
-        code_line = "(" + params[0] + " >= " + params[1] + ")";
+        code_line.insert(index, "(" + params[0] + " >= " + params[1] + ")");
     }
 
     // less than function
     if(code_line.find("less_than(") != string::npos) {
+        int index = code_line.find("less_than(");
         string parameter_s = code_line;
         vector<string> params;
         boost::replace_first(parameter_s, "less_than(", "");
         boost::replace_first(parameter_s, ")", "");
         boost::split(params, parameter_s, boost::is_any_of(","));
-        code_line = "(" + params[0] + " < " + params[1] + ")";
+        code_line.insert(index, "(" + params[0] + " < " + params[1] + ")");
     }
 
 
     // less than or equals function
     if(code_line.find("less_than_or_equals(") != string::npos) {
+        int index = code_line.find("less_than_or_equals(");
         string parameter_s = code_line;
         vector<string> params;
         boost::replace_first(parameter_s, "less_than_or_equals(", "");
         boost::replace_first(parameter_s, ")", "");
         boost::split(params, parameter_s, boost::is_any_of(","));
-        code_line = "(" + params[0] + " <= " + params[1] + ")";
+        code_line.insert(index, "(" + params[0] + " <= " + params[1] + ")");
     }
 
     // equals function
     if(code_line.find("equals(") != string::npos) {
+        int index = code_line.find("equals(");
         string parameter_s = code_line;
         vector<string> params;
         boost::replace_first(parameter_s, "equals(", "");
         boost::replace_first(parameter_s, ")", "");
         boost::split(params, parameter_s, boost::is_any_of(","));
-        code_line = "(" + params[0] + " == " + params[1] + ")";
+        code_line.insert(index, "(" + params[0] + " == " + params[1] + ")");
     }
 
     // not equals function
     if(code_line.find("not_equals(") != string::npos) {
+        int index = code_line.find("not_equals(");
         string parameter_s = code_line;
         vector<string> params;
         boost::replace_first(parameter_s, "equals(", "");
         boost::replace_first(parameter_s, ")", "");
         boost::split(params, parameter_s, boost::is_any_of(","));
-        code_line = "(" + params[0] + " != " + params[1] + ")";
-    }
+        code_line.insert(index, "(" + params[0] + " != " + params[1] + ")");
 
+    }
+// its all abt how u feel
 
     // or function
     if(code_line.find("or(") != string::npos) {
+        int index = code_line.find("or(");
+
         string parameter_s = code_line;
         vector<string> params;
         boost::replace_first(parameter_s, "or(", "");
         boost::replace_first(parameter_s, ")", "");
         boost::split(params, parameter_s, boost::is_any_of(","));
-        code_line = "(" + params[0] + " || " + params[1] + ")";
+        code_line.insert(index, "(" + params[0] + " || " + params[1] + ")");
     }
 
     // and function
     if(code_line.find("and(") != string::npos) {
+        int index = code_line.find("and(");
         string parameter_s = code_line;
         vector<string> params;
         boost::replace_first(parameter_s, "and(", "");
         boost::replace_first(parameter_s, ")", "");
         boost::split(params, parameter_s, boost::is_any_of(","));
-        code_line = "(" + params[0] + " && " + params[1] + ")";
+        code_line.insert(index, "(" + params[0] + " && " + params[1] + ")");
     }
+
+    if(code_line.find("buy_") != string::npos){
+        string alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        string stock_name;
+        bool stock_name_end = false;
+        int stock_name_start = code_line.find("buy_")+3;
+        int stock_name_had_start = code_line.find("buy_");
+
+        int stcok_name_will_end = code_line.length();
+        while (stock_name_end == false) {
+            if (++stock_name_start >= stcok_name_will_end) {
+                stock_name_end = true;
+            } else {
+                if (alphabets.find(code_line.at(stock_name_start)) != string::npos) {
+                    stock_name += code_line.at(stock_name_start);
+                }else{
+                    stock_name_end = true;
+                }
+            }
+        }
+        boost::replace_first(code_line, "buy_"+stock_name, "buys.push(window.\"+stock_name+\"_values.slice(-1).pop());");
+    }
+
+    if(code_line.find("sell_") != string::npos){
+        string alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        string stock_name;
+        bool stock_name_end = false;
+        int stock_name_start = code_line.find("sell_")+3;
+        int stock_name_had_start = code_line.find("sell_");
+
+        int stcok_name_will_end = code_line.length();
+        while (stock_name_end == false) {
+            if (++stock_name_start >= stcok_name_will_end) {
+                stock_name_end = true;
+            } else {
+                if (alphabets.find(code_line.at(stock_name_start)) != string::npos) {
+                    stock_name += code_line.at(stock_name_start);
+                }else{
+                    stock_name_end = true;
+                }
+            }
+        }
+        boost::replace_first(code_line, "sell_"+stock_name, "sells.push(window."+stock_name+"_values.slice(-1).pop());");
+    }
+
 
 
 
@@ -376,7 +479,7 @@ string gen_syntax(string code_line){
                     ticker_name_start = true;
                 }
             }
-
+            tickers.push_back(ticker_name);
 
             init_code += "window." + ticker_name + "_values = []; \n";
             init_code += "window.tickers.push(\"" + ticker_name + "\"); \n";
@@ -481,8 +584,10 @@ void handle_request(beast::string_view doc_root, http::request<Body, http::basic
         res.set(http::field::server, BOOST_BEAST_VERSION_STRING);
         res.set(http::field::content_type, "application/json");
         res.set(http::field::access_control_allow_origin, "*");
-        load_script("main.q");
-        res.body() = code;
+        load_script(req.body());
+        json req_code;
+        req_code["code"] = code;
+        res.body() = req_code.dump();
         code = "";
         init_code = "";
 
