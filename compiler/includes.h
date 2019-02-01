@@ -558,21 +558,6 @@ string gen_syntax(string code_line){
 //
 
 
-
-    /* Price Reference Declaration
-   * ticker_price. eg. ticker_price
-   * Unable to use tokenisation due to space not consistent
-   */
-    regex r_price ("(\\w*)(?:_price)");
-    smatch r_price_m;
-    while(regex_search(code_line, r_price_m, r_price)){
-        boost::replace_all(code_line, r_price_m[0].str(), "window."+r_ago_price_m[2].str()+"_values[window."+r_ago_price_m[2].str()+"_values.length-"+r_ago_price_m[1].str()+"]);");
-        smatch empty_match;
-        r_ago_price_m = empty_match;
-    }
-
-
-
     /* Price Reference Declaration, Ago Variant
    * days_ago_ticker_price. eg. days_ago_ticker_price
    * Unable to use tokenisation due to space not consistent
@@ -580,10 +565,26 @@ string gen_syntax(string code_line){
     regex r_ago_price ("(\\d*)(?:_ago_)(\\w*)(?:_price)");
     smatch r_ago_price_m;
     while(regex_search(code_line, r_ago_price_m, r_ago_price)){
-        boost::replace_all(code_line, r_ago_price_m[0].str(), "window."+r_ago_price_m[2].str()+"_values[window."+r_ago_price_m[2].str()+"_values.length-"+r_ago_price_m[1].str()+"]);");
+        boost::replace_all(code_line, r_price_m[r_price_m.size()-2].str(), "window."+r_ago_price_m[r_ago_price_m.size()].str()+"_values[window."+r_ago_price_m[r_ago_price_m.size()].str()+"_values.length-"+r_ago_price_m[r_ago_price_m.size() - 1].str()+"]);");
         smatch empty_match;
         r_ago_price_m = empty_match;
     }
+
+
+
+    /* Price Reference Declaration
+   * ticker_price. eg. ticker_price
+   * Unable to use tokenisation due to space not consistent
+   */
+    regex r_price ("[^a-zA-Z0-9_](\\w*)(?:_price)   ");
+    smatch r_price_m;
+    while(regex_search(code_line, r_price_m, r_price)){
+        for (auto &aa: r_price_m){ cout <<aa << endl;  }
+        boost::replace_all(code_line, r_price_m[r_price_m.size()-1].str(), "window." + r_price_m[r_price_m.size()].str() + "_values.slice(-1).pop();");
+        smatch empty_match;
+        r_price_m = empty_match;
+    }
+
 
 
 
