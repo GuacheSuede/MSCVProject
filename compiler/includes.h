@@ -20,7 +20,8 @@
 #include <nlohmann/json.hpp>
 #include <cpr/cpr.h>
 #include <sstream>
-
+#include <regex>
+#include <boost/lexical_cast.hpp>
 
 using namespace std;
 
@@ -110,18 +111,38 @@ void load_script(string input_code){
 
 
 string init_code_gen(){
-    string i_code = "function price(ticker){  \n fetch( window.murl + ticker + window.url_end + \"&page=\"+price_page, { \n method: \'get\', \n headers:{ \n \'Authorization\': \'Basic '+btoa(\'admin:changeit\'), \n \'Content-Type\': \'application/json\' \n }\n}).then(response => {\nreturn response.json(); \n }).then(data => {";
-    for (auto &t: tickers) { // this happens after all tickers have been examined
-        i_code += "window." + t + "_values.push(data\[\"_embedded\"\]\[0\]\[\"price\"\]);\n";
-    }
+    string i_code = "function price(ticker, container){  \n fetch( window.murl + ticker + window.url_end + \"&page=\"+window.price_page, { \n method: \'get\', \n headers:{ \n \'Authorization\': \'Basic '+btoa(\'admin:changeit\'), \n \'Content-Type\': \'application/json\' \n }\n}).then(response => {\nreturn response.json(); \n }).then(data => {";
+        i_code += "container.push(data\[\"_embedded\"\]\[0\]\[\"price\"\]);\n";
     i_code += "}); \n } \n";
+
+    for (auto &t: tickers) { // this happens after all tickers have been examined
+        i_code += "var " + t + "_line = new window.TimeSeries;\n";
+    }
+    i_code += " setInterval(function() { \n";
+    for(auto &tt: tickers){
+
+        i_code += tt + "_line.append(new Date().getTime(), window."+ tt +"_values.slice(-1).pop()); \n";
+    }
+    i_code += "}, 1000); \n";
+    for(auto &ttt: tickers) {
+        i_code += "window.smoothie.addTimeSeries(" + ttt + "_line,  { strokeStyle: window.random_rgba(), lineWidth: 8 }); \n";
+    }
+    i_code += "window.smoothie.streamTo(document.getElementById(\"graphviewid\"), 1001);";
     return i_code;
 }
 
 string loop_gen(){
     string ret;
-    ret += "function loop(){ ++price_page;\n for( let t of window.tickers){ price(t); } \n } \n setInterval(loop, 1000); \n";
+    ret += "function loop(){ ++window.price_page;\n";
+    for(auto &ttt: tickers) {
+        ret += "price(\"" + ttt + "\"," + "window." + ttt + "_values);";
+    }
+    ret += "\n } \n setInterval(loop, 1000); \n";
     return ret;
+}
+
+string get_string(char s){
+
 }
 
 /* 1. Normal Loop Code - normal code
@@ -129,367 +150,426 @@ string loop_gen(){
  * 3. Init code - global start code like websocekts
  */
 string gen_syntax(string code_line){
-    /* Comment Declaration
-     * # This will do this thing
-     */
-    if (code_line.find("#") != string::npos){
-        // Do nothing
-    }
+//    /* Comment Declaration
+//     * # This will do this thing
+//     */
+//    if (code_line.find("#") != string::npos){
+//        // Do nothing
+//    }
+//
+//    /* Variable Declaration
+//     * variable(graft,1)
+//     */
+//    if (code_line.find("variable") != string::npos){
+//        boost::replace_all(code_line, "variable(", "window.");
+//        boost::replace_all(code_line, ",", "=");
+//        boost::replace_all(code_line, ")", ";");
+//    }
+//
+//    /* Array Init Declaration
+//     * array(graft,1)
+//     */
+//    if (code_line.find("array(") != string::npos){
+//        boost::replace_all(code_line, "array(", "window.");
+//        boost::replace_first(code_line, ",", "=[\"");
+//        boost::replace_all(code_line, ",", "\",\"");
+//        boost::replace_all(code_line, ")", "\"];");
+//    }
+//
+//    /* Array Push Declaration
+//     * array_push(graft,1)
+//     */
+//    if (code_line.find("array_push") != string::npos){
+//        boost::replace_all(code_line, "array_push(", "");
+//        boost::replace_all(code_line, ",", ".push(\"");
+//        boost::replace_all(code_line, ")", "\")");
+//        code_line.insert(0, "window.");
+//    }
+//
+//    /* Array Pop Declaration
+//     * array_pop(graft)
+//     */
+//    if (code_line.find("array_pop") != string::npos){
+//        boost::replace_all(code_line, "array_pop(", "");
+//        boost::replace_all(code_line, ")", ".pop();");
+//        code_line.insert(0, "window.");
+//    }
+//
+//
+//    /* Array Has Declaration
+//     * array_has(graft, "1")
+//     */
+//    if (code_line.find("array_has") != string::npos){
+//        boost::replace_all(code_line, "array_has(", "");
+//        boost::replace_first(code_line, ",", ".includes(\"");
+//        boost::replace_all(code_line, ")", "\")");
+//        code_line += ";";
+//        code_line.insert(0, "window.");
+//    }
+//
+//    // more than function
+//    if(code_line.find("more_than(") != string::npos) {
+//        int occurrences;
+//        int pos;
+//
+//        string target = "more_than(";
+//        while ((pos = code_line.find(target, pos )) != std::string::npos) {
+//            ++occurrences;
+//            pos += target.length();
+//        }
+//
+//        cout << occurrences  << endl;
+//        for(int oc = 0; oc < occurrences; ++oc) {
+//
+//            // always find and start with first, can we ddo multiple instructions ?
+//            bool index_ended = false;
+//            int line_end = code_line.length() - 1;
+//            int index = code_line.find("more_than(");
+//            int index_end = index + 9;
+//
+//            string parameter_s;
+//            while (index_ended == false) {
+//                if (++index_end <= line_end && code_line.at(index_end) != ')') {
+//                    parameter_s += code_line.at(index_end);
+//                } else {
+//                    index_ended = true;
+//                }
+//            }
+//
+//            cout << parameter_s << endl;
+//            vector <string> params;
+//            boost::split(params, parameter_s, boost::is_any_of(","));
+//            // only 2 paramaters
+//            boost::replace_first(code_line, "more_than(" + params[0] + "," + params[1] + ")", "");
+//            code_line.insert(index, "(" + params[0] + " > " + params[1] + ")");
+//        }
+//    }
+//
+//    // more than or equals function
+//    if(code_line.find("more_than_or_equals(") != string::npos) {
+//        int index = code_line.find("more_than_or_equals(");
+//
+//        string parameter_s = code_line;
+//        vector<string> params;
+//        boost::replace_first(parameter_s, "more_than_or_equals(", "");
+//        boost::replace_first(parameter_s, ")", "");
+//        boost::split(params, parameter_s, boost::is_any_of(","));
+//        code_line.insert(index, "(" + params[0] + " >= " + params[1] + ")");
+//    }
+//
+//    // less than function
+//    if(code_line.find("less_than(") != string::npos) {
+//        int index = code_line.find("less_than(");
+//        string parameter_s = code_line;
+//        vector<string> params;
+//        boost::replace_first(parameter_s, "less_than(", "");
+//        boost::replace_first(parameter_s, ")", "");
+//        boost::split(params, parameter_s, boost::is_any_of(","));
+//        code_line.insert(index, "(" + params[0] + " < " + params[1] + ")");
+//    }
+//
+//
+//    // less than or equals function
+//    if(code_line.find("less_than_or_equals(") != string::npos) {
+//        int index = code_line.find("less_than_or_equals(");
+//        string parameter_s = code_line;
+//        vector<string> params;
+//        boost::replace_first(parameter_s, "less_than_or_equals(", "");
+//        boost::replace_first(parameter_s, ")", "");
+//        boost::split(params, parameter_s, boost::is_any_of(","));
+//        code_line.insert(index, "(" + params[0] + " <= " + params[1] + ")");
+//    }
+//
+//    // equals function
+//    if(code_line.find("equals(") != string::npos) {
+//        int index = code_line.find("equals(");
+//        string parameter_s = code_line;
+//        vector<string> params;
+//        boost::replace_first(parameter_s, "equals(", "");
+//        boost::replace_first(parameter_s, ")", "");
+//        boost::split(params, parameter_s, boost::is_any_of(","));
+//        code_line.insert(index, "(" + params[0] + " == " + params[1] + ")");
+//    }
+//
+//    // not equals function
+//    if(code_line.find("not_equals(") != string::npos) {
+//        int index = code_line.find("not_equals(");
+//        string parameter_s = code_line;
+//        vector<string> params;
+//        boost::replace_first(parameter_s, "equals(", "");
+//        boost::replace_first(parameter_s, ")", "");
+//        boost::split(params, parameter_s, boost::is_any_of(","));
+//        code_line.insert(index, "(" + params[0] + " != " + params[1] + ")");
+//
+//    }
+//// its all abt how u feel
+//
+//    // or function
+//    if(code_line.find("or(") != string::npos) {
+//        int index = code_line.find("or(");
+//
+//        string parameter_s = code_line;
+//        vector<string> params;
+//        boost::replace_first(parameter_s, "or(", "");
+//        boost::replace_first(parameter_s, ")", "");
+//        boost::split(params, parameter_s, boost::is_any_of(","));
+//        code_line.insert(index, "(" + params[0] + " || " + params[1] + ")");
+//    }
+//
+//    // and function
+//    if(code_line.find("and(") != string::npos) {
+//        int index = code_line.find("and(")+3;
+//        int index_end = 0;
+//        string parameter_s = code_line;
+//        vector<string> params;
+//        boost::replace_first(parameter_s, "and(", "");
+//        boost::replace_first(parameter_s, ")", "");
+//        boost::split(params, parameter_s, boost::is_any_of(","));
+//        code_line.insert(index, "(" + params[0] + " && " + params[1] + ")");
+//    }
+//
+//    if(code_line.find("buy_") != string::npos){
+//        string alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//        string stock_name;
+//        bool stock_name_end = false;
+//        int stock_name_start = code_line.find("buy_")+3;
+//        int stock_name_had_start = code_line.find("buy_");
+//
+//        int stcok_name_will_end = code_line.length();
+//        while (stock_name_end == false) {
+//            if (++stock_name_start >= stcok_name_will_end) {
+//                stock_name_end = true;
+//            } else {
+//                if (alphabets.find(code_line.at(stock_name_start)) != string::npos) {
+//                    stock_name += code_line.at(stock_name_start);
+//                }else{
+//                    stock_name_end = true;
+//                }
+//            }
+//        }
+//        boost::replace_first(code_line, "buy_"+stock_name, "buys.push(window.\"+stock_name+\"_values.slice(-1).pop());");
+//    }
+//
+//    if(code_line.find("sell_") != string::npos){
+//        string alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//        string stock_name;
+//        bool stock_name_end = false;
+//        int stock_name_start = code_line.find("sell_")+3;
+//        int stock_name_had_start = code_line.find("sell_");
+//
+//        int stcok_name_will_end = code_line.length();
+//        while (stock_name_end == false) {
+//            if (++stock_name_start >= stcok_name_will_end) {
+//                stock_name_end = true;
+//            } else {
+//                if (alphabets.find(code_line.at(stock_name_start)) != string::npos) {
+//                    stock_name += code_line.at(stock_name_start);
+//                }else{
+//                    stock_name_end = true;
+//                }
+//            }
+//        }
+//        boost::replace_first(code_line, "sell_"+stock_name, "sells.push(window."+stock_name+"_values.slice(-1).pop());");
+//    }
+//
+//
+//
+//
+//    /* Algo Init Declaration
+//     * use algo_name eg. use sma
+//     */
+//    if (code_line.find("use") != string::npos){
+//        boost::replace_first(code_line, "use", "");
+//        boost::replace_all(code_line, " ", "");
+//        string algo_name = code_line;
+//        code_line = "";
+//        code_line += "window." + algo_name+ "_socket = new WebSocket(" +algo_name+ "_socket_url); \n";
+//        code_line += "window." + algo_name + "_socket.onmessage = function (event) { \n \t" +"window."+algo_name+ "_values.push(event.data)); \n} \n";
+//        // TODO: Add aupdate sectoin here andsperate into init and init loop code
+//    }
+//
+//
+//    /* Algo Reference Declaration, Current Variant
+//     * current_algo_name. eg. current_macd
+//     * Unable to use tokenisation due to space not consistent
+//     */
+//    if (code_line.find("current_") != string::npos){
+//        string alphabets = "abcdefghijklmnopqrstuvwxyz";
+//        int algo_name_length = 0;
+//        bool algo_name_end = false;
+//        string algo_name;
+//        int algo_name_start = code_line.find("current_")+7;
+//        int algo_name_will_end = code_line.length();
+//        cout << algo_name_will_end << "=" << endl;
+//        while (algo_name_end == false) {
+//
+//            if (++algo_name_start >= algo_name_will_end) {
+//                algo_name_end = true;
+//            } else {
+//                if (alphabets.find(code_line.at(algo_name_start)) != string::npos) {
+//                    algo_name += code_line.at(algo_name_start);
+//                }else{
+//                    algo_name_end = true;
+//                }
+//            }
+//        }
+//
+//        init_code += "window."+ algo_name + "_values = []; \n";
+//
+//        boost::replace_first(code_line, "current_", "");
+//        // due to the nature of algorthims having variable amount of fields, wedo not specify what current_algo_name returns but rather it retursn an obbject if it's multiple values and an integer if it's a single value. data agnostic parser and tokeniser.
+//        boost::replace_first(code_line, algo_name, "window."+algo_name+"_values.slice(-1).pop()");
+//
+//    }
+//
+//
+//
+//    /* Algo Reference Declaration, Ago Variant
+//     * days_ago_algo_name. eg. 2_ago_algo_name
+//     * Unable to use tokenisation due to space not consistent
+//     */
+//    if (code_line.find("_ago_") != string::npos && code_line.find("_price") == string::npos){
+//        string numbers = "0123456789";
+//        string alphabets = "abcdefghijklmnopqrstuvwxyz";
+//        int algo_name_length = 0;
+//        bool algo_name_end = false;
+//        string algo_name;
+//        int algo_name_start = code_line.find("_ago_")+4;
+//        int algo_name_will_end = code_line.length();
+//        cout << algo_name_will_end << "=" << endl;
+//
+//        while (algo_name_end == false) {
+//
+//            if (++algo_name_start >= algo_name_will_end) {
+//                algo_name_end = true;
+//            } else {
+//                if (alphabets.find(code_line.at(algo_name_start)) != string::npos) {
+//                    algo_name += code_line.at(algo_name_start);
+//                }else{
+//                    algo_name_end = true;
+//                }
+//            }
+//        }
+//
+//
+//        boost::replace_first(code_line, "_ago_", "");
+//
+//        int days_end = code_line.find(algo_name);
+//        int days_ended = false;
+//        int actual_days = 0;
+//        string days = "";
+//
+//        while(days_ended == false){
+//            if(days_end-1 < 0) {
+//                days_ended = true;
+//                boost::replace_first(code_line, days, "");
+//            }else {
+//                --days_end;
+//                if (numbers.find(code_line.at(days_end)) != string::npos) {
+//                    days += code_line.at(days_end);
+//                } else {
+//                    days_ended = true;
+//                    boost::replace_first(code_line, days, "");
+//                }
+//            }
+//        }
+//
+//        boost::replace_first(code_line, algo_name, "window."+algo_name+"_values[window."+algo_name+"_values.length-"+days+"]");
+//    }
+//
+//
+//    /* Price Reference Declaration
+//     * ticker_price eg. AAPL_price
+//     */
+//
+//    if (code_line.find("_price") != string::npos && code_line.find("_ago_") == string::npos) {
+//
+//        // Get the first occurrence
+//        size_t pos = code_line.find("_price");
+//
+//        // Repeat till end is reached
+//        while( pos != std::string::npos)
+//        {
+//
+//        string numbers = "0123456789";
+//        string alphabets = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//        int ticker_name_length = 0;
+//        bool ticker_name_start = false;
+//        string ticker_name;
+//        int ticker_name_end = code_line.find("_price");
+//        --ticker_name_end;
+//
+//        while (ticker_name_start == false) {
+//            if (alphabets.find(code_line[ticker_name_end]) != string::npos) {
+//                ticker_name = code_line[ticker_name_end] + ticker_name;
+//                if (ticker_name_end == 0) {
+//                    ticker_name_start = true;
+//                } else {
+//                    --ticker_name_end;
+//                }
+//            } else {
+//                ticker_name_start = true;
+//            }
+//        }
+//        tickers.push_back(ticker_name);
+//
+//        init_code += "window." + ticker_name + "_values = [0]; \n";
+//        init_code += "window.tickers.push(\"" + ticker_name + "\"); \n";
+//        string replaceStr = "window." + ticker_name + "_values.slice(-1).pop());";
+//        string toSearch = "_price";
+//        code_line.replace(pos-ticker_name.size(), ticker_name.size()+ toSearch.size(), replaceStr);
+//            // Get the next occurrence from the current position
+//            pos =code_line.find(toSearch, pos-ticker_name.size() + replaceStr.size());
+//        }
+//
+////
+////        string numbers = "0123456789";
+////        string alphabets = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+////        int ticker_name_length = 0;
+////        bool ticker_name_start = false;
+////        string ticker_name;
+////        int ticker_name_end = code_line.find("_price");
+////        --ticker_name_end;
+////
+////        while (ticker_name_start == false) {
+////            if (alphabets.find(code_line[ticker_name_end]) != string::npos) {
+////                ticker_name = code_line[ticker_name_end] + ticker_name;
+////                if (ticker_name_end == 0) {
+////                    ticker_name_start = true;
+////                } else {
+////                    --ticker_name_end;
+////                }
+////            } else {
+////                ticker_name_start = true;
+////            }
+////        }
+////        tickers.push_back(ticker_name);
+////
+////        init_code += "window." + ticker_name + "_values = [0]; \n";
+////        init_code += "window.tickers.push(\"" + ticker_name + "\"); \n";
+////        boost::replace_first(code_line, ticker_name + "_price",
+////                             "window." + ticker_name + "_values.slice(-1).pop()");
+//    }
+//
+//
+//
+//
+//
+//
 
-    /* Variable Declaration
-     * variable(graft,1)
-     */
-    if (code_line.find("variable") != string::npos){
-        boost::replace_all(code_line, "variable(", "window.");
-        boost::replace_all(code_line, ",", "=");
-        boost::replace_all(code_line, ")", ";");
-    }
-
-    /* Array Init Declaration
-     * array(graft,1)
-     */
-    if (code_line.find("array(") != string::npos){
-        boost::replace_all(code_line, "array(", "window.");
-        boost::replace_first(code_line, ",", "=[\"");
-        boost::replace_all(code_line, ",", "\",\"");
-        boost::replace_all(code_line, ")", "\"];");
-    }
-
-    /* Array Push Declaration
-     * array_push(graft,1)
-     */
-    if (code_line.find("array_push") != string::npos){
-        boost::replace_all(code_line, "array_push(", "");
-        boost::replace_all(code_line, ",", ".push(\"");
-        boost::replace_all(code_line, ")", "\")");
-        code_line.insert(0, "window.");
-    }
-
-    /* Array Pop Declaration
-     * array_pop(graft)
-     */
-    if (code_line.find("array_pop") != string::npos){
-        boost::replace_all(code_line, "array_pop(", "");
-        boost::replace_all(code_line, ")", ".pop();");
-        code_line.insert(0, "window.");
-    }
-
-
-    /* Array Has Declaration
-     * array_has(graft, "1")
-     */
-    if (code_line.find("array_has") != string::npos){
-        boost::replace_all(code_line, "array_has(", "");
-        boost::replace_first(code_line, ",", ".includes(\"");
-        boost::replace_all(code_line, ")", "\")");
-        code_line += ";";
-        code_line.insert(0, "window.");
-    }
-
-    // more than function
-    if(code_line.find("more_than(") != string::npos) {
-        int occurrences;
-        int pos;
-
-        string target = "more_than(";
-        while ((pos = code_line.find(target, pos )) != std::string::npos) {
-            ++ occurrences;
-            pos += target.length();
-        }
-
-        cout << occurrences  << endl;
-        for(int oc = 0; oc < occurrences; ++oc) {
-
-            // always find and start with first, can we ddo multiple instructions ?
-            bool index_ended = false;
-            int line_end = code_line.length() - 1;
-            int index = code_line.find("more_than(");
-            int index_end = index + 9;
-
-            string parameter_s;
-            while (index_ended == false) {
-                if (++index_end <= line_end && code_line.at(index_end) != ')') {
-                    parameter_s += code_line.at(index_end);
-                } else {
-                    index_ended = true;
-                }
-            }
-
-            cout << parameter_s << endl;
-            vector <string> params;
-            boost::split(params, parameter_s, boost::is_any_of(","));
-            // only 2 paramaters
-            boost::replace_first(code_line, "more_than(" + params[0] + "," + params[1] + ")", "");
-            code_line.insert(index, "(" + params[0] + " > " + params[1] + ")");
-        }
-    }
-
-    // more than or equals function
-    if(code_line.find("more_than_or_equals(") != string::npos) {
-        int index = code_line.find("more_than_or_equals(");
-
-        string parameter_s = code_line;
-        vector<string> params;
-        boost::replace_first(parameter_s, "more_than_or_equals(", "");
-        boost::replace_first(parameter_s, ")", "");
-        boost::split(params, parameter_s, boost::is_any_of(","));
-        code_line.insert(index, "(" + params[0] + " >= " + params[1] + ")");
-    }
-
-    // less than function
-    if(code_line.find("less_than(") != string::npos) {
-        int index = code_line.find("less_than(");
-        string parameter_s = code_line;
-        vector<string> params;
-        boost::replace_first(parameter_s, "less_than(", "");
-        boost::replace_first(parameter_s, ")", "");
-        boost::split(params, parameter_s, boost::is_any_of(","));
-        code_line.insert(index, "(" + params[0] + " < " + params[1] + ")");
-    }
-
-
-    // less than or equals function
-    if(code_line.find("less_than_or_equals(") != string::npos) {
-        int index = code_line.find("less_than_or_equals(");
-        string parameter_s = code_line;
-        vector<string> params;
-        boost::replace_first(parameter_s, "less_than_or_equals(", "");
-        boost::replace_first(parameter_s, ")", "");
-        boost::split(params, parameter_s, boost::is_any_of(","));
-        code_line.insert(index, "(" + params[0] + " <= " + params[1] + ")");
-    }
-
-    // equals function
-    if(code_line.find("equals(") != string::npos) {
-        int index = code_line.find("equals(");
-        string parameter_s = code_line;
-        vector<string> params;
-        boost::replace_first(parameter_s, "equals(", "");
-        boost::replace_first(parameter_s, ")", "");
-        boost::split(params, parameter_s, boost::is_any_of(","));
-        code_line.insert(index, "(" + params[0] + " == " + params[1] + ")");
-    }
-
-    // not equals function
-    if(code_line.find("not_equals(") != string::npos) {
-        int index = code_line.find("not_equals(");
-        string parameter_s = code_line;
-        vector<string> params;
-        boost::replace_first(parameter_s, "equals(", "");
-        boost::replace_first(parameter_s, ")", "");
-        boost::split(params, parameter_s, boost::is_any_of(","));
-        code_line.insert(index, "(" + params[0] + " != " + params[1] + ")");
-
-    }
-// its all abt how u feel
-
-    // or function
-    if(code_line.find("or(") != string::npos) {
-        int index = code_line.find("or(");
-
-        string parameter_s = code_line;
-        vector<string> params;
-        boost::replace_first(parameter_s, "or(", "");
-        boost::replace_first(parameter_s, ")", "");
-        boost::split(params, parameter_s, boost::is_any_of(","));
-        code_line.insert(index, "(" + params[0] + " || " + params[1] + ")");
-    }
-
-    // and function
-    if(code_line.find("and(") != string::npos) {
-        int index = code_line.find("and(");
-        string parameter_s = code_line;
-        vector<string> params;
-        boost::replace_first(parameter_s, "and(", "");
-        boost::replace_first(parameter_s, ")", "");
-        boost::split(params, parameter_s, boost::is_any_of(","));
-        code_line.insert(index, "(" + params[0] + " && " + params[1] + ")");
-    }
-
-    if(code_line.find("buy_") != string::npos){
-        string alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        string stock_name;
-        bool stock_name_end = false;
-        int stock_name_start = code_line.find("buy_")+3;
-        int stock_name_had_start = code_line.find("buy_");
-
-        int stcok_name_will_end = code_line.length();
-        while (stock_name_end == false) {
-            if (++stock_name_start >= stcok_name_will_end) {
-                stock_name_end = true;
-            } else {
-                if (alphabets.find(code_line.at(stock_name_start)) != string::npos) {
-                    stock_name += code_line.at(stock_name_start);
-                }else{
-                    stock_name_end = true;
-                }
-            }
-        }
-        boost::replace_first(code_line, "buy_"+stock_name, "buys.push(window.\"+stock_name+\"_values.slice(-1).pop());");
-    }
-
-    if(code_line.find("sell_") != string::npos){
-        string alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        string stock_name;
-        bool stock_name_end = false;
-        int stock_name_start = code_line.find("sell_")+3;
-        int stock_name_had_start = code_line.find("sell_");
-
-        int stcok_name_will_end = code_line.length();
-        while (stock_name_end == false) {
-            if (++stock_name_start >= stcok_name_will_end) {
-                stock_name_end = true;
-            } else {
-                if (alphabets.find(code_line.at(stock_name_start)) != string::npos) {
-                    stock_name += code_line.at(stock_name_start);
-                }else{
-                    stock_name_end = true;
-                }
-            }
-        }
-        boost::replace_first(code_line, "sell_"+stock_name, "sells.push(window."+stock_name+"_values.slice(-1).pop());");
-    }
-
-
-
-
-    /* Algo Init Declaration
-     * use algo_name eg. use sma
-     */
-    if (code_line.find("use") != string::npos){
-        boost::replace_first(code_line, "use", "");
-        boost::replace_all(code_line, " ", "");
-        string algo_name = code_line;
-        code_line = "";
-        code_line += "window." + algo_name+ "_socket = new WebSocket(" +algo_name+ "_socket_url); \n";
-        code_line += "window." + algo_name + "_socket.onmessage = function (event) { \n \t" +"window."+algo_name+ "_values.push(event.data)); \n} \n";
-        // TODO: Add aupdate sectoin here andsperate into init and init loop code
-    }
-
-
-    /* Algo Reference Declaration, Current Variant
-     * current_algo_name. eg. current_macd
-     * Unable to use tokenisation due to space not consistent
-     */
-    if (code_line.find("current_") != string::npos){
-        string alphabets = "abcdefghijklmnopqrstuvwxyz";
-        int algo_name_length = 0;
-        bool algo_name_end = false;
-        string algo_name;
-        int algo_name_start = code_line.find("current_")+7;
-        int algo_name_will_end = code_line.length();
-        cout << algo_name_will_end << "=" << endl;
-        while (algo_name_end == false) {
-
-            if (++algo_name_start >= algo_name_will_end) {
-                algo_name_end = true;
-            } else {
-                if (alphabets.find(code_line.at(algo_name_start)) != string::npos) {
-                    algo_name += code_line.at(algo_name_start);
-                }else{
-                    algo_name_end = true;
-                }
-            }
-        }
-
-        init_code += "window."+ algo_name + "_values = []; \n";
-
-        boost::replace_first(code_line, "current_", "");
-        // due to the nature of algorthims having variable amount of fields, wedo not specify what current_algo_name returns but rather it retursn an obbject if it's multiple values and an integer if it's a single value. data agnostic parser and tokeniser.
-        boost::replace_first(code_line, algo_name, "window."+algo_name+"_values.slice(-1).pop()");
-
-    }
-
-    /* Algo Reference Declaration, Ago Variant
-     * days_ago_algo_name. eg. 2_ago_algo_name
-     * Unable to use tokenisation due to space not consistent
-     */
-    if (code_line.find("_ago_") != string::npos && code_line.find("_price") == string::npos){
-        string numbers = "0123456789";
-        string alphabets = "abcdefghijklmnopqrstuvwxyz";
-        int algo_name_length = 0;
-        bool algo_name_end = false;
-        string algo_name;
-        int algo_name_start = code_line.find("_ago_")+4;
-        int algo_name_will_end = code_line.length();
-        cout << algo_name_will_end << "=" << endl;
-
-        while (algo_name_end == false) {
-
-            if (++algo_name_start >= algo_name_will_end) {
-                algo_name_end = true;
-            } else {
-                if (alphabets.find(code_line.at(algo_name_start)) != string::npos) {
-                    algo_name += code_line.at(algo_name_start);
-                }else{
-                   algo_name_end = true;
-                }
-            }
-        }
-
-
-        boost::replace_first(code_line, "_ago_", "");
-
-        int days_end = code_line.find(algo_name);
-        int days_ended = false;
-        int actual_days = 0;
-        string days = "";
-
-        while(days_ended == false){
-            if(days_end-1 < 0) {
-                days_ended = true;
-                boost::replace_first(code_line, days, "");
-            }else {
-                --days_end;
-                if (numbers.find(code_line.at(days_end)) != string::npos) {
-                    days += code_line.at(days_end);
-                } else {
-                    days_ended = true;
-                    boost::replace_first(code_line, days, "");
-                }
-            }
-        }
-
-        boost::replace_first(code_line, algo_name, "window."+algo_name+"_values[window."+algo_name+"_values.length-"+days+"]");
-    }
 
 
     /* Price Reference Declaration
-     * ticker_price eg. AAPL_price
-     */
-
-    if (code_line.find("_price") != string::npos && code_line.find("_ago_") == string::npos) {
-            string numbers = "0123456789";
-            string alphabets = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            int ticker_name_length = 0;
-            bool ticker_name_start = false;
-            string ticker_name;
-            int ticker_name_end = code_line.find("_price");
-            --ticker_name_end;
-
-            while (ticker_name_start == false) {
-                if (alphabets.find(code_line[ticker_name_end]) != string::npos) {
-                    ticker_name = code_line[ticker_name_end] + ticker_name;
-                    if (ticker_name_end == 0) {
-                        ticker_name_start = true;
-                    } else {
-                        --ticker_name_end;
-                    }
-                } else {
-                    ticker_name_start = true;
-                }
-            }
-            tickers.push_back(ticker_name);
-
-            init_code += "window." + ticker_name + "_values = []; \n";
-            init_code += "window.tickers.push(\"" + ticker_name + "\"); \n";
-            boost::replace_first(code_line, ticker_name + "_price",
-                                 "window." + ticker_name + "_values.slice(-1).pop()");
-        }
-
-
-
-
+   * ticker_price. eg. ticker_price
+   * Unable to use tokenisation due to space not consistent
+   */
+    regex r_price ("(\\w*)(?:_price)");
+    smatch r_price_m;
+    while(regex_search(code_line, r_price_m, r_price)){
+        boost::replace_all(code_line, r_price_m[0].str(), "window."+r_ago_price_m[2].str()+"_values[window."+r_ago_price_m[2].str()+"_values.length-"+r_ago_price_m[1].str()+"]);");
+        smatch empty_match;
+        r_ago_price_m = empty_match;
+    }
 
 
 
@@ -497,66 +577,19 @@ string gen_syntax(string code_line){
    * days_ago_ticker_price. eg. days_ago_ticker_price
    * Unable to use tokenisation due to space not consistent
    */
-    if (code_line.find("_ago_") != string::npos && code_line.find("_price") != string::npos){
-        string numbers = "0123456789";
-        string alphabets = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        int ticker_name_length = 0;
-        bool ticker_name_start = false;
-        string ticker_name;
-        int ticker_name_end = code_line.find("_price");
-        --ticker_name_end;
-
-        while (ticker_name_start == false){
-            cout << code_line[ticker_name_end];
-            if(alphabets.find(code_line[ticker_name_end]) != string::npos){
-                ticker_name = code_line[ticker_name_end] + ticker_name;
-                if (ticker_name_end == 0) {
-                    ticker_name_start = true;
-                }else{
-                    --ticker_name_end;
-                }
-            }else{
-                ticker_name_start = true;
-            }
-        }
-
-        boost::replace_first(code_line, "_"+ticker_name+"_price", "");
-
-        int days_ago_end = code_line.find("_ago");
-        int days_ago_length = 0;
-        bool days_ago_start = false;
-        string days_ago_name = "";
-        --days_ago_end;
-
-
-        while(days_ago_start == false){
-            if(numbers.find(code_line.at(days_ago_end)) != string::npos){
-                days_ago_name = code_line[days_ago_length] + days_ago_name;
-                if (days_ago_end == 0){
-                    days_ago_start = true;
-                }else{
-                    --days_ago_end;
-                }
-            }else{
-                days_ago_start = true;
-            }
-        }
-
-        boost::replace_first(code_line, days_ago_name+"_ago", "window."+ticker_name+"_values[window."+ticker_name+"_values.length-"+days_ago_name+"];");
+    regex r_ago_price ("(\\d*)(?:_ago_)(\\w*)(?:_price)");
+    smatch r_ago_price_m;
+    while(regex_search(code_line, r_ago_price_m, r_ago_price)){
+        boost::replace_all(code_line, r_ago_price_m[0].str(), "window."+r_ago_price_m[2].str()+"_values[window."+r_ago_price_m[2].str()+"_values.length-"+r_ago_price_m[1].str()+"]);");
+        smatch empty_match;
+        r_ago_price_m = empty_match;
     }
 
 
 
-
-//        boost::replace_first(code_line, "more_than(", "");
-//        boost::replace_first(code_line, ")", "");
-//
-//        vector<string> paramters;
-//        boost::split(paramters, code_line )
-//    }
+//    regex_replace (code_line, regex_exp,");
 
 
-    // TODO: version with at vlaue
     return code_line;
 
 }

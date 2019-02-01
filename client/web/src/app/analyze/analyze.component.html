@@ -1,5 +1,10 @@
-<textarea></textarea>
+<ng-monaco-editor modelUri="file:text.js" [options]="options" [(ngModel)]="precompiled_code" (change)="log()"></ng-monaco-editor>
+
+<!--<textarea></textarea>-->
 <div class="analyzemenu">
     <div class="analyzemenucompile" (click)="compile_code()">Compile</div>
+    <div class="analyzeclose" (click)="close_graph()">Close</div>
 
 </div>
+
+<canvas id="graphviewid" class="graphview"  width="1200" height="300" [ngClass]="{'displaynone': !display_graph}" > </canvas>

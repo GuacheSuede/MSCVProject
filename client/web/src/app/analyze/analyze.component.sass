@@ -1,16 +1,46 @@
-textarea
+ng-monaco-editor
     grid-column: 1/7
     height: 94.5vh
+    //width: 70vw
     font-size: 30px
     font-family: Courier New, Courier, monospace
     padding: 10px
 
+div.smoothie-chart-tooltip
+    background: #444
+    padding: 1em
+    margin-top: 20px
+    font-family: consolas
+    color: black
+    font-size: 10px
+    pointer-events: none
+
+
 .analyzemenu
     grid-column: 7/9
+    width: 20vw
 
-.analyzemenucompile
+.analyzemenucompile,
+.analyzeclose
     text-align: center
     color: white
     font-size: 50px
     cursor: pointer
     font-weight: 600
+
+.analyzeclose
+    font-size: 30px
+    font-weight: normal
+
+.graphview
+    display: block
+    z-index: 99
+    position: absolute
+    top: 25vh
+    left: 25vw
+    //width: 400px
+    //height: 100px
+    //background-color: red
+
+.displaynone
+    display: none
