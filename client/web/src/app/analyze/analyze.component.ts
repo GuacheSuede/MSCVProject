@@ -24,6 +24,10 @@ export class AnalyzeComponent implements OnInit {
 
   ngOnInit() {
     (<any>window).murl = "http://127.0.0.1:8080/db/prices?pagesize=1&sort_by=datetime&filter={\"ticker\": \"";
+    (<any>window).furl = "http://127.0.0.1:8080/db/fundamentals?pagesize=1&filter={\"tic\": \"";
+    (<any>window).furl2 = "\", \"datafqtr\":\"";
+    (<any>window).furl3 = "\"}&=keys={\": \"";
+
     (<any>window).url_end = "\"}";
     this.options = {
       folding: true,
