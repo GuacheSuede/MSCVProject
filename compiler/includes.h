@@ -18,10 +18,9 @@
 #include <vector>
 #include <r3/r3.hpp>
 #include <nlohmann/json.hpp>
-#include <cpr/cpr.h>
 #include <sstream>
 #include <regex>
-#include <boost/lexical_cast.hpp>
+#include <boost/regex.hpp>
 
 using namespace std;
 
@@ -86,6 +85,7 @@ string loop_gen();
 string loop_code = "";
 
 vector<string> tickers;
+vector<string> algos;
 
 void load_script(string input_code){
     tickers.clear();
@@ -115,6 +115,8 @@ string init_code_gen(){
         i_code += "container.push(data\[\"_embedded\"\]\[0\]\[\"price\"\]);\n";
     i_code += "}); \n } \n";
 
+    i_code +=  "function fetch_funda(){ \n fetch(window.murl  + ";
+
     for (auto &t: tickers) { // this happens after all tickers have been examined
         i_code += "var " + t + "_line = new window.TimeSeries;\n";
     }
@@ -130,6 +132,7 @@ string init_code_gen(){
     i_code += "window.smoothie.streamTo(document.getElementById(\"graphviewid\"), 1001);";
     return i_code;
 }
+
 
 string loop_gen(){
     string ret;
@@ -388,208 +391,162 @@ string gen_syntax(string code_line){
 //        // TODO: Add aupdate sectoin here andsperate into init and init loop code
 //    }
 //
-//
-//    /* Algo Reference Declaration, Current Variant
-//     * current_algo_name. eg. current_macd
-//     * Unable to use tokenisation due to space not consistent
-//     */
-//    if (code_line.find("current_") != string::npos){
-//        string alphabets = "abcdefghijklmnopqrstuvwxyz";
-//        int algo_name_length = 0;
-//        bool algo_name_end = false;
-//        string algo_name;
-//        int algo_name_start = code_line.find("current_")+7;
-//        int algo_name_will_end = code_line.length();
-//        cout << algo_name_will_end << "=" << endl;
-//        while (algo_name_end == false) {
-//
-//            if (++algo_name_start >= algo_name_will_end) {
-//                algo_name_end = true;
-//            } else {
-//                if (alphabets.find(code_line.at(algo_name_start)) != string::npos) {
-//                    algo_name += code_line.at(algo_name_start);
-//                }else{
-//                    algo_name_end = true;
-//                }
-//            }
-//        }
-//
-//        init_code += "window."+ algo_name + "_values = []; \n";
-//
-//        boost::replace_first(code_line, "current_", "");
-//        // due to the nature of algorthims having variable amount of fields, wedo not specify what current_algo_name returns but rather it retursn an obbject if it's multiple values and an integer if it's a single value. data agnostic parser and tokeniser.
-//        boost::replace_first(code_line, algo_name, "window."+algo_name+"_values.slice(-1).pop()");
-//
-//    }
-//
-//
-//
-//    /* Algo Reference Declaration, Ago Variant
-//     * days_ago_algo_name. eg. 2_ago_algo_name
-//     * Unable to use tokenisation due to space not consistent
-//     */
-//    if (code_line.find("_ago_") != string::npos && code_line.find("_price") == string::npos){
-//        string numbers = "0123456789";
-//        string alphabets = "abcdefghijklmnopqrstuvwxyz";
-//        int algo_name_length = 0;
-//        bool algo_name_end = false;
-//        string algo_name;
-//        int algo_name_start = code_line.find("_ago_")+4;
-//        int algo_name_will_end = code_line.length();
-//        cout << algo_name_will_end << "=" << endl;
-//
-//        while (algo_name_end == false) {
-//
-//            if (++algo_name_start >= algo_name_will_end) {
-//                algo_name_end = true;
-//            } else {
-//                if (alphabets.find(code_line.at(algo_name_start)) != string::npos) {
-//                    algo_name += code_line.at(algo_name_start);
-//                }else{
-//                    algo_name_end = true;
-//                }
-//            }
-//        }
-//
-//
-//        boost::replace_first(code_line, "_ago_", "");
-//
-//        int days_end = code_line.find(algo_name);
-//        int days_ended = false;
-//        int actual_days = 0;
-//        string days = "";
-//
-//        while(days_ended == false){
-//            if(days_end-1 < 0) {
-//                days_ended = true;
-//                boost::replace_first(code_line, days, "");
-//            }else {
-//                --days_end;
-//                if (numbers.find(code_line.at(days_end)) != string::npos) {
-//                    days += code_line.at(days_end);
-//                } else {
-//                    days_ended = true;
-//                    boost::replace_first(code_line, days, "");
-//                }
-//            }
-//        }
-//
-//        boost::replace_first(code_line, algo_name, "window."+algo_name+"_values[window."+algo_name+"_values.length-"+days+"]");
-//    }
-//
-//
-//    /* Price Reference Declaration
-//     * ticker_price eg. AAPL_price
-//     */
-//
-//    if (code_line.find("_price") != string::npos && code_line.find("_ago_") == string::npos) {
-//
-//        // Get the first occurrence
-//        size_t pos = code_line.find("_price");
-//
-//        // Repeat till end is reached
-//        while( pos != std::string::npos)
-//        {
-//
-//        string numbers = "0123456789";
-//        string alphabets = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//        int ticker_name_length = 0;
-//        bool ticker_name_start = false;
-//        string ticker_name;
-//        int ticker_name_end = code_line.find("_price");
-//        --ticker_name_end;
-//
-//        while (ticker_name_start == false) {
-//            if (alphabets.find(code_line[ticker_name_end]) != string::npos) {
-//                ticker_name = code_line[ticker_name_end] + ticker_name;
-//                if (ticker_name_end == 0) {
-//                    ticker_name_start = true;
-//                } else {
-//                    --ticker_name_end;
-//                }
-//            } else {
-//                ticker_name_start = true;
-//            }
-//        }
-//        tickers.push_back(ticker_name);
-//
-//        init_code += "window." + ticker_name + "_values = [0]; \n";
-//        init_code += "window.tickers.push(\"" + ticker_name + "\"); \n";
-//        string replaceStr = "window." + ticker_name + "_values.slice(-1).pop());";
-//        string toSearch = "_price";
-//        code_line.replace(pos-ticker_name.size(), ticker_name.size()+ toSearch.size(), replaceStr);
-//            // Get the next occurrence from the current position
-//            pos =code_line.find(toSearch, pos-ticker_name.size() + replaceStr.size());
-//        }
-//
-////
-////        string numbers = "0123456789";
-////        string alphabets = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-////        int ticker_name_length = 0;
-////        bool ticker_name_start = false;
-////        string ticker_name;
-////        int ticker_name_end = code_line.find("_price");
-////        --ticker_name_end;
-////
-////        while (ticker_name_start == false) {
-////            if (alphabets.find(code_line[ticker_name_end]) != string::npos) {
-////                ticker_name = code_line[ticker_name_end] + ticker_name;
-////                if (ticker_name_end == 0) {
-////                    ticker_name_start = true;
-////                } else {
-////                    --ticker_name_end;
-////                }
-////            } else {
-////                ticker_name_start = true;
-////            }
-////        }
-////        tickers.push_back(ticker_name);
-////
-////        init_code += "window." + ticker_name + "_values = [0]; \n";
-////        init_code += "window.tickers.push(\"" + ticker_name + "\"); \n";
-////        boost::replace_first(code_line, ticker_name + "_price",
-////                             "window." + ticker_name + "_values.slice(-1).pop()");
-//    }
-//
-//
-//
-//
-//
-//
 
 
-    /* Price Reference Declaration, Ago Variant
-   * days_ago_ticker_price. eg. days_ago_ticker_price
-   * Unable to use tokenisation due to space not consistent
-   */
-    regex r_ago_price ("(\\d*)(?:_ago_)(\\w*)(?:_price)");
-    smatch r_ago_price_m;
-    while(regex_search(code_line, r_ago_price_m, r_ago_price)){
-        boost::replace_all(code_line, r_price_m[r_price_m.size()-2].str(), "window."+r_ago_price_m[r_ago_price_m.size()].str()+"_values[window."+r_ago_price_m[r_ago_price_m.size()].str()+"_values.length-"+r_ago_price_m[r_ago_price_m.size() - 1].str()+"]);");
-        smatch empty_match;
+// lower case == algo, uppercase == ticker, jsut for the distinction thoguth no real benefit
+    boost::regex r_algo_current{"\\b(?:current_)([a-z]*)\\b"};
+    boost::smatch r_algo_current_m;
+
+    while(boost::regex_search(code_line, r_algo_current_m, r_algo_current)){
+        boost::replace_first(code_line, r_algo_current_m[0].str(), "window." + r_algo_current_m[1].str() + "_values.slice(-1).pop()");
+        string algoname = r_algo_current_m[1].str();
+
+        boost::smatch empty_match;
+        r_algo_current_m = empty_match;
+        if(std::find(algos.begin(), algos.end(), algoname) != algos.end()) {
+            algos.push_back(algoname);
+
+            init_code += "window." + algoname + "_values = []; \n";
+
+        }
+    }
+
+    boost::regex r_algo_ago{"\\b(\\d*)(?:_ago_)([a-z]*)\\b"};
+    boost::smatch r_algo_ago_m;
+
+    while(boost::regex_search(code_line, r_algo_ago_m, r_algo_ago)){
+        boost::replace_first(code_line, r_algo_ago_m[0].str(), "window."+r_algo_ago_m[2].str()+"_values[window."+r_algo_ago_m[2].str()+"_values.length-"+r_algo_ago_m[1].str()+"])");
+
+        string algoname = r_algo_ago_m[1].str();
+
+        boost::smatch empty_match;
+        r_algo_ago_m = empty_match;
+
+        if(std::find(algos.begin(), algos.end(), algoname) != algos.end()) {
+            algos.push_back(algoname);
+
+            init_code += "window." + algoname + "_values = []; \n";
+
+        }
+    }
+
+    boost::regex r_price{"\\b(\\w{1,5})(?:_price)\\b"};
+    boost::smatch r_price_m;
+
+    while(boost::regex_search(code_line, r_price_m, r_price)){
+        boost::replace_first(code_line, r_price_m[0].str(), "window." + r_price_m[1].str() + "_values.slice(-1).pop()");
+        string ticker = r_price_m[1].str();
+
+        boost::smatch empty_match;
+        r_price_m = empty_match;
+
+        if(std::find(tickers.begin(), tickers.end(), ticker) != tickers.end()) {
+            tickers.push_back(ticker);
+
+            init_code += "window." + ticker + "_values = [0]; \n";
+            init_code += "window.tickers.push(\"" + ticker + "\"); \n";
+        }
+    }
+
+    boost::regex r_ago_price ("\\b(\\d*)(?:_ago_)(\\w{1,5})(?:_price)\\b");
+    boost::smatch r_ago_price_m;
+    while(boost::regex_search(code_line, r_ago_price_m, r_ago_price)){
+        boost::replace_first(code_line, r_ago_price_m[0].str(), "window."+r_ago_price_m[2].str()+"_values[window."+r_ago_price_m[2].str()+"_values.length-"+r_ago_price_m[1].str()+"]);");
+        string ticker = r_ago_price_m[2].str();
+
+        boost::smatch empty_match;
+        r_ago_price_m = empty_match;
+
+        if(std::find(tickers.begin(), tickers.end(), ticker) != tickers.end()) {
+            tickers.push_back(ticker);
+
+            init_code += "window." + ticker + "_values = [0]; \n";
+            init_code += "window.tickers.push(\"" + ticker + "\"); \n";
+        }
+    }
+
+    boost::regex r_if ("(?:if)[ ](.*)[ ](?:{)");
+    boost::smatch r_if_m;
+    while(boost::regex_search(code_line, r_if_m, r_if)){
+        boost::replace_first(code_line, r_if_m[0].str(), "if("+r_if_m[1].str()+"){");
+        boost::smatch empty_match;
         r_ago_price_m = empty_match;
     }
 
+    boost::regex r_else_if ("(?:}else if)[ ](.*)[ ](?:{)");
+    boost::smatch r_else_if_m;
+    while(boost::regex_search(code_line, r_else_if_m, r_else_if)){
+        boost::replace_first(code_line, r_else_if_m[0].str(), "}else if("+r_else_if_m[1].str()+"){");
+        boost::smatch empty_match;
+        r_ago_price_m = empty_match;
+    }
+
+    boost::regex r_while ("(?:while)[ ](.*)[ ](?:{)");
+    boost::smatch r_while_m;
+    while(boost::regex_search(code_line, r_while_m, r_while)){
+        boost::replace_first(code_line, r_while_m[0].str(), "while("+r_while_m[1].str()+"){");
+        boost::smatch empty_match;
+        r_ago_price_m = empty_match;
+    }
+
+    boost::replace_all(code_line, "more_than", ">");
+    boost::replace_all(code_line, "more_than_or_equals", ">=");
+    boost::replace_all(code_line, "less_than", "<");
+    boost::replace_all(code_line, "less_than_or_equals", "<=");
+    boost::replace_all(code_line, "equals", "==");
+    boost::replace_all(code_line, "not_equals", "!=");
+    boost::replace_all(code_line, "and", "&&");
+    boost::replace_all(code_line, "or", "||");
 
 
-    /* Price Reference Declaration
-   * ticker_price. eg. ticker_price
-   * Unable to use tokenisation due to space not consistent
-   */
-    regex r_price ("[^a-zA-Z0-9_](\\w*)(?:_price)   ");
-    smatch r_price_m;
-    while(regex_search(code_line, r_price_m, r_price)){
-        for (auto &aa: r_price_m){ cout <<aa << endl;  }
-        boost::replace_all(code_line, r_price_m[r_price_m.size()-1].str(), "window." + r_price_m[r_price_m.size()].str() + "_values.slice(-1).pop();");
-        smatch empty_match;
-        r_price_m = empty_match;
+
+    boost::regex r_var{"\\b(?:var_)(\\w*)(?:_)(\\w*)\\b"};
+    boost::smatch r_var_m;
+    while(boost::regex_search(code_line, r_var_m, r_var)) {
+        boost::replace_first(code_line, r_var_m[0].str(), "var " + r_var_m[1].str() + " = " + r_var_m[2].str() + ";");
+        boost::smatch empty_match;
+        r_var_m = empty_match;
+    }
+
+    //buy, sell, buy sell ui, algo finish, total, fundamentals, legend ?
+
+    boost::regex r_buy{"\\b(?:buy_)(\\w*)\\b"};
+    boost::smatch r_buy_m;
+
+    while(boost::regex_search(code_line, r_buy_m, r_buy)) {
+        boost::replace_first(code_line, r_buy_m[0].str(), "window.buys.push({"+r_buy_m[1].str() + ",window." + r_buy_m[1].str() + "_values.slice(-1).pop()})");
+        boost::smatch empty_match;
+        r_buy_m = empty_match;
     }
 
 
+    boost::regex r_sell{"\\b(?:sell_)(\\w*)\\b"};
+    boost::smatch r_sell_m;
+
+    while(boost::regex_search(code_line, r_sell_m, r_sell)) {
+        boost::replace_first(code_line, r_sell_m[0].str(), "window.sells.push({"+r_sell_m[1].str() + ",window." + r_sell_m[1].str() + "_values.slice(-1).pop()})");
+        boost::smatch empty_match;
+        r_sell_m = empty_match;
+    }
 
 
-//    regex_replace (code_line, regex_exp,");
+    boost::regex r_fundamentals{"\\b(?:fundamentals_)([A-Z]*)(?:_)([a-z]*)(?:_)([A-Z0-9]*)\\b"};
+    boost::smatch r_fundamentals_m;
 
+    while(boost::regex_search(code_line, r_buy_m, r_buy)) {
+        boost::replace_first(code_line, r_fundamentals[0].str(), r_fundamentals[1].str() + "_" + r_fundamentals[2].str() + "_" + r_fundamentals[3].str());
+
+        string funda =  r_fundamentals[1].str() + "_" + r_fundamentals[2].str() + "_" + r_fundamentals[3].str();
+
+        boost::smatch empty_match;
+        r_price_m = empty_match;
+
+        if(std::find(fundamentals.begin(), fundamentals.end(), funda) != fundamentals.end()) {
+            fundamentals.push_back(funda);
+
+            init_code += "window." + funda + "; \n";
+        }
+    }
 
     return code_line;
 

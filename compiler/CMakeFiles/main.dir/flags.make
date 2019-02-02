@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/justin/MSCVProject/compiler/cpr/include -I/usr/local/include/mongocxx/v_noabi -I/usr/local/include/bsoncxx/v_noabi -I/usr/local/include/libmongoc-1.0 -I/usr/local/include/libbson-1.0 -I/home/justin/MSCVProject/compiler/cpr/opt/curl/include -I/home/justin/MSCVProject/compiler/cpr/opt/curl/include/curl -isystem /usr/local/include 
+CXX_INCLUDES = -I/home/justin/MSCVProject/compiler/cpr/include -isystem /usr/local/include 
 
