@@ -8,7 +8,7 @@ spec:
   type: NodePort
   ports:
   - protocol: TCP
-    nodePort: 8090
+    nodePort: 30090 
     port: 8090 
     targetPort: 8080 
 ---
@@ -22,7 +22,7 @@ spec:
   type: NodePort
   ports:
   - protocol: TCP
-    nodePort: 8091
+    nodePort: 30091
     port: 8091 
     targetPort: 8081 
 ---
@@ -36,7 +36,7 @@ spec:
   type: NodePort
   ports:
   - protocol: TCP
-    nodePort: 8092
+    nodePort: 30092
     port: 8092 
     targetPort: 8082 
 ---
@@ -50,7 +50,7 @@ spec:
   type: NodePort
   ports:
   - protocol: TCP
-    nodePort: 8093
+    nodePort: 30093 
     port: 8093 
     targetPort: 8083
 ---
@@ -64,6 +64,6 @@ spec:
   type: NodePort
   ports:
   - protocol: TCP
-    nodePort: 8094
+    nodePort: 30094 
     port: 8094 
     targetPort: 8084

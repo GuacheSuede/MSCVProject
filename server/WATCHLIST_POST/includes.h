@@ -110,7 +110,7 @@ void handle_request(beast::string_view doc_root, http::request<Body, http::basic
 void new_watchlist(std::string body){  // verify ssl is quick fix
 
     std::cout << body << std::endl;
-    std::string restheart_url = "http://localhost:8080/db/watchlist";
+    std::string restheart_url = "http://localhost:8081/db/watchlist";
     auto r = cpr::Post(
                 cpr::Url{restheart_url},
                 cpr::VerifySsl(false),

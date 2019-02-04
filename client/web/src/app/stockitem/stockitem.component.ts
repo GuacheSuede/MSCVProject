@@ -17,17 +17,19 @@ export class StockitemComponent implements OnInit {
 
   ngOnInit() {
     
-    interval(1000).pipe(switchMap(() =>  this.iexservice.get_price(this.stockitem))).subscribe(price => {
+    interval(5000+Math.random()).pipe(switchMap(() =>  this.iexservice.get_price(this.stockitem))).subscribe(price => {
       console.log(price + "====" + this.price);
 
-      if(parseFloat(price) > parseFloat(this.price)){
+      if(price > this.price){
         this.price_state = true;
         this.price = price;
+        console.log("_--");
       }
 
-      if(parseFloat(price) < parseFloat(this.price)){
+      if(price < this.price){
           this.price_state = false;
           this.price = price;
+        console.log("-_-");
       }
 
     });

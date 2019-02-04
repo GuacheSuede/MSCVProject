@@ -375,11 +375,8 @@ string gen_syntax(string code_line){
 
     while(boost::regex_search(code_line, r_fundamentals_m, r_fundamentals)) {
         string funda = r_fundamentals_m[1].str() + "_" + r_fundamentals_m[2].str() + "_" + r_fundamentals_m[3].str(); // putting this after oost replace corrupts it..
-        cout << funda << endl;
 
         boost::replace_first(code_line, r_fundamentals_m[0].str(), r_fundamentals_m[1].str() + "_" + r_fundamentals_m[2].str() + "_" + r_fundamentals_m[3].str());
-
-
 
         boost::smatch empty_match;
         r_fundamentals_m = empty_match;

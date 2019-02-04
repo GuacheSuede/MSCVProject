@@ -2,7 +2,6 @@ FROM ubuntu
 
 MAINTAINER Justin Yeap <iamjustinyeap@gmail.com>
   
-
 WORKDIR /app
 COPY . /app
 

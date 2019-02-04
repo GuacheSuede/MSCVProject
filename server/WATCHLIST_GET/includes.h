@@ -108,7 +108,7 @@ void handle_request(beast::string_view doc_root, http::request<Body, http::basic
 
 json get_watchlists(){  // verify ssl is quick fix
 
-    std::string restheart_url = "http://localhost:8080/db/watchlist";
+    std::string restheart_url = "http://localhost:8081/db/watchlist";
     auto r = cpr::Get(
             cpr::Url{restheart_url},
             cpr::VerifySsl(false),
