@@ -24,7 +24,7 @@ RUN cd boost_1_69_0 \
 RUN cmake . \
   && make 
 
-EXPOSE 8080
+EXPOSE 8082
 
 CMD ["./main"]
 

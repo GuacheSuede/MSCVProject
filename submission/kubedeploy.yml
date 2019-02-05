@@ -42,7 +42,7 @@ spec:
         image: guachesuede/rsi_websocket_fast:latest
         ports:
         - name: http
-          containerPort: 8081 
+          containerPort: 8080
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -65,7 +65,7 @@ spec:
         image: guachesuede/ema_websocket_fast:latest
         ports:
         - name: http
-          containerPort: 8082 
+          containerPort: 8080
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -88,7 +88,7 @@ spec:
         image: guachesuede/sma_websocket_fast:latest
         ports:
         - name: http
-          containerPort: 8083 
+          containerPort: 8080
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -111,4 +111,4 @@ spec:
         image: guachesuede/macd_websocket_fast:latest
         ports:
         - name: http
-          containerPort: 8084 
+          containerPort: 8080
