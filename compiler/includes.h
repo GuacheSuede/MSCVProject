@@ -35,7 +35,7 @@ using json = nlohmann::json;
 
 // Report a failure
 void fail(beast::error_code ec, char const* what){
-    std::cerr << what << ": " << ec.message() << "\n";
+    std::cerr << what << ": " << ec.message() << "";
 }
 
 // Return a reasonable mime type based on the extension of a file.
@@ -82,6 +82,7 @@ string code = "";
 string gen_syntax(string code_line);
 string init_code_gen();
 string loop_gen();
+string loop_gen_slow();
 string loop_code = "";
 
 vector<string> tickers;
@@ -95,65 +96,74 @@ void load_script(string input_code){
     algos.clear();
     algos_t.clear();
     init_code = "";
-    loop_code = "";
+    loop_code = "function loopyloop(){";
     code = "";
 
-    init_code += "window.tickers = []; \n";
-    init_code += "window.price_page = 0; \n";
-    init_code += "window.portfolio = 10000; \n";
-    init_code += "window.buys = [] \n"; // for now buy and sell  a stock only limited
-    init_code += "window.sells = []; \n"; //push thoguth so u see the good
+    init_code += "window.tickers = []; ";
+    init_code += "window.price_page = 0; ";
+    init_code += "window.portfolio = 10000; ";
+    init_code += "window.buys = []; "; // for now buy and sell  a stock only limited
+    init_code += "window.sells = []; "; //push thoguth so u see the good
+    init_code += "window.fundamentals = [];";
 
 
     istringstream f(input_code);
     string code_script_buf;
     while (getline(f, code_script_buf)){
-        code += gen_syntax(code_script_buf) + "\n";
+        loop_code += gen_syntax(code_script_buf) + "";
     }
+    loop_code += "};  setInterval(loopyloop, 1800); ";
 
+    code.insert(0, loop_gen_slow());
     code.insert(0, loop_gen());
     code.insert(0, init_code_gen());
     code.insert(0, init_code);
+    code.insert(0, "console.log(\"VM ALERT\");");
+    code += loop_code;
 
 }
 
 
 string init_code_gen(){
-    string i_code = "function price(ticker, container){  \n fetch( window.murl + ticker + window.url_end + \"&page=\"+window.price_page, { \n method: \'get\', \n headers:{ \n \'Authorization\': \'Basic '+btoa(\'admin:changeit\'), \n \'Content-Type\': \'application/json\' \n }\n}).then(response => {\nreturn response.json(); \n }).then(data => {";
-        i_code += "container.push(data\[\"_embedded\"\]\[0\]\[\"price\"\]);\n";
-    i_code += "}); \n } \n";
+    string i_code = "function price(ticker, container){   fetch( window.murl + ticker + window.url_end + \"&page=\"+window.price_page, {  method: \'get\',  headers:{  \'Authorization\': \'Basic '+btoa(\'admin:changeit\'),  \'Content-Type\': \'application/json\'  }}).then(response => {return response.json();  }).then(data => {";
+        i_code += "container.push(data\[\"_embedded\"\]\[0\]\[\"price\"\]);";
+    i_code += "});  } ";
 
-    i_code +=  "function fetch_funda(ticker, quarter, field, cont){ \n fetch(window.furl + ticker + window.furl2 + quarter + window.furl3 + field + window.url_end, { \n method: \'get\', \n headers:{ \n \'Authorization\': \'Basic '+btoa(\'admin:changeit\'), \n \'Content-Type\': \'application/json\' \n }\n}).then(response => {\nreturn response.json(); \n }).then(data => {";
-        i_code += "cont = data\[\"_embedded\"\]\[0\]\[\"field\"\];\n";
-    i_code += "}); \n } \n";
+    i_code +=  "function fetch_funda(ticker, quarter, field, cont){  fetch(window.furl + ticker + window.furl2 + quarter + window.furl3 + field + window.url_end, {  method: \'get\',  headers:{  \'Authorization\': \'Basic '+btoa(\'admin:changeit\'),  \'Content-Type\': \'application/json\'  }}).then(response => {return response.json();  }).then(data => {";
+        i_code += "window.fundamentals[cont] = data\[\"_embedded\"\]\[0\]\[field\];";
+    i_code += "});  } ";
 
 
     for(auto &f: fundamentals) {
             vector<string> tokens;
         boost::split(tokens, f, boost::is_any_of("_"));
-        i_code += "fetch_funda(" + tokens[0] + "," + tokens[1] + "," + tokens[2] + "," + f + ");";
+        i_code += "fetch_funda(\"" + tokens[0] + "\",\"" + tokens[1] + "\",\"" + tokens[2] + "\",\"" + f + "\");";
     }
 
     for (auto &t: tickers) { // this happens after all tickers have been examined
-        i_code += "var " + t + "_line = new window.TimeSeries;\n";
+        i_code += "var " + t + "_line = new window.TimeSeries;";
     }
 
     for (auto &at: algos_t) { // this happens after all algos have been examined
-        i_code += "var " + at + "_line = new window.TimeSeries;\n";
+        i_code += "var " + at + "_line = new window.TimeSeries;";
     }
 
-    i_code += " setInterval(function() { \n";
+    i_code += " setInterval(function() { ";
+    for (auto &tt: tickers) {
+
+        i_code += tt + "_line.append(new Date().getTime(), window."+ tt +"_values.slice(-1).pop()); ";
+    }
     for (auto &att: algos_t) {
 
-        i_code += att + "_line.append(new Date().getTime(), window."+ att +"_values.slice(-1).pop()); \n";
+        i_code += att + "_line.append(new Date().getTime(), window."+ att +"_values.slice(-1).pop()); ";
     }
-    i_code += "}, 1000); \n";
+    i_code += "}, 1000); ";
     for(auto &ttt: tickers) {
-        i_code += "window.smoothie.addTimeSeries(" + ttt + "_line,  { strokeStyle: window.random_rgba(), lineWidth: 8 }); \n";
+        i_code += "window.smoothie.addTimeSeries(" + ttt + "_line,  { strokeStyle: window.random_rgba(), lineWidth: 8 }); ";
     }
 
     for(auto &attt: algos_t) {
-        i_code += "window.smoothie.addTimeSeries(" + attt + "_line,  { strokeStyle: window.random_rgba(), lineWidth: 8 }); \n";
+        i_code += "window.smoothie.addTimeSeries(" + attt + "_line,  { strokeStyle: window.random_rgba(), lineWidth: 8 }); ";
     }
 
     i_code += "window.smoothie.streamTo(document.getElementById(\"graphviewid\"), 1001);";
@@ -163,16 +173,36 @@ string init_code_gen(){
 
 string loop_gen(){
     string ret;
-    ret += "function loop(){ ++window.price_page;\n";
+    ret += "function loop(){ ++window.price_page;";
     for(auto &ttt: tickers) {
-        ret += "price(\"" + ttt + "\"," + "window." + ttt + "_values);";
+        ret += "price(\"" + ttt + "\"," + "window." + ttt + "_values); ";
     }
+//    for (auto &alg: algos_t){
+//        vector<string> alg_p;
+//        boost::split(alg_p, alg, boost::is_any_of("_"));
+////        ret+= "window." + alg + "_socket.send(JSON.stringify({\"command\": \"STEP\", \"value\": window." + alg_p[1] + "_values." + "slice(-1).pop() })); ";
+////        ret+= "console.log(window." + alg + "_socket.send(JSON.stringify({\"command\": \"STEP\", \"value\": window." + alg_p[1] + "_values." + "slice(-1).pop() }))) ";
+////        ret += "console.log(JSON.stringify({\"command\": \"STEP\", \"value\": window.\" + alg_p[1] + \"_values.slice(-1).pop() }))";
+//        ret+= "console.log(window."+alg+"_socket.send(JSON.stringify({\"command\": \"STEP\", \"value\": window." + alg_p[1] + "_values." + "slice(-1).pop() })))    ";
+//
+//    }
+    ret += " }  setInterval(loop, 1000); ";
+    return ret;
+}
+
+
+
+string loop_gen_slow(){
+    string ret;
+    ret += "function loop2(){ ";
+
     for (auto &alg: algos_t){
         vector<string> alg_p;
         boost::split(alg_p, alg, boost::is_any_of("_"));
-        ret+= "window." + alg + "_socket.send(JSON.stringify({\"command\": \"STEP\", \"value\":" + alg_p[1] + "_values." + "slice(-1).pop() })); \n";
+        ret+= "console.log(window."+alg+"_socket.send(JSON.stringify({\"command\": \"STEP\", \"value\": window." + alg_p[1] + "_values." + "slice(-1).pop() })));";
+
     }
-    ret += "\n } \n setInterval(loop, 1000); \n";
+    ret += " }  setInterval(loop2, 1500); ";
     return ret;
 }
 
@@ -258,7 +288,7 @@ string gen_syntax(string code_line){
             algos.push_back(algoname_unique);
             algos_t.push_back(algoname_unique);
 
-            init_code += "window." + algoname_unique + "_values = []; \n";
+            init_code += "window." + algoname_unique + "_values = []; ";
 
             string ws_port = "";
 
@@ -269,8 +299,9 @@ string gen_syntax(string code_line){
             if (algoname == "macd"){ ws_port = "30094"; }
 
 
-            init_code += "window." + algoname_unique+ "_socket = new WebSocket( \" ws://127.0.0.1:" + ws_port + "\" ); \n";
-            init_code += "window." + algoname_unique + "_socket.onmessage = function (event) { \n \t" +"window."+algoname_unique+ "_values.push(event.data)); \n} \n";
+            init_code += "window." + algoname_unique+ "_socket = new WebSocket(\"ws://127.0.0.1:" + ws_port + "\"); ";
+            init_code += "window." + algoname_unique + "_socket.onmessage = function (event) {  \t" +"window."+algoname_unique+ "_values.push(event.data); }; ";
+            init_code += "window." + algoname_unique + "_socket.onerror = function (error) {  \t console.log(error);  };";
         }
     }
 
@@ -293,7 +324,7 @@ string gen_syntax(string code_line){
             algos_t.push_back(algoname_unique);
 
 
-            init_code += "window." + algoname_unique + "_values = []; \n";
+            init_code += "window." + algoname_unique + "_values = []; ";
 
             string ws_port = "";
 
@@ -304,8 +335,9 @@ string gen_syntax(string code_line){
             if (algoname == "macd"){ ws_port = "30094"; }
 
 
-            init_code += "window." + algoname_unique+ "_socket = new WebSocket( \" ws://127.0.0.1:" + ws_port + "\" ); \n";
-            init_code += "window." + algoname_unique + "_socket.onmessage = function (event) { \n \t" +"window."+algoname_unique+ "_values.push(event.data)); \n} \n";
+            init_code += "window." + algoname_unique+ "_socket = new WebSocket(\"ws://127.0.0.1:" + ws_port + "\"); ";
+            init_code += "window." + algoname_unique + "_socket.onmessage = function (event) {  \t" +"window."+algoname_unique+ "_values.push(event.data); } ";
+            init_code += "window." + algoname_unique + "_socket.onerror = function (error) {  \t console.log(error);  }";
         }
     }
 
@@ -313,17 +345,18 @@ string gen_syntax(string code_line){
     boost::smatch r_price_m;
 
     while(boost::regex_search(code_line, r_price_m, r_price)){
-        boost::replace_first(code_line, r_price_m[0].str(), "window." + r_price_m[1].str() + "_values.slice(-1).pop()");
         string ticker = r_price_m[1].str();
+
+        boost::replace_first(code_line, r_price_m[0].str(), "window." + ticker + "_values.slice(-1).pop()");
 
         boost::smatch empty_match;
         r_price_m = empty_match;
 
-        if(std::find(tickers.begin(), tickers.end(), ticker) != tickers.end()) {
+        if(std::find(tickers.begin(), tickers.end(), ticker) == tickers.end()) {
             tickers.push_back(ticker);
 
-            init_code += "window." + ticker + "_values = [0]; \n";
-            init_code += "window.tickers.push(\"" + ticker + "\"); \n";
+            init_code += "window." + ticker + "_values = [0]; ";
+            init_code += "window.tickers.push(\"" + ticker + "\"); ";
         }
     }
 
@@ -339,8 +372,8 @@ string gen_syntax(string code_line){
         if(std::find(tickers.begin(), tickers.end(), ticker) == tickers.end()) {
             tickers.push_back(ticker);
 
-            init_code += "window." + ticker + "_values = [0]; \n";
-            init_code += "window.tickers.push(\"" + ticker + "\"); \n";
+            init_code += "window." + ticker + "_values = [0]; ";
+            init_code += "window.tickers.push(\"" + ticker + "\"); ";
         }
     }
 
@@ -379,6 +412,7 @@ string gen_syntax(string code_line){
 
 
 
+    // var_bing_2
     boost::regex r_var{"\\b(?:var_)(\\w*)(?:_)(\\w*)\\b"};
     boost::smatch r_var_m;
     while(boost::regex_search(code_line, r_var_m, r_var)) {
@@ -394,7 +428,7 @@ string gen_syntax(string code_line){
     boost::smatch r_buy_m;
 
     while(boost::regex_search(code_line, r_buy_m, r_buy)) {
-        boost::replace_first(code_line, r_buy_m[0].str(), "window.buys.push({"+r_buy_m[1].str() + ",window." + r_buy_m[1].str() + "_values.slice(-1).pop()})");
+        boost::replace_first(code_line, r_buy_m[0].str(), "var bo = [\"" + r_buy_m[1].str() +  "\", window." + r_buy_m[1].str() + "_values.slice(-1).pop()];  window.buys.push(bo);");
         boost::smatch empty_match;
         r_buy_m = empty_match;
     }
@@ -404,26 +438,25 @@ string gen_syntax(string code_line){
     boost::smatch r_sell_m;
 
     while(boost::regex_search(code_line, r_sell_m, r_sell)) {
-        boost::replace_first(code_line, r_sell_m[0].str(), "window.sells.push({"+r_sell_m[1].str() + ",window." + r_sell_m[1].str() + "_values.slice(-1).pop()})");
+        boost::replace_first(code_line, r_sell_m[0].str(), "var so = [\"" + r_sell_m[1].str() +  "\", window." + r_sell_m[1].str() + "_values.slice(-1).pop()];  window.sells.push(so);");
         boost::smatch empty_match;
         r_sell_m = empty_match;
     }
 
 
-    boost::regex r_fundamentals{"\\b(?:fundamentals_)(\\w*)(?:_)(\\w*)(?:[_])(\\w*)\\b"};
-    boost::smatch r_fundamentals_m;
+    // fundamentals_AAPL_2014q3_tic
+    boost::regex r_fundamentals{"\\b(?:fundamentals_)(\\w*)(?:_)(\\w*)(?:[_])(\\w*)\\b"}; boost::smatch r_fundamentals_m;
 
     while(boost::regex_search(code_line, r_fundamentals_m, r_fundamentals)) {
         string funda = r_fundamentals_m[1].str() + "_" + r_fundamentals_m[2].str() + "_" + r_fundamentals_m[3].str(); // putting this after oost replace corrupts it..
 
-        boost::replace_first(code_line, r_fundamentals_m[0].str(), r_fundamentals_m[1].str() + "_" + r_fundamentals_m[2].str() + "_" + r_fundamentals_m[3].str());
+        boost::replace_first(code_line, r_fundamentals_m[0].str(), "window.fundamentals[\""+r_fundamentals_m[1].str() + "_" + r_fundamentals_m[2].str() + "_" + r_fundamentals_m[3].str() + "\"]");
 
         boost::smatch empty_match;
         r_fundamentals_m = empty_match;
 
         if(std::find(fundamentals.begin(), fundamentals.end(), funda) == fundamentals.end()) {
             fundamentals.push_back(funda);
-            init_code += "var " + funda + "; \n";
         }
     }
 
