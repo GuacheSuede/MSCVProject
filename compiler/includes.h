@@ -103,7 +103,7 @@ void load_script(string input_code){
     init_code += "window.price_page = 0; ";
     init_code += "window.portfolio = 10000; ";
     init_code += "window.buys = []; "; // for now buy and sell  a stock only limited
-    init_code += "window.sells = []; "; //push thoguth so u see the good
+    init_code += "window.sells = []; ";
     init_code += "window.fundamentals = [];";
 
 
@@ -278,7 +278,7 @@ string gen_syntax(string code_line){
     boost::smatch r_algo_current_m;
 
     while(boost::regex_search(code_line, r_algo_current_m, r_algo_current)){
-        boost::replace_first(code_line, r_algo_current_m[0].str(), "window." + r_algo_current_m[1].str() + "_" + r_algo_current_m[2].str()  + "_values." + "slice(-1).pop()");
+        boost::replace_first(code_line, r_algo_current_m[0].str(), "window." + r_algo_current_m[1].str() + "_" + r_algo_current_m[2].str()  + "_values." + "slice(-1).pop();");
         string algoname_unique = r_algo_current_m[1].str() + "_" + r_algo_current_m[2].str();
         string algoname = r_algo_current_m[1].str();
 
@@ -288,7 +288,7 @@ string gen_syntax(string code_line){
             algos.push_back(algoname_unique);
             algos_t.push_back(algoname_unique);
 
-            init_code += "window." + algoname_unique + "_values = []; ";
+            init_code += "window." + algoname_unique + "_values = [\"0\"]; ";
 
             string ws_port = "";
 
@@ -312,7 +312,7 @@ string gen_syntax(string code_line){
         string algoname = r_algo_ago_m[2].str();
         string algoname_unique = r_algo_current_m[2].str() + "_" + r_algo_current_m[3].str();
 
-        boost::replace_first(code_line, r_algo_ago_m[0].str(), "window."+ algoname_unique +"_values[window."+  algoname_unique +"_values.length-"+r_algo_ago_m[1].str()+"])");
+        boost::replace_first(code_line, r_algo_ago_m[0].str(), "window."+ algoname_unique +"_values[window."+  algoname_unique +"_values.length-"+r_algo_ago_m[1].str()+"]);");
 
 
 
@@ -324,7 +324,7 @@ string gen_syntax(string code_line){
             algos_t.push_back(algoname_unique);
 
 
-            init_code += "window." + algoname_unique + "_values = []; ";
+            init_code += "window." + algoname_unique + "_values = [\"0\"]; ";
 
             string ws_port = "";
 
@@ -347,7 +347,7 @@ string gen_syntax(string code_line){
     while(boost::regex_search(code_line, r_price_m, r_price)){
         string ticker = r_price_m[1].str();
 
-        boost::replace_first(code_line, r_price_m[0].str(), "window." + ticker + "_values.slice(-1).pop()");
+        boost::replace_first(code_line, r_price_m[0].str(), "window." + ticker + "_values.slice(-1).pop();");
 
         boost::smatch empty_match;
         r_price_m = empty_match;
@@ -355,7 +355,7 @@ string gen_syntax(string code_line){
         if(std::find(tickers.begin(), tickers.end(), ticker) == tickers.end()) {
             tickers.push_back(ticker);
 
-            init_code += "window." + ticker + "_values = [0]; ";
+            init_code += "window." + ticker + "_values = [\"0\"]; ";
             init_code += "window.tickers.push(\"" + ticker + "\"); ";
         }
     }
@@ -372,34 +372,11 @@ string gen_syntax(string code_line){
         if(std::find(tickers.begin(), tickers.end(), ticker) == tickers.end()) {
             tickers.push_back(ticker);
 
-            init_code += "window." + ticker + "_values = [0]; ";
+            init_code += "window." + ticker + "_values = [\"0\"]; ";
             init_code += "window.tickers.push(\"" + ticker + "\"); ";
         }
     }
 
-    boost::regex r_if ("(?:if)[ ](.*)[ ](?:{)");
-    boost::smatch r_if_m;
-    while(boost::regex_search(code_line, r_if_m, r_if)){
-        boost::replace_first(code_line, r_if_m[0].str(), "if("+r_if_m[1].str()+"){");
-        boost::smatch empty_match;
-        r_ago_price_m = empty_match;
-    }
-
-    boost::regex r_else_if ("(?:}else if)[ ](.*)[ ](?:{)");
-    boost::smatch r_else_if_m;
-    while(boost::regex_search(code_line, r_else_if_m, r_else_if)){
-        boost::replace_first(code_line, r_else_if_m[0].str(), "}else if("+r_else_if_m[1].str()+"){");
-        boost::smatch empty_match;
-        r_ago_price_m = empty_match;
-    }
-
-    boost::regex r_while ("(?:while)[ ](.*)[ ](?:{)");
-    boost::smatch r_while_m;
-    while(boost::regex_search(code_line, r_while_m, r_while)){
-        boost::replace_first(code_line, r_while_m[0].str(), "while("+r_while_m[1].str()+"){");
-        boost::smatch empty_match;
-        r_ago_price_m = empty_match;
-    }
 
     boost::replace_all(code_line, "more_than", ">");
     boost::replace_all(code_line, "more_than_or_equals", ">=");
@@ -460,6 +437,35 @@ string gen_syntax(string code_line){
         }
     }
 
+    boost::regex r_if ("(?:if)[ ](.*)[ ](?:{)");
+    boost::smatch r_if_m;
+    while(boost::regex_search(code_line, r_if_m, r_if)){
+        string replacement = r_if_m[1].str();
+        boost::replace_all(replacement, ";", "");
+        boost::replace_first(code_line, r_if_m[0].str(), "if("+ replacement +"){");
+        boost::smatch empty_match;
+        r_ago_price_m = empty_match;
+    }
+
+    boost::regex r_else_if ("(?:}else if)[ ](.*)[ ](?:{)");
+    boost::smatch r_else_if_m;
+    while(boost::regex_search(code_line, r_else_if_m, r_else_if)){
+        string replacement = r_else_if_m[1].str();
+        boost::replace_all(replacement, ";", "");
+        boost::replace_first(code_line, r_else_if_m[0].str(), "}else if("+replacement+"){");
+        boost::smatch empty_match;
+        r_ago_price_m = empty_match;
+    }
+
+    boost::regex r_while ("(?:while)[ ](.*)[ ](?:{)");
+    boost::smatch r_while_m;
+    while(boost::regex_search(code_line, r_while_m, r_while)){
+        string replacement = r_while_m[1].str();
+        boost::replace_all(replacement, ";", "");
+        boost::replace_first(code_line, r_while_m[0].str(), "while("+ replacement +"){");
+        boost::smatch empty_match;
+        r_ago_price_m = empty_match;
+    }
 
 
 

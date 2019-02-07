@@ -13,7 +13,7 @@ export class AnalyzeComponent implements OnInit {
   compiled_code: string = "";
   options: Object;
   smoothie = new SmoothieChart({
-    grid:{fillStyle:'#ffffff', fontSize:20},
+    grid:{fillStyle:'#000', fontSize:20},
     tooltip:true,
     labels:{fillStyle:'#000000', fontSize:20},
     yRangeFunction: (range) => {

@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class FundamentalsService {
 
-	fundamentals_get_url = "http://127.0.0.1:8080/db/fundamentals?pagesize=1000&filter={\'tic\': \'TICKER\'}&sort_by=datafqtr"		
+	fundamentals_get_url = "http://127.0.0.1:8081/db/fundamentals?pagesize=1000&filter={\'tic\': \'TICKER\'}&sort_by=datafqtr"		
 
 	constructor(private http: HttpClient) { }
 

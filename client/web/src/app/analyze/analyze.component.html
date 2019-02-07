@@ -4,11 +4,13 @@
 <div class="analyzemenu">
     <div class="analyzemenucompile" (click)="compile_code()">Compile</div>
     <div class="analyzeclose" (click)="close_graph()">Close</div>
-    <ul>
-      <li *ngFor"let b of buys_list"> {{ b[0] }} --- {{ b[1] }} </li>
+    <h2 class="orderstitle">Buys</h2>    
+    <ul class="ordersitem">
+      <li *ngFor="let b of buys_list"> {{ b[0] }} | {{ b[1] }} </li>
     </ul>
-    <ul>
-      <li *ngFor"let s of sells_list"> {{ s[0] }} --- {{ s[1] }} </li>
+    <h2 class="orderstitle">Sells</h2>
+    <ul class="ordersitem">
+      <li *ngFor="let s of sells_list"> {{ s[0] }} | {{ s[1] }} </li>
     </ul>
 </div>
 

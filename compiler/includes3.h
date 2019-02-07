@@ -103,8 +103,7 @@ void load_script(string input_code){
     init_code += "window.price_page = 0; \n";
     init_code += "window.portfolio = 10000; \n";
     init_code += "window.buys = [] \n"; // for now buy and sell  a stock only limited
-    init_code += "window.sells = []; \n"; //push thoguth so u see the good
-
+    init_code += "window.sells = []; \n";
 
     istringstream f(input_code);
     string code_script_buf;

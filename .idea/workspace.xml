@@ -10,13 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e575387-7aab-4406-af92-c7eeeaf50a43" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.sass" beforeDir="false" afterPath="$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/web/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/src/app/fundamentals.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/web/src/app/fundamentals.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/web/src/app/watchlistcreation/watchlistcreation.component.sass" beforeDir="false" afterPath="$PROJECT_DIR$/client/web/src/app/watchlistcreation/watchlistcreation.component.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compiler/CMakeFiles/main.dir/main.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/CMakeFiles/main.dir/main.cc.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compiler/includes.h" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/includes.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler/includes3.h" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/includes3.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/compiler/main" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compiler/main.q" beforeDir="false" afterPath="$PROJECT_DIR$/compiler/main.q" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/TRTH_BUILDER/main.cc" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_BUILDER/main.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/TRTH_COMMITER_TICKER/main.cc" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_COMMITER_TICKER/main.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/TRTH_IMPORTER/CMakeFiles/main.dir/main.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_IMPORTER/CMakeFiles/main.dir/main.cc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/TRTH_IMPORTER/main" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_IMPORTER/main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/TRTH_IMPORTER/main.cc" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_IMPORTER/main.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/TRTH_SPLITTER_COMMITER/main.cc" beforeDir="false" afterPath="$PROJECT_DIR$/server/TRTH_SPLITTER_COMMITER/main.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc" beforeDir="false" afterPath="$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,59 +52,90 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/compiler/includes.h">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/WATCHLIST_GET/includes.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="423" column="192" selection-start-line="423" selection-start-column="192" selection-end-line="423" selection-end-column="192" />
+            <state relative-caret-position="-1608" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1853">
+              <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.html">
+        <entry file="file://$PROJECT_DIR$/server/TRTH_MINIFIER/main.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+            <state relative-caret-position="-520" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/TRTH_COMMITER_TICKER/main.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="76" selection-start-line="76" selection-end-line="76" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.sass">
+        <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/main.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+            <state relative-caret-position="3570">
+              <caret line="210" column="1" selection-start-line="210" selection-start-column="1" selection-end-line="210" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.ts">
+        <entry file="file://$PROJECT_DIR$/server/PRICES_GET/main.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="-5875">
+              <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/web/src/app/stockitem/stockitem.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="19" column="105" selection-start-line="19" selection-start-column="105" selection-end-line="19" selection-end-column="105" />
               <folding>
-                <element signature="e#0#50#0" expanded="true" />
+                <element signature="e#0#57#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/submission/bollinger/session.cc">
+        <entry file="file://$PROJECT_DIR$/client/web/src/app/watchlistsoverview/watchlistsoverview.component.ts">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/web/src/app/watchlistview/watchlistview.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1394">
-              <caret line="82" column="22" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
+            <state relative-caret-position="289">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="e#0#57#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/compiler/main.cc">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/web/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+            <state relative-caret-position="187">
+              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -109,7 +151,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>serve</find>
       <find>DEFAULT_MONACO_OPTIONS</find>
       <find>bind</find>
       <find>price_pa</find>
@@ -139,6 +180,7 @@
       <find>send</find>
       <find>JSON</find>
       <find>buys</find>
+      <find>//</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -158,17 +200,12 @@
         <option value="$PROJECT_DIR$/server/TRTH_MINIFIER/main.cc" />
         <option value="$PROJECT_DIR$/server/TRTH_BUILDER/IEXTRTHSymbolsList.csv" />
         <option value="$PROJECT_DIR$/server/TRTH_BUILDER/IEXSymbolsList.txt" />
-        <option value="$PROJECT_DIR$/server/TRTH_BUILDER/main.cc" />
-        <option value="$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc" />
-        <option value="$PROJECT_DIR$/server/TRTH_SPLITTER_COMMITER/main.cc" />
-        <option value="$PROJECT_DIR$/server/TRTH_COMMITER_TICKER/main.cc" />
         <option value="$PROJECT_DIR$/server/TRTH_IMPORTER/main.cc" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/server/PRICES_GET/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/server/PRICES_GET/main.cc" />
         <option value="$PROJECT_DIR$/server/WATCHLIST_POST/main.cc" />
         <option value="$PROJECT_DIR$/compiler/script.q" />
-        <option value="$PROJECT_DIR$/compiler/main.q" />
         <option value="$PROJECT_DIR$/client/web/src/app/fundamentals.service.ts" />
         <option value="$PROJECT_DIR$/client/web/src/app/compile.service.ts" />
         <option value="$PROJECT_DIR$/compiler/main.cc" />
@@ -185,6 +222,13 @@
         <option value="$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.html" />
         <option value="$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.ts" />
         <option value="$PROJECT_DIR$/compiler/includes.h" />
+        <option value="$PROJECT_DIR$/compiler/includes3.h" />
+        <option value="$PROJECT_DIR$/compiler/main.q" />
+        <option value="$PROJECT_DIR$/server/TRTH_SPLITTER_COMMITER/main.cc" />
+        <option value="$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc" />
+        <option value="$PROJECT_DIR$/server/TRTH_COMMITER_TICKER/main.cc" />
+        <option value="$PROJECT_DIR$/server/TRTH_BUILDER/main.cc" />
+        <option value="$PROJECT_DIR$/client/web/src/app/app.component.ts" />
       </list>
     </option>
   </component>
@@ -281,18 +325,12 @@
             <path>
               <item name="MSCVProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="MSCVProject" type="462c0819:PsiDirectoryNode" />
-              <item name="compiler" type="462c0819:PsiDirectoryNode" />
+              <item name="compiler_test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MSCVProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="MSCVProject" type="462c0819:PsiDirectoryNode" />
-              <item name="submission" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSCVProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSCVProject" type="462c0819:PsiDirectoryNode" />
-              <item name="submission" type="462c0819:PsiDirectoryNode" />
-              <item name="bollinger" type="462c0819:PsiDirectoryNode" />
+              <item name="trth_crawler" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -381,17 +419,17 @@
       <workItem from="1549296081252" duration="6841000" />
       <workItem from="1549333368309" duration="6375000" />
       <workItem from="1549358970199" duration="4221000" />
+      <workItem from="1549485601211" duration="2491000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218475000" />
+    <option name="totallyTimeSpent" value="220966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11846318" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11953042" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -417,135 +455,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="240" column="9" selection-start-line="240" selection-start-column="9" selection-end-line="240" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/PRICES_GET/listener.h" />
-    <entry file="file://$PROJECT_DIR$/server/PRICES_GET/includes.h" />
-    <entry file="file://$PROJECT_DIR$/server/PRICES_GET/session.h" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/TRTH_IMPORTER/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="20" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/trth/AAPL.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state>
-          <caret column="43" selection-start-column="38" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/TRTH_IMPORTER/main.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1565">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/PRICES_GET/main.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6290">
-          <caret line="370" column="21" selection-start-line="370" selection-start-column="21" selection-end-line="370" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/PRICES_GET/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="42" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/WATCHLIST_POST/main.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compiler/cpr/cpr/Makefile" />
-    <entry file="file://$PROJECT_DIR$/compiler/script.q">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="11" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compiler/main.q">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compiler_backup/main.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6732">
-          <caret line="396" selection-start-line="396" selection-end-line="396" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compiler_test/main2.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compiler_test/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/PRICES_GET/Makefile">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compiler_backup/main.q">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/web/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/web/src/app/info/info.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/web/src/app/fundamentals.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compiler/listener.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/web/src/tsconfig.app.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -648,27 +557,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compiler/includes2.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="566" column="23" selection-start-line="566" selection-start-column="23" selection-end-line="566" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/web/node_modules/@angular/common/http/src/client.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="719">
           <caret line="1844" column="4" selection-start-line="1844" selection-start-column="4" selection-end-line="1844" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/web/src/app/watchlistview/watchlistview.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -682,9 +574,6 @@
     <entry file="file://$PROJECT_DIR$/client/web/src/app/watchlistview/watchlistview.component.sass">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/web/src/app/stockitem/stockitem.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/compiler/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -692,25 +581,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/web/src/app/stockitem/stockitem.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="105" lean-forward="true" selection-start-line="19" selection-start-column="105" selection-end-line="19" selection-end-column="105" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/web/src/app/watchlistview/watchlistview.component.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/submission/bollinger/session.cc">
       <provider selected="true" editor-type-id="text-editor">
@@ -719,34 +591,224 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compiler/main.cc">
+    <entry file="file://$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+        <state relative-caret-position="272">
+          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.html">
+    <entry file="file://$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+        <state relative-caret-position="551">
+          <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/web/src/app/analyze/analyze.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="153">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/web/src/app/stockitem/stockitem.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/web/src/app/stockitem/stockitem.component.sass">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/compiler/includes.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="423" column="192" selection-start-line="423" selection-start-column="192" selection-end-line="423" selection-end-column="192" />
+        <state relative-caret-position="-4099">
+          <caret line="105" column="39" lean-forward="true" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/includes2.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="398" column="10" selection-start-line="398" selection-start-column="8" selection-end-line="398" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/includes3.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6297">
+          <caret line="105" column="41" selection-start-line="105" selection-start-column="41" selection-end-line="105" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/notes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/session.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/script.q">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="11" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/main.q">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/listener.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1098">
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler_backup/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5931">
+          <caret line="396" selection-start-line="396" selection-end-line="396" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler_test/main2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-95" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler_test/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="22" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/TRTH_IMPORTER/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1540">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/TRTH_SPLITTER_COMMITER/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="192" lean-forward="true" selection-start-line="192" selection-end-line="192" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/WATCHLIST_GET/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-146">
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/WATCHLIST_GET/includes.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1608" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/WRDS_IMPORTER/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1853">
+          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/TRTH_MINIFIER/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-520" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/TRTH_COMMITER_TICKER/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/TRTH_BUILDER/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3570">
+          <caret line="210" column="1" selection-start-line="210" selection-start-column="1" selection-end-line="210" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/PRICES_GET/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5875">
+          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/web/src/app/stockitem/stockitem.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="105" selection-start-line="19" selection-start-column="105" selection-end-line="19" selection-end-column="105" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/web/src/app/watchlistsoverview/watchlistsoverview.component.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/web/src/app/watchlistview/watchlistview.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/web/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
         </state>
       </provider>
     </entry>
